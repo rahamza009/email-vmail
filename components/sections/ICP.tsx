@@ -2,17 +2,14 @@ import FadeIn from "@/components/FadeIn";
 
 const ICP_ITEMS = [
   {
-    icon: "🔫",
     title: "Online Gun Stores",
     desc: "FFL dealers and direct-to-consumer firearms retailers ready to scale retention and repeat purchases.",
   },
   {
-    icon: "💥",
     title: "Ammo Retailers",
     desc: "High-volume ammo sellers who need consistent campaigns, automated flows, and compliant sends.",
   },
   {
-    icon: "🪖",
     title: "Tactical Gear Brands",
     desc: "Holsters, optics, EDC gear — brands serving armed professionals and enthusiasts.",
   },
@@ -29,7 +26,10 @@ export default function ICP() {
           >
             Who This Is For
           </h2>
-          <p className="font-inter text-gray-400 max-w-lg mx-auto mb-14 text-base">
+          <p
+            className="font-inter max-w-lg mx-auto mb-14 text-base"
+            style={{ color: "#1E2419" }}
+          >
             We work exclusively with businesses in the tactical and firearms space.
           </p>
         </FadeIn>
@@ -38,14 +38,16 @@ export default function ICP() {
           {ICP_ITEMS.map((item, i) => (
             <FadeIn key={item.title} delay={i * 120}>
               <div className="bg-white rounded-xl p-8 text-center shadow-sm border border-gray-100 h-full">
-                <div className="text-4xl mb-4">{item.icon}</div>
                 <h3
                   className="font-barlow text-xl font-bold mb-3"
                   style={{ color: "#1E2419" }}
                 >
                   {item.title}
                 </h3>
-                <p className="font-inter text-sm text-gray-500 leading-relaxed">
+                <p
+                  className="font-inter text-sm leading-relaxed"
+                  style={{ color: "#1E2419" }}
+                >
                   {item.desc}
                 </p>
               </div>

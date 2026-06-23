@@ -27,12 +27,6 @@ const POSTS = [
   },
 ];
 
-const CATEGORY_COLORS: Record<string, string> = {
-  "Email Strategy": "#F5C124",
-  Automation: "#F5C124",
-  Compliance: "#F5C124",
-};
-
 export default function BlogPage() {
   return (
     <main className="min-h-screen bg-white pt-28 pb-24 px-6">
@@ -49,7 +43,10 @@ export default function BlogPage() {
         >
           Tactical Email Insights
         </h1>
-        <p className="font-inter text-gray-400 mb-16 text-lg max-w-xl mx-auto">
+        <p
+          className="font-inter mb-16 text-lg max-w-xl mx-auto"
+          style={{ color: "#1E2419" }}
+        >
           Strategy, compliance, and execution — written exclusively for the firearms and tactical industry.
         </p>
 
@@ -59,7 +56,6 @@ export default function BlogPage() {
               key={post.slug}
               className="border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
-              {/* Thumbnail */}
               <div
                 className="h-48 flex items-center justify-center"
                 style={{ backgroundColor: "#1E2419" }}
@@ -75,10 +71,7 @@ export default function BlogPage() {
               <div className="p-6">
                 <span
                   className="font-barlow text-xs font-black tracking-wider uppercase px-3 py-1 rounded-full"
-                  style={{
-                    backgroundColor: CATEGORY_COLORS[post.category],
-                    color: "#1E2419",
-                  }}
+                  style={{ backgroundColor: "#F5C124", color: "#1E2419" }}
                 >
                   {post.category}
                 </span>
@@ -90,12 +83,20 @@ export default function BlogPage() {
                   {post.title}
                 </h2>
 
-                <p className="font-inter text-sm text-gray-500 mb-5 leading-relaxed">
+                <p
+                  className="font-inter text-sm mb-5 leading-relaxed"
+                  style={{ color: "#1E2419" }}
+                >
                   {post.excerpt}
                 </p>
 
                 <div className="flex items-center justify-between">
-                  <span className="font-inter text-xs text-gray-400">{post.date}</span>
+                  <span
+                    className="font-inter text-xs"
+                    style={{ color: "#1E2419" }}
+                  >
+                    {post.date}
+                  </span>
                   <Link
                     href={`/blog/${post.slug}`}
                     className="font-barlow text-sm font-bold transition-opacity hover:opacity-70"

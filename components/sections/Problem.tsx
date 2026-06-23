@@ -2,17 +2,14 @@ import FadeIn from "@/components/FadeIn";
 
 const PROBLEMS = [
   {
-    icon: "⚠️",
     title: "Compliance Challenges",
     body: "Mainstream ESPs restrict or ban firearms businesses without warning — leaving your revenue exposed overnight with zero recourse.",
   },
   {
-    icon: "🔁",
     title: "No Retention System",
     body: "Your customers buy once and never come back. Without strategic automations, you're leaving repeat revenue on the table every single month.",
   },
   {
-    icon: "📧",
     title: "Poor Email Design",
     body: "Unresponsive, broken templates that hurt customer experience and tank your deliverability before the sell even starts.",
   },
@@ -29,7 +26,10 @@ export default function Problem() {
           >
             Sound Familiar?
           </h2>
-          <p className="font-inter text-gray-400 max-w-lg mx-auto mb-14 text-base">
+          <p
+            className="font-inter max-w-lg mx-auto mb-14 text-base"
+            style={{ color: "#1E2419" }}
+          >
             These are the three biggest problems we see killing tactical email programs.
           </p>
         </FadeIn>
@@ -41,14 +41,16 @@ export default function Problem() {
                 className="bg-gray-50 rounded-xl p-8 text-left border-t-4 h-full"
                 style={{ borderTopColor: "#F5C124" }}
               >
-                <div className="text-4xl mb-4">{p.icon}</div>
                 <h3
                   className="font-barlow text-xl font-bold mb-3"
                   style={{ color: "#1E2419" }}
                 >
                   {p.title}
                 </h3>
-                <p className="font-inter text-gray-500 text-sm leading-relaxed">
+                <p
+                  className="font-inter text-sm leading-relaxed"
+                  style={{ color: "#1E2419" }}
+                >
                   {p.body}
                 </p>
               </div>

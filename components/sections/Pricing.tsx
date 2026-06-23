@@ -48,7 +48,7 @@ export default function Pricing() {
                   className="font-barlow text-xs font-black px-3 py-1 rounded-full tracking-wide"
                   style={{ backgroundColor: "#F5C124", color: "#1E2419" }}
                 >
-                  🔥 LIMITED OFFER
+                  LIMITED OFFER
                 </span>
               </div>
 

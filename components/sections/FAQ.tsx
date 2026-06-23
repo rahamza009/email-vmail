@@ -43,7 +43,10 @@ export default function FAQ() {
           >
             Common Questions
           </h2>
-          <p className="font-inter text-gray-400 mb-14">
+          <p
+            className="font-inter mb-14"
+            style={{ color: "#1E2419" }}
+          >
             Everything you need to know before getting started.
           </p>
         </FadeIn>
@@ -72,7 +75,10 @@ export default function FAQ() {
                 <div
                   className={`overflow-hidden transition-all duration-300 ${open === i ? "max-h-64" : "max-h-0"}`}
                 >
-                  <p className="font-inter text-sm text-gray-500 leading-relaxed px-6 pb-5">
+                  <p
+                    className="font-inter text-sm leading-relaxed px-6 pb-5"
+                    style={{ color: "#1E2419" }}
+                  >
                     {faq.a}
                   </p>
                 </div>

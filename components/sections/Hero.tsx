@@ -3,7 +3,6 @@ import FadeIn from "@/components/FadeIn";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20 px-6 bg-white overflow-hidden">
-      {/* Subtle tactical crosshatch texture */}
       <div
         className="absolute inset-0 opacity-[0.035] pointer-events-none"
         style={{
@@ -24,15 +23,16 @@ export default function Hero() {
             className="font-barlow text-5xl md:text-7xl font-black leading-[1.05] mb-6"
             style={{ color: "#1E2419" }}
           >
-            From Subscribed<br />
-            to Sold —{" "}
+            From Subscribed To Sold.<br />
             <span style={{ color: "#F5C124" }}>Again and Again.</span>
           </h1>
 
-          <p className="font-inter text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Done-for-you email marketing built exclusively for{" "}
-            <strong className="text-gray-700">Guns, Ammo &amp; Tactical Stores.</strong>{" "}
-            Strategy, design, copy, and deployment — all handled.
+          <p
+            className="font-inter text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+            style={{ color: "#1E2419" }}
+          >
+            Done-For-You Email Marketing Agency For Gun Stores, Ammo and Tactical Gear.
+            It&apos;s time to build your customer retention and lifetime value.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
