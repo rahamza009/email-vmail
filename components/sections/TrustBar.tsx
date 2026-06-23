@@ -6,7 +6,7 @@ const ITEMS = [
 
 export default function TrustBar() {
   return (
-    <section style={{ backgroundColor: "#1E2419" }} className="py-5 px-6">
+    <section style={{ backgroundColor: "#2D3A28" }} className="py-5 px-6">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-3 md:gap-0 text-center">
         {ITEMS.map((item, i) => (
           <div key={item} className="flex items-center">

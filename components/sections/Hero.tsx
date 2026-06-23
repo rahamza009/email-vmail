@@ -21,7 +21,7 @@ export default function Hero() {
 
           <h1
             className="font-barlow text-5xl md:text-7xl font-black leading-[1.05] mb-6"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             From Subscribed To Sold.<br />
             <span style={{ color: "#F5C124" }}>Again and Again.</span>
@@ -29,7 +29,7 @@ export default function Hero() {
 
           <p
             className="font-inter text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             Done-For-You Email Marketing Agency For Gun Stores, Ammo and Tactical Gear.
             It&apos;s time to build your customer retention and lifetime value.
@@ -39,14 +39,14 @@ export default function Hero() {
             <a
               href="#audit"
               className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1E2419", color: "#F5C124" }}
+              style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}
             >
               Claim $0 Audit
             </a>
             <a
               href="#contact"
               className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide border-2 transition-colors hover:bg-gray-50"
-              style={{ borderColor: "#1E2419", color: "#1E2419" }}
+              style={{ borderColor: "#2D3A28", color: "#2D3A28" }}
             >
               Book a Free Call
             </a>

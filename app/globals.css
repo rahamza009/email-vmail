@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-dark: #1E2419;
+  --color-brand-dark: #2D3A28;
   --color-brand-gold: #F5C124;
   --color-brand-light-gray: #F4F4F4;
 
@@ -16,7 +16,7 @@ html {
 
 body {
   background: #ffffff;
-  color: #1E2419;
+  color: #2D3A28;
 }
 
 .fade-in {

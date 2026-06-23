@@ -39,13 +39,13 @@ export default function BlogPage() {
         </p>
         <h1
           className="font-barlow text-5xl md:text-6xl font-black mb-4"
-          style={{ color: "#1E2419" }}
+          style={{ color: "#2D3A28" }}
         >
           Tactical Email Insights
         </h1>
         <p
           className="font-inter mb-16 text-lg max-w-xl mx-auto"
-          style={{ color: "#1E2419" }}
+          style={{ color: "#2D3A28" }}
         >
           Strategy, compliance, and execution — written exclusively for the firearms and tactical industry.
         </p>
@@ -58,7 +58,7 @@ export default function BlogPage() {
             >
               <div
                 className="h-48 flex items-center justify-center"
-                style={{ backgroundColor: "#1E2419" }}
+                style={{ backgroundColor: "#2D3A28" }}
               >
                 <span
                   className="font-rajdhani text-2xl font-bold tracking-widest uppercase"
@@ -71,21 +71,21 @@ export default function BlogPage() {
               <div className="p-6">
                 <span
                   className="font-barlow text-xs font-black tracking-wider uppercase px-3 py-1 rounded-full"
-                  style={{ backgroundColor: "#F5C124", color: "#1E2419" }}
+                  style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
                 >
                   {post.category}
                 </span>
 
                 <h2
                   className="font-barlow text-xl font-bold mt-4 mb-2 leading-snug"
-                  style={{ color: "#1E2419" }}
+                  style={{ color: "#2D3A28" }}
                 >
                   {post.title}
                 </h2>
 
                 <p
                   className="font-inter text-sm mb-5 leading-relaxed"
-                  style={{ color: "#1E2419" }}
+                  style={{ color: "#2D3A28" }}
                 >
                   {post.excerpt}
                 </p>
@@ -93,14 +93,14 @@ export default function BlogPage() {
                 <div className="flex items-center justify-between">
                   <span
                     className="font-inter text-xs"
-                    style={{ color: "#1E2419" }}
+                    style={{ color: "#2D3A28" }}
                   >
                     {post.date}
                   </span>
                   <Link
                     href={`/blog/${post.slug}`}
                     className="font-barlow text-sm font-bold transition-opacity hover:opacity-70"
-                    style={{ color: "#1E2419" }}
+                    style={{ color: "#2D3A28" }}
                   >
                     Read More →
                   </Link>

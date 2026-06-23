@@ -22,13 +22,13 @@ export default function Problem() {
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-4"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             Sound Familiar?
           </h2>
           <p
             className="font-inter max-w-lg mx-auto mb-14 text-base"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             These are the three biggest problems we see killing tactical email programs.
           </p>
@@ -43,13 +43,13 @@ export default function Problem() {
               >
                 <h3
                   className="font-barlow text-xl font-bold mb-3"
-                  style={{ color: "#1E2419" }}
+                  style={{ color: "#2D3A28" }}
                 >
                   {p.title}
                 </h3>
                 <p
                   className="font-inter text-sm leading-relaxed"
-                  style={{ color: "#1E2419" }}
+                  style={{ color: "#2D3A28" }}
                 >
                   {p.body}
                 </p>

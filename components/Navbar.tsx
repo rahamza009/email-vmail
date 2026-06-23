@@ -24,7 +24,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${scrolled ? "shadow-xl" : ""}`}
-      style={{ backgroundColor: "#1E2419" }}
+      style={{ backgroundColor: "#2D3A28" }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
@@ -54,7 +54,7 @@ export default function Navbar() {
         <a
           href="#audit"
           className="hidden md:inline-block font-barlow text-sm font-bold px-5 py-2.5 rounded transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#F5C124", color: "#1E2419" }}
+          style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
         >
           Claim $0 Audit
         </a>
@@ -83,7 +83,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 pb-6" : "max-h-0"}`}
-        style={{ backgroundColor: "#1E2419" }}
+        style={{ backgroundColor: "#2D3A28" }}
       >
         <div className="px-6 flex flex-col gap-5 pt-2">
           {NAV_LINKS.map((link) => (
@@ -100,7 +100,7 @@ export default function Navbar() {
           <a
             href="#audit"
             className="font-barlow text-sm font-bold px-5 py-3 rounded text-center mt-1"
-            style={{ backgroundColor: "#F5C124", color: "#1E2419" }}
+            style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
             onClick={() => setIsOpen(false)}
           >
             Claim $0 Audit

@@ -24,7 +24,7 @@ export default function Pricing() {
     <section
       id="pricing"
       className="py-20 md:py-28 px-6"
-      style={{ backgroundColor: "#1E2419" }}
+      style={{ backgroundColor: "#2D3A28" }}
     >
       <div className="max-w-5xl mx-auto text-center">
         <FadeIn>
@@ -46,7 +46,7 @@ export default function Pricing() {
               <div className="absolute -top-3.5 left-7">
                 <span
                   className="font-barlow text-xs font-black px-3 py-1 rounded-full tracking-wide"
-                  style={{ backgroundColor: "#F5C124", color: "#1E2419" }}
+                  style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
                 >
                   LIMITED OFFER
                 </span>
@@ -83,7 +83,7 @@ export default function Pricing() {
               >
                 <p
                   className="font-barlow text-sm font-black"
-                  style={{ color: "#1E2419" }}
+                  style={{ color: "#2D3A28" }}
                 >
                   Discounted Spots Remaining: 2 / 3
                 </p>
@@ -101,7 +101,7 @@ export default function Pricing() {
               <a
                 href="#audit"
                 className="block w-full text-center font-barlow font-bold py-4 rounded-xl transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#F5C124", color: "#1E2419" }}
+                style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
               >
                 Claim This Spot
               </a>

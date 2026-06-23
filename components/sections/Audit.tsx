@@ -7,13 +7,13 @@ export default function Audit() {
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-6 leading-tight"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             Want a Revenue Gap Analysis<br className="hidden md:block" /> of Your Store?
           </h2>
           <p
             className="font-inter text-lg leading-relaxed mb-10 max-w-xl mx-auto"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             Get your{" "}
             <strong>$0 Audit Report</strong> delivered in 7 days. No commitment.
@@ -23,14 +23,14 @@ export default function Audit() {
             <a
               href="mailto:hello@email-vmail.com"
               className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#1E2419", color: "#F5C124" }}
+              style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}
             >
               Claim $0 Audit
             </a>
             <a
               href="#contact"
               className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide border-2 transition-colors hover:bg-gray-50"
-              style={{ borderColor: "#1E2419", color: "#1E2419" }}
+              style={{ borderColor: "#2D3A28", color: "#2D3A28" }}
             >
               Book a 20-min Call
             </a>

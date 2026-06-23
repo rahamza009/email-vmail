@@ -4,7 +4,7 @@ const LINKS = ["Services", "Pricing", "Case Studies", "Blog", "Contact"];
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#1E2419" }} className="py-14 px-6">
+    <footer style={{ backgroundColor: "#2D3A28" }} className="py-14 px-6">
       <div className="max-w-4xl mx-auto text-center">
         <div
           className="font-rajdhani text-3xl font-bold tracking-widest uppercase mb-1"

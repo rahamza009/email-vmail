@@ -39,13 +39,13 @@ export default function FAQ() {
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-4"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             Common Questions
           </h2>
           <p
             className="font-inter mb-14"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             Everything you need to know before getting started.
           </p>
@@ -57,7 +57,7 @@ export default function FAQ() {
               <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
                 <button
                   className="w-full flex items-center justify-between px-6 py-5 text-left font-barlow font-bold text-base transition-colors hover:bg-gray-50 cursor-pointer"
-                  style={{ color: "#1E2419" }}
+                  style={{ color: "#2D3A28" }}
                   onClick={() => setOpen(open === i ? null : i)}
                 >
                   <span>{faq.q}</span>
@@ -77,7 +77,7 @@ export default function FAQ() {
                 >
                   <p
                     className="font-inter text-sm leading-relaxed px-6 pb-5"
-                    style={{ color: "#1E2419" }}
+                    style={{ color: "#2D3A28" }}
                   >
                     {faq.a}
                   </p>

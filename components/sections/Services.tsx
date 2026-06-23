@@ -32,13 +32,13 @@ export default function Services() {
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-4"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             What We Handle For You
           </h2>
           <p
             className="font-inter max-w-lg mx-auto mb-14 text-base"
-            style={{ color: "#1E2419" }}
+            style={{ color: "#2D3A28" }}
           >
             End-to-end email marketing — strategy through execution — fully done for you.
           </p>
@@ -49,17 +49,17 @@ export default function Services() {
             <FadeIn key={s.title} delay={i * 90}>
               <div
                 className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
-                style={{ borderColor: "#1E2419" }}
+                style={{ borderColor: "#2D3A28" }}
               >
                 <h3
                   className="font-barlow text-base font-bold leading-tight"
-                  style={{ color: "#1E2419" }}
+                  style={{ color: "#2D3A28" }}
                 >
                   {s.title}
                 </h3>
                 <p
                   className="font-inter text-xs leading-relaxed"
-                  style={{ color: "#1E2419" }}
+                  style={{ color: "#2D3A28" }}
                 >
                   {s.desc}
                 </p>
@@ -72,7 +72,7 @@ export default function Services() {
           <div className="border-t border-gray-100 pt-10">
             <p
               className="font-barlow text-xs font-bold tracking-[0.2em] uppercase mb-6"
-              style={{ color: "#1E2419" }}
+              style={{ color: "#2D3A28" }}
             >
               Platforms We Work With
             </p>
@@ -81,7 +81,7 @@ export default function Services() {
                 <div
                   key={esp}
                   className="font-rajdhani text-lg font-bold px-7 py-3 rounded-lg border-2"
-                  style={{ borderColor: "#1E2419", color: "#1E2419" }}
+                  style={{ borderColor: "#2D3A28", color: "#2D3A28" }}
                 >
                   {esp}
                 </div>
