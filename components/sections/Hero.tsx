@@ -32,7 +32,7 @@ export default function Hero() {
             style={{ color: "#2D3A28" }}
           >
             Done-For-You Email Marketing Agency For Gun Stores, Ammo and Tactical Gear.
-            It&apos;s time to build your customer retention and lifetime value.
+            It&apos;s time to fix leaks in retention and turn one-time buyers into lifetime customers.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
