@@ -1,4 +1,5 @@
 import FadeIn from "@/components/FadeIn";
+import AuditPopover from "@/components/AuditPopover";
 
 export default function Hero() {
   return (
@@ -30,15 +31,17 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://www.linkedin.com/in/umehabiba2210/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
-            >
-              Get $0 Account Audit
-            </a>
+            <AuditPopover position="above">
+              <a
+                href="https://www.linkedin.com/in/umehabiba2210/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide transition-opacity hover:opacity-90 block"
+                style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
+              >
+                Get $0 Account Audit
+              </a>
+            </AuditPopover>
             <a
               href="https://calendly.com/rahamza009-dzou/30min"
               target="_blank"
