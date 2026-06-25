@@ -17,18 +17,17 @@ const PROBLEMS = [
 
 export default function Problem() {
   return (
-    <section id="problem" className="py-20 md:py-28 px-6 bg-white">
+    <section id="problem" className="py-20 md:py-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-4"
-            style={{ color: "#2D3A28" }}
+            style={{ color: "#F5C124" }}
           >
             Sound Familiar?
           </h2>
           <p
-            className="font-inter max-w-lg mx-auto mb-14 text-base"
-            style={{ color: "#2D3A28" }}
+            className="font-inter max-w-lg mx-auto mb-14 text-base text-white/60"
           >
             These are the three biggest problems we see killing tactical email programs.
           </p>
@@ -38,18 +37,16 @@ export default function Problem() {
           {PROBLEMS.map((p, i) => (
             <FadeIn key={p.title} delay={i * 120}>
               <div
-                className="bg-gray-50 rounded-xl p-8 text-left border-t-4 h-full"
+                className="rounded-xl p-8 text-left border-t-4 h-full bg-white/5 border border-white/10"
                 style={{ borderTopColor: "#F5C124" }}
               >
                 <h3
-                  className="font-barlow text-xl font-bold mb-3"
-                  style={{ color: "#2D3A28" }}
+                  className="font-barlow text-xl font-bold mb-3 text-white"
                 >
                   {p.title}
                 </h3>
                 <p
-                  className="font-inter text-sm leading-relaxed"
-                  style={{ color: "#2D3A28" }}
+                  className="font-inter text-sm leading-relaxed text-white/75"
                 >
                   {p.body}
                 </p>

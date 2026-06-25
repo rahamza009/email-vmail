@@ -27,18 +27,17 @@ const ESPS = ["Klaviyo", "Sendlane", "Omnisend"];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 md:py-28 px-6 bg-white">
+    <section id="services" className="py-20 md:py-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-4"
-            style={{ color: "#2D3A28" }}
+            style={{ color: "#F5C124" }}
           >
             What We Handle For You
           </h2>
           <p
-            className="font-inter max-w-lg mx-auto mb-14 text-base"
-            style={{ color: "#2D3A28" }}
+            className="font-inter max-w-lg mx-auto mb-14 text-base text-white/60"
           >
             End-to-end email marketing — strategy through execution — fully done for you.
           </p>
@@ -49,17 +48,15 @@ export default function Services() {
             <FadeIn key={s.title} delay={i * 90}>
               <div
                 className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
-                style={{ borderColor: "#2D3A28" }}
+                style={{ borderColor: "#F5C124" }}
               >
                 <h3
-                  className="font-barlow text-base font-bold leading-tight"
-                  style={{ color: "#2D3A28" }}
+                  className="font-barlow text-base font-bold leading-tight text-white"
                 >
                   {s.title}
                 </h3>
                 <p
-                  className="font-inter text-xs leading-relaxed"
-                  style={{ color: "#2D3A28" }}
+                  className="font-inter text-xs leading-relaxed text-white/75"
                 >
                   {s.desc}
                 </p>
@@ -69,10 +66,9 @@ export default function Services() {
         </div>
 
         <FadeIn delay={350}>
-          <div className="border-t border-gray-100 pt-10">
+          <div className="border-t border-white/10 pt-10">
             <p
-              className="font-barlow text-xs font-bold tracking-[0.2em] uppercase mb-6"
-              style={{ color: "#2D3A28" }}
+              className="font-barlow text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white/50"
             >
               Platforms We Work With
             </p>
@@ -80,8 +76,8 @@ export default function Services() {
               {ESPS.map((esp) => (
                 <div
                   key={esp}
-                  className="font-rajdhani text-lg font-bold px-7 py-3 rounded-lg border-2"
-                  style={{ borderColor: "#2D3A28", color: "#2D3A28" }}
+                  className="font-rajdhani text-lg font-bold px-7 py-3 rounded-lg border-2 text-white"
+                  style={{ borderColor: "rgba(255,255,255,0.2)" }}
                 >
                   {esp}
                 </div>

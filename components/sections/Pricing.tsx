@@ -1,4 +1,5 @@
 import FadeIn from "@/components/FadeIn";
+import AuditPopover from "@/components/AuditPopover";
 
 const STARTER_INCLUDES = [
   "Up to 10,000 subscribers",
@@ -98,13 +99,15 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href="#audit"
-                className="block w-full text-center font-barlow font-bold py-4 rounded-xl transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
-              >
-                Claim This Spot
-              </a>
+              <AuditPopover>
+                <a
+                  href="#audit"
+                  className="block w-full text-center font-barlow font-bold py-4 rounded-xl transition-opacity hover:opacity-90"
+                  style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
+                >
+                  Claim This Spot
+                </a>
+              </AuditPopover>
             </div>
           </FadeIn>
 
@@ -136,13 +139,15 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <a
-                href="#audit"
-                className="block w-full text-center font-barlow font-bold py-4 rounded-xl border-2 transition-colors hover:bg-white/5"
-                style={{ borderColor: "#F5C124", color: "#F5C124" }}
-              >
-                Claim This Spot
-              </a>
+              <AuditPopover>
+                <a
+                  href="#audit"
+                  className="block w-full text-center font-barlow font-bold py-4 rounded-xl border-2 transition-colors hover:bg-white/5"
+                  style={{ borderColor: "#F5C124", color: "#F5C124" }}
+                >
+                  Claim This Spot
+                </a>
+              </AuditPopover>
             </div>
           </FadeIn>
         </div>

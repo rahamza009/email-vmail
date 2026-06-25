@@ -34,18 +34,17 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-20 md:py-28 px-6 bg-gray-50">
+    <section id="faq" className="py-20 md:py-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
       <div className="max-w-3xl mx-auto text-center">
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-4"
-            style={{ color: "#2D3A28" }}
+            style={{ color: "#F5C124" }}
           >
             Common Questions
           </h2>
           <p
-            className="font-inter mb-14"
-            style={{ color: "#2D3A28" }}
+            className="font-inter mb-14 text-white/60"
           >
             Everything you need to know before getting started.
           </p>
@@ -54,10 +53,9 @@ export default function FAQ() {
         <div className="space-y-3 text-left">
           {FAQS.map((faq, i) => (
             <FadeIn key={i} delay={i * 70}>
-              <div className="bg-white border border-gray-200 rounded-xl overflow-hidden">
+              <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
                 <button
-                  className="w-full flex items-center justify-between px-6 py-5 text-left font-barlow font-bold text-base transition-colors hover:bg-gray-50 cursor-pointer"
-                  style={{ color: "#2D3A28" }}
+                  className="w-full flex items-center justify-between px-6 py-5 text-left font-barlow font-bold text-base transition-colors hover:bg-white/10 cursor-pointer text-white"
                   onClick={() => setOpen(open === i ? null : i)}
                 >
                   <span>{faq.q}</span>
@@ -76,8 +74,7 @@ export default function FAQ() {
                   className={`overflow-hidden transition-all duration-300 ${open === i ? "max-h-64" : "max-h-0"}`}
                 >
                   <p
-                    className="font-inter text-sm leading-relaxed px-6 pb-5"
-                    style={{ color: "#2D3A28" }}
+                    className="font-inter text-sm leading-relaxed px-6 pb-5 text-white/75"
                   >
                     {faq.a}
                   </p>

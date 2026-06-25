@@ -17,18 +17,17 @@ const ICP_ITEMS = [
 
 export default function ICP() {
   return (
-    <section id="who-we-serve" className="py-20 md:py-28 px-6 bg-gray-50">
+    <section id="who-we-serve" className="py-20 md:py-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-4"
-            style={{ color: "#2D3A28" }}
+            style={{ color: "#F5C124" }}
           >
             Who This Is For
           </h2>
           <p
-            className="font-inter max-w-lg mx-auto mb-14 text-base"
-            style={{ color: "#2D3A28" }}
+            className="font-inter max-w-lg mx-auto mb-14 text-base text-white/60"
           >
             We work exclusively with businesses in the tactical and firearms space.
           </p>
@@ -37,16 +36,14 @@ export default function ICP() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {ICP_ITEMS.map((item, i) => (
             <FadeIn key={item.title} delay={i * 120}>
-              <div className="bg-white rounded-xl p-8 text-center shadow-sm border border-gray-100 h-full">
+              <div className="bg-white/5 rounded-xl p-8 text-center border border-white/10 h-full">
                 <h3
-                  className="font-barlow text-xl font-bold mb-3"
-                  style={{ color: "#2D3A28" }}
+                  className="font-barlow text-xl font-bold mb-3 text-white"
                 >
                   {item.title}
                 </h3>
                 <p
-                  className="font-inter text-sm leading-relaxed"
-                  style={{ color: "#2D3A28" }}
+                  className="font-inter text-sm leading-relaxed text-white/75"
                 >
                   {item.desc}
                 </p>
@@ -58,9 +55,9 @@ export default function ICP() {
         <FadeIn delay={320}>
           <div
             className="inline-block rounded-xl px-8 py-5"
-            style={{ backgroundColor: "#2D3A28" }}
+            style={{ backgroundColor: "#F5C124" }}
           >
-            <p className="font-barlow text-sm font-semibold" style={{ color: "#F5C124" }}>
+            <p className="font-barlow text-sm font-semibold" style={{ color: "#2D3A28" }}>
               Best suited for stores with{" "}
               <span className="font-black">2,000–10,000 email subscribers</span> doing{" "}
               <span className="font-black">$20,000+/mo</span> in revenue

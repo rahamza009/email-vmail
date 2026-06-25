@@ -22,7 +22,7 @@ export default function Audit() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <AuditPopover position="above">
               <a
-                href="https://www.linkedin.com/in/umehabiba2210/"
+                href="https://tally.so/r/aQk8yW?utm_source=free-audit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide transition-opacity hover:opacity-90 block"
