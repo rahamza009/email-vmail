@@ -35,8 +35,8 @@ export default function Pricing() {
           >
             Limited Availability
           </h2>
-          <p className="font-inter text-white/60 max-w-lg mx-auto mb-14 text-base">
-            We keep our client roster lean so every store gets full attention. Spots fill fast.
+          <p className="font-inter text-white/60 max-w-lg mx-auto mb-14 text-lg">
+            Pick the plan that matches your growth stage. Predictable revenue starts here.
           </p>
         </FadeIn>
 
