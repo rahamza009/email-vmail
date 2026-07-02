@@ -17,19 +17,19 @@ const ICP_ITEMS = [
 
 export default function ICP() {
   return (
-    <section id="who-we-serve" className="py-20 md:py-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
+    <section id="who-we-serve" className="pt-10 pb-20 md:pb-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
-            className="font-barlow text-4xl md:text-5xl font-black mb-4"
+            className="font-barlow text-3xl md:text-4xl font-black mb-4"
             style={{ color: "#F5C124" }}
           >
-            Who This Is For
+            Who We Work With
           </h2>
           <p
-            className="font-inter max-w-lg mx-auto mb-14 text-base text-white/60"
+            className="font-inter max-w-lg mx-auto mb-14 text-lg text-white/60"
           >
-            We work exclusively with businesses in the tactical and firearms space.
+            We Grow Revenue for Gun Stores, Ammo and Tactical Gear Retailers.
           </p>
         </FadeIn>
 
