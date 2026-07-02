@@ -27,14 +27,14 @@ const ESPS = ["Klaviyo", "Sendlane", "Omnisend"];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 md:py-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
+    <section id="services" className="pt-10 pb-20 md:pb-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-4"
             style={{ color: "#F5C124" }}
           >
-            What We Handle For You
+            We Fix the Leaks for Predictable Revenue Growth.
           </h2>
           <p
             className="font-inter max-w-lg mx-auto mb-14 text-base text-white/60"
