@@ -42,13 +42,13 @@ export default function Hero() {
             </em>
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
             <AuditPopover position="above">
               <a
                 href="https://tally.so/r/aQk8yW?utm_source=free-audit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide transition-opacity hover:opacity-90 block"
+                className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide transition-opacity hover:opacity-90 block text-center w-full sm:w-[240px]"
                 style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}
               >
                 Get $0 Account Audit
@@ -58,7 +58,7 @@ export default function Hero() {
               href="https://calendly.com/rahamza009-dzou/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide border-2 transition-colors hover:bg-gray-50"
+              className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide border-2 transition-colors hover:bg-gray-50 text-center w-full sm:w-[240px]"
               style={{ borderColor: "#2D3A28", color: "#2D3A28" }}
             >
               Fix My Retention
