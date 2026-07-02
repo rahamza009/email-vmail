@@ -19,7 +19,7 @@ const PLANS = [
     originalPrice: "$2,000",
     price: "$1,200",
     period: "/mo · first 2 months",
-    spotsLabel: "Discounted Spots Remaining: 1 / 3",
+    spotsLabel: "Discounted Spots: 1 / 3 remaining before discount closes",
   },
   {
     name: "Growth",
@@ -28,7 +28,7 @@ const PLANS = [
     originalPrice: "$3,500",
     price: "$2,500",
     period: "/mo · first 2 months",
-    spotsLabel: "Discounted Spots Remaining: 0 / 2",
+    spotsLabel: "Discounted Spots: 0 / 2 remaining before discount closes",
   },
 ];
 
