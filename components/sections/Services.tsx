@@ -15,7 +15,7 @@ const SERVICES = [
   },
   {
     title: "Email Copywriting",
-    desc: "Direct, compelling copy written for the tactical community — built to convert.",
+    desc: "Niche-specific, industry-compatible email copy to relate with gun and tactical gear users.",
   },
   {
     title: "List Segmentation",
@@ -52,12 +52,12 @@ export default function Services() {
                 style={{ borderColor: "#F5C124" }}
               >
                 <h3
-                  className="font-barlow text-base font-bold text-white flex items-center justify-center"
+                  className="font-barlow text-lg font-bold text-white flex items-center justify-center"
                   style={{ minHeight: "2.75rem" }}
                 >
                   {s.title}
                 </h3>
-                <p className="font-inter text-xs leading-relaxed text-white/75">
+                <p className="font-inter text-sm leading-relaxed text-white/75">
                   {s.desc}
                 </p>
               </div>
@@ -72,12 +72,12 @@ export default function Services() {
                 style={{ borderColor: "#F5C124" }}
               >
                 <h3
-                  className="font-barlow text-base font-bold text-white flex items-center justify-center"
+                  className="font-barlow text-lg font-bold text-white flex items-center justify-center"
                   style={{ minHeight: "2.75rem" }}
                 >
                   {s.title}
                 </h3>
-                <p className="font-inter text-xs leading-relaxed text-white/75">
+                <p className="font-inter text-sm leading-relaxed text-white/75">
                   {s.desc}
                 </p>
               </div>
