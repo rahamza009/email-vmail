@@ -3,15 +3,15 @@ import FadeIn from "@/components/FadeIn";
 const PROBLEMS = [
   {
     title: "Compliance Challenges",
-    body: "Mainstream ESPs restrict or ban firearms businesses without warning — leaving your revenue exposed overnight with zero recourse.",
+    body: "Firearms businesses have strict ESP compliance requirements. One policy violation and your account is gone — your list, your automations, your entire revenue engine wiped overnight.",
   },
   {
     title: "No Retention System",
-    body: "Your customers buy once and never come back. Without strategic automations, you're leaving repeat revenue on the table every single month.",
+    body: "You make the sale and move on. Without a system to engage your customers after purchase, you're missing the relationship that turns a one-time buyer into a lifelong one.",
   },
   {
     title: "Poor Email Design",
-    body: "Unresponsive, broken templates that hurt customer experience and tank your deliverability before the sell even starts.",
+    body: "Poorly structured templates and weak wireframing create a confusing experience for your customers. In a trust-driven industry like firearms, poor design costs you credibility before it costs you the sale.",
   },
 ];
 
