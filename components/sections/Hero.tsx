@@ -25,16 +25,18 @@ export default function Hero() {
             className="font-barlow text-5xl md:text-7xl font-black leading-[1.05] mb-6"
             style={{ color: "#2D3A28" }}
           >
-            From Subscribed To Sold.<br />
-            <span style={{ color: "#F5C124" }}>Again and Again.</span>
+            Email Marketing Built for<br />
+            Gun Stores, Ammo and<br className="hidden md:block" /> Tactical Gear.
           </h1>
 
           <p
             className="font-inter text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
             style={{ color: "#2D3A28" }}
           >
-            Done-For-You Email Marketing Agency For Gun Stores, Ammo and Tactical Gear.
-            It&apos;s time to fix leaks in retention and turn one-time buyers into lifetime customers.
+            From Subscribed to Sold,{" "}
+            <em className="font-rajdhani not-italic" style={{ color: "#F5C124", fontStyle: "italic", fontWeight: 600 }}>
+              again and again.
+            </em>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
