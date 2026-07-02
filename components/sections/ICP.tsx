@@ -17,7 +17,7 @@ const ICP_ITEMS = [
 
 export default function ICP() {
   return (
-    <section id="who-we-serve" className="pt-10 pb-20 md:pb-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
+    <section id="who-we-serve" className="pt-10 pb-6 px-6" style={{ backgroundColor: "#2D3A28" }}>
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
