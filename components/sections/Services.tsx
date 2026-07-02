@@ -23,7 +23,15 @@ const SERVICES = [
   },
 ];
 
-const ESPS = ["Klaviyo", "Sendlane", "Omnisend"];
+const ESPS = [
+  { name: "Klaviyo",          accent: "#45E9A5" },
+  { name: "Sendlane",         accent: "#4F8EF7" },
+  { name: "Omnisend",         accent: "#00C09A" },
+  { name: "ActiveCampaign",   accent: "#356AE6" },
+  { name: "Drip",             accent: "#B14FFF" },
+  { name: "Campaign Monitor", accent: "#EB4C36" },
+  { name: "GetResponse",      accent: "#00BAFF" },
+];
 
 export default function Services() {
   return (
@@ -87,21 +95,28 @@ export default function Services() {
 
         <FadeIn delay={350}>
           <div className="border-t border-white/10 pt-10">
-            <p
-              className="font-barlow text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white/50"
-            >
+            <p className="font-barlow text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white/50">
               Platforms We Work With
             </p>
-            <div className="flex flex-wrap justify-center gap-5">
-              {ESPS.map((esp) => (
-                <div
-                  key={esp}
-                  className="font-rajdhani text-lg font-bold px-7 py-3 rounded-lg border-2 text-white"
-                  style={{ borderColor: "rgba(255,255,255,0.2)" }}
-                >
-                  {esp}
-                </div>
-              ))}
+
+            {/* Ticker */}
+            <div className="overflow-hidden">
+              <div className="ticker-track flex gap-8 w-max">
+                {[...ESPS, ...ESPS].map((esp, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 px-6 py-3 rounded-lg border border-white/15 bg-white/5 shrink-0"
+                  >
+                    <span
+                      className="inline-block w-2 h-2 rounded-full shrink-0"
+                      style={{ backgroundColor: esp.accent }}
+                    />
+                    <span className="font-rajdhani text-base font-bold text-white whitespace-nowrap">
+                      {esp.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </FadeIn>

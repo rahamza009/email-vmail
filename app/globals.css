@@ -19,6 +19,19 @@ body {
   color: #ffffff;
 }
 
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: ticker 28s linear infinite;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
