@@ -43,11 +43,11 @@ export default function Services() {
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 mb-16">
+        <div className="flex flex-wrap justify-center gap-5 mb-16">
           {SERVICES.map((s, i) => (
             <FadeIn key={s.title} delay={i * 90}>
               <div
-                className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
+                className="w-full sm:w-56 rounded-xl p-6 text-center border-2 flex flex-col items-center gap-3"
                 style={{ borderColor: "#F5C124" }}
               >
                 <h3
