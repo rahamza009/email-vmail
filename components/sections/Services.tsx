@@ -43,21 +43,41 @@ export default function Services() {
           </p>
         </FadeIn>
 
-        <div className="flex flex-wrap justify-center gap-5 mb-16">
-          {SERVICES.map((s, i) => (
-            <FadeIn key={s.title} delay={i * 90}>
+        <div className="grid grid-cols-12 gap-5 mb-16">
+          {/* Row 1 — 3 cards × 4 columns */}
+          {SERVICES.slice(0, 3).map((s, i) => (
+            <FadeIn key={s.title} delay={i * 90} className="col-span-12 sm:col-span-4">
               <div
-                className="w-full sm:w-56 rounded-xl p-6 text-center border-2 flex flex-col items-center gap-3"
+                className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
                 style={{ borderColor: "#F5C124" }}
               >
                 <h3
-                  className="font-barlow text-base font-bold leading-tight text-white"
+                  className="font-barlow text-base font-bold text-white flex items-center justify-center"
+                  style={{ minHeight: "2.75rem" }}
                 >
                   {s.title}
                 </h3>
-                <p
-                  className="font-inter text-xs leading-relaxed text-white/75"
+                <p className="font-inter text-xs leading-relaxed text-white/75">
+                  {s.desc}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+
+          {/* Row 2 — 2 cards × 6 columns */}
+          {SERVICES.slice(3).map((s, i) => (
+            <FadeIn key={s.title} delay={(i + 3) * 90} className="col-span-12 sm:col-span-6">
+              <div
+                className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
+                style={{ borderColor: "#F5C124" }}
+              >
+                <h3
+                  className="font-barlow text-base font-bold text-white flex items-center justify-center"
+                  style={{ minHeight: "2.75rem" }}
                 >
+                  {s.title}
+                </h3>
+                <p className="font-inter text-xs leading-relaxed text-white/75">
                   {s.desc}
                 </p>
               </div>
