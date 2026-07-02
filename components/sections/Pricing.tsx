@@ -23,7 +23,7 @@ const PLANS = [
   },
   {
     name: "Growth",
-    badge: null,
+    badge: "LIMITED OFFER",
     subscribers: "10,000–30,000 subscribers",
     originalPrice: "$3,500",
     price: "$2,500",
@@ -76,21 +76,29 @@ export default function Pricing() {
                 </h3>
 
                 {/* Original price (strikethrough) */}
-                <div className="mb-1">
-                  <span className="font-inter text-white/30 line-through text-base">
+                <div className="mb-1 flex items-center gap-2">
+                  <span className="font-inter text-white/60 line-through text-base">
                     {plan.originalPrice}/mo
+                  </span>
+                  <span
+                    className="font-barlow text-xs font-black px-2 py-0.5 rounded"
+                    style={{ backgroundColor: "rgba(245,193,36,0.15)", color: "#F5C124" }}
+                  >
+                    INTRO RATE
                   </span>
                 </div>
 
                 {/* Discounted price */}
-                <div className="mb-5">
+                <div className="mb-2">
                   <span
                     className="font-barlow text-5xl font-black"
                     style={{ color: "#F5C124" }}
                   >
                     {plan.price}
                   </span>
-                  <span className="font-inter text-white/50 text-sm ml-2">
+                </div>
+                <div className="mb-5">
+                  <span className="font-inter text-white/80 text-base font-semibold">
                     {plan.period}
                   </span>
                 </div>
@@ -129,7 +137,7 @@ export default function Pricing() {
                       className="font-barlow font-bold px-10 py-4 rounded-xl text-base tracking-wide transition-opacity hover:opacity-90 block text-center"
                       style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
                     >
-                      Get $0 Account Audit
+                      $0 Account Audit Before You Start
                     </a>
                   </AuditPopover>
                 </div>
