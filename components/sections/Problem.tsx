@@ -17,19 +17,19 @@ const PROBLEMS = [
 
 export default function Problem() {
   return (
-    <section id="problem" className="py-20 md:py-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
+    <section id="problem" className="pt-10 pb-20 md:pb-28 px-6" style={{ backgroundColor: "#2D3A28" }}>
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
             className="font-barlow text-4xl md:text-5xl font-black mb-4"
             style={{ color: "#F5C124" }}
           >
-            Sound Familiar?
+            Your Online Store Is Leaking Revenue
           </h2>
           <p
             className="font-inter max-w-lg mx-auto mb-14 text-base text-white/60"
           >
-            These are the three biggest problems we see killing tactical email programs.
+            These are the three biggest problems we see killing email revenue for gun stores.
           </p>
         </FadeIn>
 
