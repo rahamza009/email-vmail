@@ -39,7 +39,7 @@ export default function Services() {
           <p
             className="font-inter max-w-lg mx-auto mb-14 text-lg text-white/60"
           >
-            End-to-End Email Marketing. DFY Strategy and Execution.
+            Niche-Specific, Industry Compatible. End-to-End Email Marketing. DFY Strategy and Execution.
           </p>
         </FadeIn>
 
