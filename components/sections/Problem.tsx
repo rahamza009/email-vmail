@@ -21,13 +21,13 @@ export default function Problem() {
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
-            className="font-barlow text-4xl md:text-5xl font-black mb-4"
+            className="font-barlow text-3xl md:text-4xl font-black mb-4"
             style={{ color: "#F5C124" }}
           >
             Your Online Store Is Leaking Revenue
           </h2>
           <p
-            className="font-inter max-w-lg mx-auto mb-14 text-base text-white/60"
+            className="font-inter max-w-lg mx-auto mb-14 text-lg text-white/60"
           >
             These are the three biggest problems we see killing email revenue for gun stores.
           </p>
