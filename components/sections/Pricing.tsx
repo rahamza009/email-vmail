@@ -9,6 +9,7 @@ const SHARED_INCLUDES = [
   "Weekly work updates & Monthly revenue performance reports",
   "Dedicated Client Success Manager for non-stop coordination",
   "Annual strategy & quarterly reviews",
+  "SMS Marketing (if required)",
 ];
 
 const PLANS = [
