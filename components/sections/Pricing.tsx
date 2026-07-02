@@ -1,23 +1,35 @@
 import FadeIn from "@/components/FadeIn";
 import AuditPopover from "@/components/AuditPopover";
 
-const STARTER_INCLUDES = [
-  "Up to 10,000 subscribers",
-  "2 automated flows built & optimized",
-  "4 campaign sends per month",
-  "HTML email design",
-  "Full copywriting",
-  "Monthly performance report",
+const SHARED_INCLUDES = [
+  "Strategic Automations built & optimized",
+  "Email Campaigns required per strategy (no cap)",
+  "Advanced HTML email design templates",
+  "Niche specific email copy + A/B testing",
+  "Weekly work updates & Monthly revenue performance reports",
+  "Dedicated Client Success Manager for non-stop coordination",
+  "Annual strategy & quarterly reviews",
 ];
 
-const GROWTH_INCLUDES = [
-  "10,000–30,000 subscribers",
-  "5 automated flows built & optimized",
-  "8 campaign sends per month",
-  "Advanced HTML email design",
-  "Full copywriting + A/B testing",
-  "Weekly performance reports",
-  "Dedicated account manager",
+const PLANS = [
+  {
+    name: "Starter",
+    badge: "LIMITED OFFER",
+    subscribers: "Up to 10,000 subscribers",
+    originalPrice: "$2,000",
+    price: "$1,200",
+    period: "/mo · first 2 months",
+    spotsLabel: "Discounted Spots Remaining: 1 / 3",
+  },
+  {
+    name: "Growth",
+    badge: null,
+    subscribers: "10,000–30,000 subscribers",
+    originalPrice: "$3,500",
+    price: "$2,500",
+    period: "/mo · first 2 months",
+    spotsLabel: "Discounted Spots Remaining: 0 / 2",
+  },
 ];
 
 export default function Pricing() {
@@ -30,7 +42,7 @@ export default function Pricing() {
       <div className="max-w-5xl mx-auto text-center">
         <FadeIn>
           <h2
-            className="font-barlow text-4xl md:text-5xl font-black mb-4"
+            className="font-barlow text-3xl md:text-4xl font-black mb-4"
             style={{ color: "#F5C124" }}
           >
             Limited Availability
@@ -40,116 +52,90 @@ export default function Pricing() {
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Starter */}
-          <FadeIn delay={100}>
-            <div className="relative bg-white/5 border border-white/10 rounded-2xl p-8 text-left">
-              <div className="absolute -top-3.5 left-7">
-                <span
-                  className="font-barlow text-xs font-black px-3 py-1 rounded-full tracking-wide"
-                  style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
-                >
-                  LIMITED OFFER
-                </span>
-              </div>
-
-              <h3 className="font-barlow text-2xl font-black text-white mb-1 mt-2">
-                Starter
-              </h3>
-              <p className="font-inter text-white/40 text-sm mb-4">
-                Up to 10,000 subscribers
-              </p>
-
-              <div className="mb-1">
-                <span className="font-inter text-white/30 line-through text-base">
-                  $2,000/mo
-                </span>
-              </div>
-              <div className="mb-5">
-                <span
-                  className="font-barlow text-5xl font-black"
-                  style={{ color: "#F5C124" }}
-                >
-                  $1,000
-                </span>
-                <span className="font-inter text-white/50 text-sm ml-2">
-                  /mo · first 3 months
-                </span>
-              </div>
-
-              {/* Slot counter */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          {PLANS.map((plan, i) => (
+            <FadeIn key={plan.name} delay={i * 120}>
               <div
-                className="rounded-lg px-4 py-3 mb-6 text-center"
-                style={{ backgroundColor: "#F5C124" }}
+                className="relative border-2 rounded-2xl p-8 text-left h-full flex flex-col"
+                style={{ borderColor: "#F5C124", backgroundColor: "rgba(255,255,255,0.04)" }}
               >
-                <p
-                  className="font-barlow text-sm font-black"
-                  style={{ color: "#2D3A28" }}
-                >
-                  Discounted Spots Remaining: 2 / 3
-                </p>
-              </div>
+                {plan.badge && (
+                  <div className="absolute -top-3.5 left-7">
+                    <span
+                      className="font-barlow text-xs font-black px-3 py-1 rounded-full tracking-wide"
+                      style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
+                    >
+                      {plan.badge}
+                    </span>
+                  </div>
+                )}
 
-              <ul className="space-y-3 mb-8">
-                {STARTER_INCLUDES.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
+                {/* Plan name */}
+                <h3 className="font-barlow text-2xl font-black text-white mb-1 mt-2">
+                  {plan.name}
+                </h3>
+
+                {/* Original price (strikethrough) */}
+                <div className="mb-1">
+                  <span className="font-inter text-white/30 line-through text-base">
+                    {plan.originalPrice}/mo
+                  </span>
+                </div>
+
+                {/* Discounted price */}
+                <div className="mb-5">
+                  <span
+                    className="font-barlow text-5xl font-black"
+                    style={{ color: "#F5C124" }}
+                  >
+                    {plan.price}
+                  </span>
+                  <span className="font-inter text-white/50 text-sm ml-2">
+                    {plan.period}
+                  </span>
+                </div>
+
+                {/* Spots counter */}
+                <div
+                  className="rounded-lg px-4 py-3 mb-6 text-center"
+                  style={{ backgroundColor: "#F5C124" }}
+                >
+                  <p className="font-barlow text-sm font-black" style={{ color: "#2D3A28" }}>
+                    {plan.spotsLabel}
+                  </p>
+                </div>
+
+                {/* Service list */}
+                <ul className="space-y-3 mb-8 flex-1">
+                  <li className="flex items-start gap-3">
                     <span style={{ color: "#F5C124" }} className="mt-0.5 flex-shrink-0">✓</span>
-                    <span className="font-inter text-sm text-white/75">{item}</span>
+                    <span className="font-inter text-base text-white/75">{plan.subscribers}</span>
                   </li>
-                ))}
-              </ul>
+                  {SHARED_INCLUDES.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span style={{ color: "#F5C124" }} className="mt-0.5 flex-shrink-0">✓</span>
+                      <span className="font-inter text-base text-white/75">{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              <AuditPopover>
-                <a
-                  href="#audit"
-                  className="block w-full text-center font-barlow font-bold py-4 rounded-xl transition-opacity hover:opacity-90"
-                  style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
-                >
-                  Claim This Spot
-                </a>
-              </AuditPopover>
-            </div>
-          </FadeIn>
-
-          {/* Growth */}
-          <FadeIn delay={200}>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 text-left">
-              <h3 className="font-barlow text-2xl font-black text-white mb-1">
-                Growth
-              </h3>
-              <p className="font-inter text-white/40 text-sm mb-4">
-                10,000–30,000 subscribers
-              </p>
-              <div className="mb-6">
-                <span
-                  className="font-barlow text-5xl font-black"
-                  style={{ color: "#F5C124" }}
-                >
-                  $3,500
-                </span>
-                <span className="font-inter text-white/50 text-sm ml-2">/mo</span>
+                {/* CTA */}
+                <div className="flex justify-center">
+                  <AuditPopover position="above">
+                    <a
+                      href="https://tally.so/r/aQk8yW?utm_source=free-audit"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-barlow font-bold px-10 py-4 rounded-xl text-base tracking-wide transition-opacity hover:opacity-90 block text-center"
+                      style={{ backgroundColor: "#F5C124", color: "#2D3A28" }}
+                    >
+                      Get $0 Account Audit
+                    </a>
+                  </AuditPopover>
+                </div>
               </div>
-
-              <ul className="space-y-3 mb-8">
-                {GROWTH_INCLUDES.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span style={{ color: "#F5C124" }} className="mt-0.5 flex-shrink-0">✓</span>
-                    <span className="font-inter text-sm text-white/75">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <AuditPopover>
-                <a
-                  href="#audit"
-                  className="block w-full text-center font-barlow font-bold py-4 rounded-xl border-2 transition-colors hover:bg-white/5"
-                  style={{ borderColor: "#F5C124", color: "#F5C124" }}
-                >
-                  Claim This Spot
-                </a>
-              </AuditPopover>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          ))}
         </div>
       </div>
     </section>
