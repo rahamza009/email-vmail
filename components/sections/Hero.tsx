@@ -22,19 +22,22 @@ export default function Hero() {
           </p>
 
           <h1
-            className="font-barlow text-5xl md:text-7xl font-black leading-[1.05] mb-6"
+            className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6"
             style={{ color: "#2D3A28" }}
           >
             Email Marketing Built for<br />
-            Gun Stores, Ammo and<br className="hidden md:block" /> Tactical Gear.
+            Gun Stores, Ammo and Tactical Gear.
           </h1>
 
           <p
-            className="font-inter text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="font-inter text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed"
             style={{ color: "#2D3A28" }}
           >
-            From Subscribed to Sold,{" "}
-            <em className="font-rajdhani not-italic" style={{ color: "#F5C124", fontStyle: "italic", fontWeight: 600 }}>
+            From subscribed to sold,{" "}
+            <em
+              className="font-rajdhani"
+              style={{ color: "#F5C124", fontStyle: "italic", fontWeight: 900, fontSize: "1.1em" }}
+            >
               again and again.
             </em>
           </p>
