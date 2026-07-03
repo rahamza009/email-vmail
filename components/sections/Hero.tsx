@@ -1,10 +1,5 @@
-"use client";
-
-import dynamic from "next/dynamic";
 import FadeIn from "@/components/FadeIn";
 import AuditPopover from "@/components/AuditPopover";
-
-const HeroScene = dynamic(() => import("@/components/HeroScene"), { ssr: false });
 
 const GRID_SVG = (size: number) =>
   `url("data:image/svg+xml,%3Csvg width='${size}' height='${size}' viewBox='0 0 ${size} ${size}' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232D3A28' fill-opacity='1'%3E%3Cpath d='M0 0h2v${size}H0zm${size - 2} 0h2v${size}h-2zM0 0v2h${size}V0zm0 ${size - 2}v2h${size}v-2z'/%3E%3C/g%3E%3C/svg%3E")`;
@@ -12,8 +7,6 @@ const GRID_SVG = (size: number) =>
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20 px-6 bg-white overflow-hidden">
-
-      <HeroScene />
 
       {/* Layer 1 — small 40px grid drifts forward (near) */}
       <div
