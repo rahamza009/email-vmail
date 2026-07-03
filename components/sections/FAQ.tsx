@@ -43,10 +43,8 @@ export default function FAQ() {
           >
             Common Questions
           </h2>
-          <p
-            className="font-inter mb-14 text-white/60"
-          >
-            Everything you need to know before getting started.
+          <p className="font-inter mb-14 text-lg text-white/60">
+            Industry players ask this to understand how emails fix revenue growth.
           </p>
         </FadeIn>
 

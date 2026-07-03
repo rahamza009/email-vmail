@@ -3,6 +3,7 @@ import { Rajdhani, Barlow, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FooterDivider from "@/components/FooterDivider";
 
 const rajdhani = Rajdhani({
   weight: ["400", "500", "600", "700"],
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Navbar />
         {children}
+        <FooterDivider />
         <Footer />
       </body>
     </html>
