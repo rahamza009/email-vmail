@@ -35,17 +35,18 @@ const ESPS = [
 
 export default function Services() {
   return (
-    <section id="services" className="pt-10 pb-6 px-6" style={{ backgroundColor: "#2D3A28" }}>
+    <section id="services" className="pt-10 pb-6 px-6 bg-white">
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
             className="font-barlow text-3xl md:text-4xl font-black mb-4"
-            style={{ color: "#F5C124" }}
+            style={{ color: "#2D3A28" }}
           >
             We Fix the Leaks for Predictable Revenue Growth.
           </h2>
           <p
-            className="font-inter max-w-lg mx-auto mb-14 text-lg text-white/60"
+            className="font-inter max-w-lg mx-auto mb-14 text-lg"
+            style={{ color: "rgba(45,58,40,0.6)" }}
           >
             Niche-Specific, Industry Compatible. End-to-End Email Marketing. DFY Strategy and Execution.
           </p>
@@ -57,7 +58,7 @@ export default function Services() {
             <FadeIn key={s.title} delay={i * 90} className="col-span-12 sm:col-span-4">
               <div
                 className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
-                style={{ borderColor: "#F5C124" }}
+                style={{ backgroundColor: "#2D3A28", borderColor: "#F5C124" }}
               >
                 <h3
                   className="font-barlow text-lg font-bold text-white flex items-center justify-center"
@@ -77,7 +78,7 @@ export default function Services() {
             <FadeIn key={s.title} delay={(i + 3) * 90} className="col-span-12 sm:col-span-6">
               <div
                 className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
-                style={{ borderColor: "#F5C124" }}
+                style={{ backgroundColor: "#2D3A28", borderColor: "#F5C124" }}
               >
                 <h3
                   className="font-barlow text-lg font-bold text-white flex items-center justify-center"
@@ -94,8 +95,11 @@ export default function Services() {
         </div>
 
         <FadeIn delay={350}>
-          <div className="border-t border-white/10 pt-10">
-            <p className="font-barlow text-xs font-bold tracking-[0.2em] uppercase mb-6 text-white/50">
+          <div className="border-t pt-10" style={{ borderColor: "rgba(45,58,40,0.15)" }}>
+            <p
+              className="font-barlow text-xs font-bold tracking-[0.2em] uppercase mb-6"
+              style={{ color: "rgba(45,58,40,0.45)" }}
+            >
               Platforms We Work With
             </p>
 
@@ -105,13 +109,20 @@ export default function Services() {
                 {[...ESPS, ...ESPS].map((esp, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 px-6 py-3 rounded-lg border border-white/15 bg-white/5 shrink-0"
+                    className="flex items-center gap-2 px-6 py-3 rounded-lg shrink-0"
+                    style={{
+                      border: "1px solid rgba(45,58,40,0.15)",
+                      backgroundColor: "rgba(45,58,40,0.05)",
+                    }}
                   >
                     <span
                       className="inline-block w-2 h-2 rounded-full shrink-0"
                       style={{ backgroundColor: esp.accent }}
                     />
-                    <span className="font-rajdhani text-base font-bold text-white whitespace-nowrap">
+                    <span
+                      className="font-rajdhani text-base font-bold whitespace-nowrap"
+                      style={{ color: "#2D3A28" }}
+                    >
                       {esp.name}
                     </span>
                   </div>
