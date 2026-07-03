@@ -4,7 +4,6 @@ import Problem from "@/components/sections/Problem";
 import Services from "@/components/sections/Services";
 import ICP from "@/components/sections/ICP";
 import Pricing from "@/components/sections/Pricing";
-import Audit from "@/components/sections/Audit";
 import FAQ from "@/components/sections/FAQ";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <Services />
       <ICP />
       <Pricing />
-      <Audit />
       <FAQ />
     </main>
   );
