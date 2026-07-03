@@ -19,6 +19,16 @@ body {
   color: #ffffff;
 }
 
+@keyframes tacticalFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes tacticalFloatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
 @keyframes ticker {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
