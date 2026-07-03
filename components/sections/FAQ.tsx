@@ -26,7 +26,7 @@ const FAQS = [
   },
   {
     q: "How does the discounted offer work?",
-    a: "The Starter Plan discount ($1,000/mo instead of $2,000/mo) applies for the first 3 months for a limited number of new clients. After the introductory period, it moves to the standard rate.",
+    a: "Both plans carry an intro rate for the first 2 months: Starter runs at $1,200/mo (standard $2,000/mo) and Growth at $2,500/mo (standard $3,500/mo). Spots are strictly limited — Starter has 1 of 3 remaining, Growth is fully taken. After the intro period, billing moves to the standard rate.",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function FAQ() {
           >
             Common Questions
           </h2>
-          <p className="font-inter mb-14 text-lg text-white/60">
+          <p className="font-inter mb-14 text-xl text-white/60">
             Industry players ask this to understand how emails fix revenue growth.
           </p>
         </FadeIn>
@@ -53,7 +53,7 @@ export default function FAQ() {
             <FadeIn key={i} delay={i * 70}>
               <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
                 <button
-                  className="w-full flex items-center justify-between px-6 py-5 text-left font-barlow font-bold text-base transition-colors hover:bg-white/10 cursor-pointer text-white"
+                  className="w-full flex items-center justify-between px-6 py-5 text-left font-barlow font-bold text-lg transition-colors hover:bg-white/10 cursor-pointer text-white"
                   onClick={() => setOpen(open === i ? null : i)}
                 >
                   <span>{faq.q}</span>
@@ -72,7 +72,7 @@ export default function FAQ() {
                   className={`overflow-hidden transition-all duration-300 ${open === i ? "max-h-64" : "max-h-0"}`}
                 >
                   <p
-                    className="font-inter text-sm leading-relaxed px-6 pb-5 text-white/75"
+                    className="font-inter text-base leading-relaxed px-6 pb-5 text-white/75"
                   >
                     {faq.a}
                   </p>
