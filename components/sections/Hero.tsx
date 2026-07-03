@@ -14,12 +14,14 @@ export default function Hero() {
 
       <div className="relative max-w-4xl mx-auto text-center">
         <FadeIn>
-          <p
-            className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-5"
-            style={{ color: "#F5C124" }}
-          >
-            DFY Email Marketing Agency
-          </p>
+          <div className="inline-block mb-5">
+            <p
+              className="font-barlow text-xs font-bold tracking-[0.25em] uppercase px-4 py-2 rounded-full"
+              style={{ color: "#F5C124", backgroundColor: "#2D3A28" }}
+            >
+              DFY Email Marketing Agency
+            </p>
+          </div>
 
           <h1
             className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6"
