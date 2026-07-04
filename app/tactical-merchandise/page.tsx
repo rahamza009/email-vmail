@@ -16,9 +16,12 @@ function WishlistForm() {
     e.preventDefault();
     setStatus("submitting");
     try {
-      // TODO: replace with your API endpoint
-      // await fetch("/api/wishlist", { method: "POST", body: JSON.stringify(fields) });
-      await new Promise((r) => setTimeout(r, 800)); // placeholder delay
+      const res = await fetch("/api/wishlist", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(fields),
+      });
+      if (!res.ok) throw new Error("non-ok");
       setStatus("done");
     } catch {
       setStatus("error");
