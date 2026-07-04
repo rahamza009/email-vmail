@@ -4,32 +4,19 @@ import FadeIn from "@/components/FadeIn";
 import AuditPopover from "@/components/AuditPopover";
 const TacticalAnimation = dynamic(() => import("@/components/TacticalAnimation"), { ssr: false });
 
-const GRID_SVG = (size: number) =>
-  `url("data:image/svg+xml,%3Csvg width='${size}' height='${size}' viewBox='0 0 ${size} ${size}' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232D3A28' fill-opacity='1'%3E%3Cpath d='M0 0h2v${size}H0zm${size - 2} 0h2v${size}h-2zM0 0v2h${size}V0zm0 ${size - 2}v2h${size}v-2z'/%3E%3C/g%3E%3C/svg%3E")`;
-
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20 px-6 bg-white overflow-hidden">
-
+    <section
+      className="relative min-h-screen flex items-center justify-center pt-24 pb-20 px-6 overflow-hidden"
+      style={{ backgroundColor: "#0D1109" }}
+    >
       <TacticalAnimation />
 
-      {/* Layer 1 — small 40px grid drifts forward (near) */}
+      {/* subtle center vignette so text stays readable */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: GRID_SVG(40),
-          opacity: 0.055,
-          animation: "gridDrift 18s linear infinite",
-        }}
-      />
-
-      {/* Layer 2 — larger 70px grid drifts backward (far) */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: GRID_SVG(70),
-          opacity: 0.03,
-          animation: "gridDriftReverse 28s linear infinite",
+          background: "radial-gradient(ellipse 55% 60% at 50% 50%, rgba(13,17,9,0.55) 0%, transparent 100%)",
         }}
       />
 
@@ -38,24 +25,20 @@ export default function Hero() {
           <div className="inline-block mb-5">
             <p
               className="font-barlow text-xs font-bold tracking-[0.25em] uppercase px-4 py-2 rounded-full"
-              style={{ color: "#F5C124", backgroundColor: "#2D3A28" }}
+              style={{ color: "#F5C124", backgroundColor: "rgba(245,193,36,0.15)", border: "1px solid rgba(245,193,36,0.3)" }}
             >
               DFY Email Marketing Agency
             </p>
           </div>
 
           <h1
-            className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6"
-            style={{ color: "#2D3A28" }}
+            className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6 text-white"
           >
             Email Marketing Built for<br />
             Gun Stores, Ammo and Tactical Gear.
           </h1>
 
-          <p
-            className="font-inter text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed"
-            style={{ color: "#2D3A28" }}
-          >
+          <p className="font-inter text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed text-white/75">
             From subscribed to sold,{" "}
             <em
               className="font-rajdhani"
@@ -72,7 +55,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide transition-opacity hover:opacity-90 block text-center w-full sm:w-[240px]"
-                style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}
+                style={{ backgroundColor: "#F5C124", color: "#0D1109" }}
               >
                 Get $0 Account Audit
               </a>
@@ -81,8 +64,8 @@ export default function Hero() {
               href="https://calendly.com/rahamza009-dzou/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide border-2 transition-colors hover:bg-gray-50 text-center w-full sm:w-[240px]"
-              style={{ borderColor: "#2D3A28", color: "#2D3A28" }}
+              className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide border-2 transition-colors hover:bg-white/10 text-center w-full sm:w-[240px] text-white"
+              style={{ borderColor: "rgba(255,255,255,0.4)" }}
             >
               Fix My Retention
             </a>
