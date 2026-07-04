@@ -1,14 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#case-studies", label: "Case Studies" },
-  { href: "/blog", label: "Blog" },
-  { href: "/tactical-merchandise", label: "Tactical Merchandise" },
+  { href: "services", label: "Services", anchor: true },
+  { href: "pricing", label: "Pricing", anchor: true },
+  { href: "#case-studies", label: "Case Studies", anchor: false },
+  { href: "/blog", label: "Blog", anchor: false },
+  { href: "/tactical-merchandise", label: "Tactical Merchandise", anchor: false },
 ];
 
 const WA_LINK =
@@ -30,12 +31,28 @@ function WhatsAppIcon() {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  function handleAnchorClick(e: React.MouseEvent, id: string) {
+    e.preventDefault();
+    setIsOpen(false);
+    if (pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate home, then scroll after page load
+      sessionStorage.setItem("scrollTo", id);
+      router.push("/");
+    }
+  }
+
+  const linkClass = "font-barlow text-lg font-semibold tracking-wide transition-opacity hover:opacity-70 cursor-pointer";
 
   return (
     <nav
@@ -54,16 +71,27 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="font-barlow text-lg font-semibold tracking-wide transition-opacity hover:opacity-70"
-              style={{ color: "#F5C124" }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.anchor ? (
+              <button
+                key={link.href}
+                onClick={(e) => handleAnchorClick(e, link.href)}
+                className={linkClass}
+                style={{ color: "#F5C124", background: "none", border: "none", padding: 0 }}
+              >
+                {link.label}
+              </button>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={linkClass}
+                style={{ color: "#F5C124" }}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </div>
 
         {/* WhatsApp CTA */}
@@ -105,17 +133,28 @@ export default function Navbar() {
         style={{ backgroundColor: "#2D3A28" }}
       >
         <div className="px-6 flex flex-col gap-5 pt-2">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="font-barlow text-lg font-semibold tracking-wide"
-              style={{ color: "#F5C124" }}
-              onClick={() => setIsOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.anchor ? (
+              <button
+                key={link.href}
+                onClick={(e) => handleAnchorClick(e, link.href)}
+                className="font-barlow text-lg font-semibold tracking-wide text-left"
+                style={{ color: "#F5C124", background: "none", border: "none", padding: 0 }}
+              >
+                {link.label}
+              </button>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="font-barlow text-lg font-semibold tracking-wide"
+                style={{ color: "#F5C124" }}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           <a
             href={WA_LINK}
             target="_blank"

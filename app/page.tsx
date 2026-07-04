@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import Problem from "@/components/sections/Problem";
@@ -8,6 +11,16 @@ import FAQ from "@/components/sections/FAQ";
 import Newsletter from "@/components/sections/Newsletter";
 
 export default function Home() {
+  useEffect(() => {
+    const target = sessionStorage.getItem("scrollTo");
+    if (target) {
+      sessionStorage.removeItem("scrollTo");
+      setTimeout(() => {
+        document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, []);
+
   return (
     <main>
       <Hero />
