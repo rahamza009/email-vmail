@@ -14,15 +14,12 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "All fields are required" }, { status: 400 });
   }
 
-  const kitRes = await fetch(`https://api.kit.com/v4/forms/${formId}/subscribers`, {
+  const kitRes = await fetch(`https://api.convertkit.com/v3/forms/${formId}/subscribe`, {
     method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      email_address: email,
+      api_key: apiKey,
+      email,
       first_name: name,
       fields: { company },
     }),
