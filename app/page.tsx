@@ -5,6 +5,7 @@ import Services from "@/components/sections/Services";
 import ICP from "@/components/sections/ICP";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
+import Newsletter from "@/components/sections/Newsletter";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ICP />
       <Pricing />
       <FAQ />
+      <Newsletter />
     </main>
   );
 }
