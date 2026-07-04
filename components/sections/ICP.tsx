@@ -43,7 +43,7 @@ export default function ICP() {
                   {item.title}
                 </h3>
                 <p
-                  className="font-inter text-base leading-relaxed text-white/75"
+                  className="font-inter text-lg leading-relaxed text-white/75"
                 >
                   {item.desc}
                 </p>
