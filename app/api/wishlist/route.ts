@@ -22,6 +22,7 @@ export async function POST(req: NextRequest) {
       email,
       first_name: name,
       fields: { company },
+      tags: [20878327],
     }),
   });
 
