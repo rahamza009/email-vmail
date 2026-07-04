@@ -170,7 +170,7 @@ export default function TacticalMerchandise() {
 
           {/* Wishlist form */}
           <div
-            className="max-w-md mx-auto rounded-2xl border-2 p-8 text-left"
+            className="max-w-2xl mx-auto rounded-2xl border-2 p-8 text-left"
             style={{ borderColor: "#F5C124", backgroundColor: "#fff" }}
           >
             <h2
@@ -180,7 +180,7 @@ export default function TacticalMerchandise() {
               Join Wish List
             </h2>
             <p
-              className="font-inter text-sm mb-6"
+              className="font-inter text-base mb-6"
               style={{ color: "rgba(45,58,40,0.6)" }}
             >
               Be the first to know when new brands and products go live.
