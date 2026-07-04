@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: "#pricing", label: "Pricing" },
   { href: "#case-studies", label: "Case Studies" },
   { href: "/blog", label: "Blog" },
+  { href: "/tactical-merchandise", label: "Tactical Merchandise" },
 ];
 
 const WA_LINK =
