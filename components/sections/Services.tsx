@@ -23,7 +23,7 @@ const SERVICES = [
   },
   {
     title: "Email Copywriting",
-    desc: "Niche-specific, industry-compatible email copy to relate with gun and tactical gear users.",
+    desc: "Niche-specific, industry-compatible copy written for gun owners and tactical gear buyers. Every word is crafted to build rapport, reflect their mindset, and drive action. Its intent remains to turn subscribers and browsers into buyers, again and again.",
   },
 ];
 
