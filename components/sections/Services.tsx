@@ -44,7 +44,7 @@ export default function Services() {
         <FadeIn>
           <h2
             className="font-barlow text-3xl md:text-4xl font-black mb-4"
-            style={{ color: "#2D3A28" }}
+            style={{ color: "#F5C124" }}
           >
             We Fix the Leaks for Predictable Revenue Growth.
           </h2>
