@@ -8,6 +8,7 @@ const GRID_SVG = (size: number) =>
 function WishlistForm() {
   const [fields, setFields] = useState({ name: "", company: "", email: "" });
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
+  const [errorDetail, setErrorDetail] = useState("");
 
   const set = (key: keyof typeof fields) => (e: React.ChangeEvent<HTMLInputElement>) =>
     setFields((f) => ({ ...f, [key]: e.target.value }));
@@ -21,7 +22,11 @@ function WishlistForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(fields),
       });
-      if (!res.ok) throw new Error("non-ok");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setErrorDetail(JSON.stringify(data));
+        throw new Error("non-ok");
+      }
       setStatus("done");
     } catch {
       setStatus("error");
@@ -103,7 +108,10 @@ function WishlistForm() {
       </div>
 
       {status === "error" && (
-        <p className="font-inter text-sm text-red-600">Something went wrong. Please try again.</p>
+        <p className="font-inter text-sm text-red-600">
+          Something went wrong. Please try again.
+          {errorDetail && <span className="block text-xs mt-1 opacity-70">{errorDetail}</span>}
+        </p>
       )}
 
       <button
