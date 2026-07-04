@@ -6,7 +6,7 @@ const GRID_SVG = (size: number) =>
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-20 px-6 bg-white overflow-hidden">
+    <section className="relative flex items-center justify-center pt-32 pb-24 px-6 bg-white overflow-hidden">
 
       {/* Layer 1 — small 40px grid drifts forward (near) */}
       <div

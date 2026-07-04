@@ -39,7 +39,7 @@ const ESPS = [
 
 export default function Services() {
   return (
-    <section id="services" className="pt-10 pb-6 px-6 bg-white">
+    <section id="services" className="pt-10 pb-6 px-6 bg-white scroll-mt-20">
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2

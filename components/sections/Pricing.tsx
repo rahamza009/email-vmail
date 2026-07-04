@@ -35,7 +35,7 @@ const PLANS = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="pt-10 pb-20 md:pb-28 px-6 bg-white">
+    <section id="pricing" className="pt-10 pb-20 md:pb-28 px-6 bg-white scroll-mt-20">
       <div className="max-w-5xl mx-auto text-center">
         <FadeIn>
           <h2
