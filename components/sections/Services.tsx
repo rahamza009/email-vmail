@@ -2,24 +2,28 @@ import FadeIn from "@/components/FadeIn";
 
 const SERVICES = [
   {
-    title: "Email Automations & Flows",
-    desc: "Welcome, abandoned cart, post-purchase, win-back — every flow built and optimized for tactical buyers.",
+    title: "Email Strategy & Audit",
+    desc: "We build a revenue-first email strategy before a single campaign goes live. We audit your current setup, identify every revenue gap, and map a data-driven Execution Plan tied directly to your store's growth targets. Each KPI is marked and reported, offering a clear path to predictable revenue.",
+  },
+  {
+    title: "Email Automations",
+    desc: "Curated email automations to generate revenue on auto-pilot & increase customers Lifetime Value. Automations use personalized touch points to keep customers in the loop and trigger repeat purchases of consumable gear.",
   },
   {
     title: "HTML Email Design",
-    desc: "Battle-tested responsive templates that render sharp in every inbox on every device.",
+    desc: "Battle-tested, responsive & creative templates that enhance user experience, prompting people to buy more. They render sharp in every inbox, ensuring every recipient is engaged, nurtured and converted.",
   },
   {
     title: "Campaign Management",
-    desc: "Full send calendar, scheduling, A/B testing — every campaign handled start to finish.",
+    desc: "We plan revenue-first email campaigns tied to brand value and loyalty. Each campaign follows a sales, promo or educational logic for content diversity and reading recipient behaviors. Full send calendar, scheduling, A/B testing. Everything.",
+  },
+  {
+    title: "List Segmentation",
+    desc: "Smart segments based on customer behaviour i.e. engagement, purchase, repeat purchase, never purchase, and VIP customers. We send the right message to the right buyer at the right time.",
   },
   {
     title: "Email Copywriting",
     desc: "Niche-specific, industry-compatible email copy to relate with gun and tactical gear users.",
-  },
-  {
-    title: "List Segmentation",
-    desc: "Smart segments that send the right message to the right buyer at the right time.",
   },
 ];
 
@@ -53,29 +57,8 @@ export default function Services() {
         </FadeIn>
 
         <div className="grid grid-cols-12 gap-5 mb-16">
-          {/* Row 1 — 3 cards × 4 columns */}
-          {SERVICES.slice(0, 3).map((s, i) => (
+          {SERVICES.map((s, i) => (
             <FadeIn key={s.title} delay={i * 90} className="col-span-12 sm:col-span-4">
-              <div
-                className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
-                style={{ backgroundColor: "#2D3A28", borderColor: "#F5C124" }}
-              >
-                <h3
-                  className="font-barlow text-lg font-bold text-white flex items-center justify-center"
-                  style={{ minHeight: "2.75rem" }}
-                >
-                  {s.title}
-                </h3>
-                <p className="font-inter text-sm leading-relaxed text-white/75">
-                  {s.desc}
-                </p>
-              </div>
-            </FadeIn>
-          ))}
-
-          {/* Row 2 — 2 cards × 6 columns */}
-          {SERVICES.slice(3).map((s, i) => (
-            <FadeIn key={s.title} delay={(i + 3) * 90} className="col-span-12 sm:col-span-6">
               <div
                 className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
                 style={{ backgroundColor: "#2D3A28", borderColor: "#F5C124" }}
