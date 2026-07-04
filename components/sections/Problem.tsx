@@ -46,7 +46,7 @@ export default function Problem() {
                   {p.title}
                 </h3>
                 <p
-                  className="font-inter text-sm leading-relaxed text-white/75"
+                  className="font-inter text-base leading-relaxed text-white/75"
                 >
                   {p.body}
                 </p>
