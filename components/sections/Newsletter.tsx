@@ -29,7 +29,7 @@ export default function Newsletter() {
           className="font-barlow text-xs font-bold tracking-[0.25em] uppercase px-4 py-2 rounded-full inline-block mb-5"
           style={{ color: "#F5C124", backgroundColor: "#2D3A28" }}
         >
-          Free · Twice a Month
+          Bi-Monthly Email Newsletter
         </p>
 
         <h2
