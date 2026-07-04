@@ -57,7 +57,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-barlow text-base font-semibold tracking-wide transition-opacity hover:opacity-70"
+              className="font-barlow text-lg font-semibold tracking-wide transition-opacity hover:opacity-70"
               style={{ color: "#F5C124" }}
             >
               {link.label}
@@ -108,7 +108,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="font-barlow text-base font-semibold tracking-wide"
+              className="font-barlow text-lg font-semibold tracking-wide"
               style={{ color: "#F5C124" }}
               onClick={() => setIsOpen(false)}
             >
