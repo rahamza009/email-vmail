@@ -112,7 +112,7 @@ function WishlistForm() {
         className="w-full font-barlow font-black text-base tracking-wide py-4 rounded-lg transition-opacity hover:opacity-90 disabled:opacity-60 mt-2"
         style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}
       >
-        {status === "submitting" ? "Joining..." : "Join Wait List"}
+        {status === "submitting" ? "Joining..." : "Join Wish List"}
       </button>
 
       <p className="font-inter text-xs text-center" style={{ color: "rgba(45,58,40,0.45)" }}>
