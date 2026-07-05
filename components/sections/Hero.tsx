@@ -1,5 +1,6 @@
 import FadeIn from "@/components/FadeIn";
 import AuditPopover from "@/components/AuditPopover";
+import CallPopover from "@/components/CallPopover";
 
 const GRID_SVG = (size: number) =>
   `url("data:image/svg+xml,%3Csvg width='${size}' height='${size}' viewBox='0 0 ${size} ${size}' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232D3A28' fill-opacity='1'%3E%3Cpath d='M0 0h2v${size}H0zm${size - 2} 0h2v${size}h-2zM0 0v2h${size}V0zm0 ${size - 2}v2h${size}v-2z'/%3E%3C/g%3E%3C/svg%3E")`;
@@ -72,15 +73,17 @@ export default function Hero() {
                 Get $0 Account Audit
               </a>
             </AuditPopover>
-            <a
-              href="https://calendly.com/rahamza009-dzou/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide border-2 transition-colors hover:bg-gray-50 text-center w-full sm:w-[240px]"
-              style={{ borderColor: "#2D3A28", color: "#2D3A28" }}
-            >
-              Fix My Retention
-            </a>
+            <CallPopover position="above">
+              <a
+                href="https://calendly.com/rahamza009-dzou/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide border-2 transition-colors text-center w-full sm:w-[240px] block bg-white hover:bg-[#F5C124] active:bg-[#C9930A] hover:border-[#F5C124] active:border-[#C9930A]"
+                style={{ borderColor: "#2D3A28", color: "#2D3A28" }}
+              >
+                Fix My Retention
+              </a>
+            </CallPopover>
           </div>
         </FadeIn>
       </div>
