@@ -31,10 +31,10 @@ export default function Founder() {
                   alt="Ameer Hamza"
                   style={{
                     position: "absolute",
-                    width: "118%",
+                    width: "138%",
                     height: "auto",
-                    left: "-9%",
-                    top: "10%",
+                    left: "-19%",
+                    top: "18%",
                   }}
                 />
               </div>
