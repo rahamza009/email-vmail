@@ -12,7 +12,7 @@ export default function Founder() {
       <div className="max-w-4xl mx-auto">
         <FadeIn>
           <h2
-            className="font-barlow text-3xl md:text-4xl font-black mb-10"
+            className="font-barlow text-3xl md:text-4xl font-black mb-10 text-center"
             style={{ color: "#2D3A28" }}
           >
             Who You Will Work With
@@ -31,10 +31,10 @@ export default function Founder() {
                   alt="Ameer Hamza"
                   style={{
                     position: "absolute",
-                    width: "150%",
+                    width: "100%",
                     height: "auto",
-                    left: "-25%",
-                    top: "-2%",
+                    left: "0%",
+                    top: "-1.3%",
                   }}
                 />
               </div>
