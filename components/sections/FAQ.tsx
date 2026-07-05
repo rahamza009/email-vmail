@@ -3,10 +3,15 @@
 import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 
-const FAQS = [
+const FAQS: { q: string; a: string | string[] }[] = [
   {
     q: "Which ESPs do you work with?",
-    a: "It depends on your business size and channel needs. For Starter and Growth stores on Shopify, Klaviyo is the go-to — it updated its policy to permit firearms messaging and has strong flow and segmentation tooling. ActiveCampaign is a solid email-only alternative that explicitly allows firearms businesses. For SMS and email combined, OtterText is the only platform purpose-built for firearms and 2A compliance — we recommend it across all tiers. At the Scale tier, Listrak is enterprise-grade and openly supports firearm retailers, though the cost reflects that. Celerant is ideal for stores with physical retail and POS needs — it pairs with OtterText for compliant email and SMS across the full stack. We steer clear of Mailchimp (high suspension risk), Sendlane (explicitly does not support 2A), and GoHighLevel for SMS (it runs on Twilio underneath, which blocks firearm-related texting).",
+    a: [
+      "It depends on your business size and channel needs. For Starter and Growth stores — especially on Shopify — Klaviyo is the go-to. It updated its policy to permit firearms messaging and offers the strongest flow and segmentation tooling in the market. ActiveCampaign is a solid email-only alternative that explicitly allows firearms businesses.",
+      "For SMS and email combined, OtterText is the only platform purpose-built for firearms and 2A compliance. We recommend it across all tiers. At the Scale level, Listrak is enterprise-grade and openly supports firearm retailers — though the pricing reflects that positioning.",
+      "Celerant is the right fit for stores with physical retail and POS operations. It covers the full retail stack and pairs with OtterText for compliant email and SMS.",
+      "Platforms we steer clear of: Mailchimp carries a high account suspension risk for this vertical. Sendlane explicitly does not support 2A businesses. GoHighLevel looks gun-friendly on the surface but runs on Twilio underneath — which prohibits firearm-related SMS, making it unreliable for compliant sends.",
+    ],
   },
   {
     q: "Do you work with firearms businesses specifically?",
@@ -67,11 +72,12 @@ export default function FAQ() {
                 <div
                   className={`overflow-hidden transition-all duration-300 ${open === i ? "max-h-[500px]" : "max-h-0"}`}
                 >
-                  <p
-                    className="font-inter text-base leading-relaxed px-6 pb-5 text-white/75"
-                  >
-                    {faq.a}
-                  </p>
+                  <div className="font-inter text-base leading-relaxed px-6 pb-5 text-white/75 space-y-3">
+                    {Array.isArray(faq.a)
+                      ? faq.a.map((para, j) => <p key={j}>{para}</p>)
+                      : <p>{faq.a}</p>
+                    }
+                  </div>
                 </div>
               </div>
             </FadeIn>
