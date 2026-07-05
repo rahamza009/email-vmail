@@ -27,7 +27,7 @@ export default function Founder() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/ameer.jpeg"
+                  src="/about-me.png"
                   alt="Ameer Hamza"
                   style={{
                     position: "absolute",
