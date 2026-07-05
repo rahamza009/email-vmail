@@ -34,7 +34,7 @@ export default function Founder() {
                     width: "100%",
                     height: "auto",
                     left: "0%",
-                    top: "-5%",
+                    top: "5%",
                   }}
                 />
               </div>
