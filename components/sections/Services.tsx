@@ -28,13 +28,15 @@ const SERVICES = [
 ];
 
 const ESPS = [
-  { name: "Klaviyo",          accent: "#45E9A5" },
-  { name: "Sendlane",         accent: "#4F8EF7" },
-  { name: "Omnisend",         accent: "#00C09A" },
-  { name: "ActiveCampaign",   accent: "#356AE6" },
-  { name: "Drip",             accent: "#B14FFF" },
-  { name: "Campaign Monitor", accent: "#EB4C36" },
-  { name: "GetResponse",      accent: "#00BAFF" },
+  { name: "Klaviyo",        accent: "#45E9A5" },
+  { name: "Sendlane",       accent: "#4F8EF7" },
+  { name: "ActiveCampaign", accent: "#356AE6" },
+  { name: "SendGrid",       accent: "#1A82E2" },
+  { name: "Listrak",        accent: "#FF6B35" },
+  { name: "OtterText",      accent: "#00D4FF" },
+  { name: "Celerant",       accent: "#B14FFF" },
+  { name: "Dotdigital",     accent: "#F5A623" },
+  { name: "GoHighLevel",    accent: "#02C3BD" },
 ];
 
 export default function Services() {
