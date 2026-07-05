@@ -6,6 +6,7 @@ import TrustBar from "@/components/sections/TrustBar";
 import Problem from "@/components/sections/Problem";
 import Services from "@/components/sections/Services";
 import ICP from "@/components/sections/ICP";
+import Founder from "@/components/sections/Founder";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import Newsletter from "@/components/sections/Newsletter";
@@ -28,6 +29,7 @@ export default function Home() {
       <Problem />
       <Services />
       <ICP />
+      <Founder />
       <Pricing />
       <FAQ />
       <Newsletter />
