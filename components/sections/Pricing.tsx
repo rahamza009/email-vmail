@@ -151,7 +151,7 @@ export default function Pricing() {
                       className="font-barlow font-bold px-10 py-4 rounded-xl text-base tracking-wide transition-opacity hover:opacity-90 block text-center"
                       style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}
                     >
-                      $0 Account Audit Before You Start
+                      Get $0 Account Audit
                     </a>
                   </AuditPopover>
                 </div>
