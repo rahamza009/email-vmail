@@ -1,48 +1,74 @@
 import FadeIn from "@/components/FadeIn";
 import AuditPopover from "@/components/AuditPopover";
 
-const SHARED_INCLUDES = [
-  "Strategic Automations built & optimized",
-  "Email Campaigns required per strategy (no cap)",
-  "Advanced HTML email design templates",
-  "Niche specific email copy + A/B testing",
-  "Weekly work updates & Monthly revenue performance reports",
-  "Dedicated Client Success Manager for non-stop coordination",
-  "Annual strategy & quarterly reviews",
-  "SMS Marketing (if required)",
-];
-
 const PLANS = [
   {
     name: "Starter",
-    badge: "LIMITED OFFER",
-    subscribers: "Up to 10,000 subscribers",
-    originalPrice: "$2,000",
-    price: "$1,200",
-    period: "/mo · first 2 months",
-    spotsLabel: "Discounted Spots: 1 / 3 remaining before discount closes",
+    badge: null,
+    subtitle: "Under $1M annual revenue",
+    uplift: "Up to 15%",
+    price: "$997",
+    period: "/mo",
+    commission: "+ 15% of incremental revenue",
+    categoryLabel: "FOUNDATION BUILD",
+    includes: [
+      "Automations built & optimized",
+      "Unlimited email campaigns",
+      "Advanced HTML templates",
+      "Niche copy + A/B testing",
+      "Weekly & monthly reports",
+      "Dedicated success manager",
+      "Annual & quarterly reviews",
+      "SMS marketing (optional)",
+    ],
   },
   {
     name: "Growth",
-    badge: "LIMITED OFFER",
-    subscribers: "10,000–30,000 subscribers",
-    originalPrice: "$3,500",
-    price: "$2,500",
-    period: "/mo · first 2 months",
-    spotsLabel: "Discounted Spots: 0 / 2 remaining before discount closes",
+    badge: "Most Popular",
+    subtitle: "$1M–$10M annual revenue",
+    uplift: "Up to 10%",
+    price: "$2,997",
+    period: "/mo",
+    commission: "+ 12% of incremental revenue",
+    categoryLabel: "REVENUE OUTCOMES",
+    includes: [
+      "Everything in Starter",
+      "Repeat-purchase flows for consumables",
+      "Higher AOV via cross-sell segmentation",
+      "Lower CAC vs restricted ad channels",
+      "Quarterly cohort & LTV analysis",
+    ],
+  },
+  {
+    name: "Scale",
+    badge: null,
+    subtitle: "$10M+ annual revenue",
+    uplift: "Up to 7%",
+    price: "$6,997",
+    period: "/mo",
+    commission: "+ 8% of incremental revenue",
+    categoryLabel: "RETENTION & LTV OUTCOMES",
+    includes: [
+      "Everything in Growth",
+      "Predictive reorder automation",
+      "VIP/loyalty retention program",
+      "Blended CAC reduction program",
+      "Win-back flows for high-LTV lapses",
+      "Executive LTV/CAC/retention reporting",
+    ],
   },
 ];
 
 export default function Pricing() {
   return (
     <section id="pricing" className="pt-10 pb-20 md:pb-28 px-6 bg-white scroll-mt-20">
-      <div className="max-w-5xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <h2
             className="font-barlow text-3xl md:text-4xl font-black mb-4"
             style={{ color: "#2D3A28" }}
           >
-            Limited Availability
+            Plans Built Around Your Revenue Stage
           </h2>
           <p
             className="font-inter max-w-lg mx-auto mb-14 text-lg"
@@ -52,7 +78,7 @@ export default function Pricing() {
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {PLANS.map((plan, i) => (
             <FadeIn key={plan.name} delay={i * 120}>
               <div
@@ -73,53 +99,40 @@ export default function Pricing() {
                 <h3 className="font-barlow text-2xl font-black mb-1 mt-2" style={{ color: "#2D3A28" }}>
                   {plan.name}
                 </h3>
+                <p className="font-inter text-sm mb-4" style={{ color: "rgba(45,58,40,0.55)" }}>
+                  {plan.subtitle}
+                </p>
 
-                <div className="mb-1 flex items-center gap-2">
-                  <span
-                    className="font-inter text-base line-through"
-                    style={{ color: "rgba(45,58,40,0.35)" }}
-                  >
-                    {plan.originalPrice}/mo
-                  </span>
-                  <span
-                    className="font-barlow text-xs font-black px-2 py-0.5 rounded"
-                    style={{ backgroundColor: "rgba(245,193,36,0.2)", color: "#2D3A28" }}
-                  >
-                    INTRO RATE
-                  </span>
-                </div>
-
-                <div className="mb-2">
-                  <span className="font-barlow text-5xl font-black" style={{ color: "#F5C124" }}>
-                    {plan.price}
-                  </span>
-                </div>
-                <div className="mb-5">
-                  <span
-                    className="font-inter text-base font-semibold"
-                    style={{ color: "rgba(45,58,40,0.7)" }}
-                  >
-                    {plan.period}
-                  </span>
-                </div>
-
-                <div
-                  className="rounded-lg px-4 py-3 mb-6 text-center"
-                  style={{ backgroundColor: "#F5C124" }}
-                >
-                  <p className="font-barlow text-sm font-black" style={{ color: "#2D3A28" }}>
-                    {plan.spotsLabel}
+                {/* Revenue uplift target */}
+                <div className="rounded-lg px-4 py-3 mb-5" style={{ backgroundColor: "#2D3A28" }}>
+                  <p className="font-barlow text-xs font-bold tracking-widest uppercase mb-1" style={{ color: "rgba(255,255,255,0.55)" }}>
+                    Revenue uplift target
+                  </p>
+                  <p className="font-barlow text-2xl font-black" style={{ color: "#F5C124" }}>
+                    {plan.uplift}
                   </p>
                 </div>
 
+                {/* Price */}
+                <div className="mb-1">
+                  <span className="font-barlow text-5xl font-black" style={{ color: "#F5C124" }}>
+                    {plan.price}
+                  </span>
+                  <span className="font-inter text-base font-semibold ml-1" style={{ color: "rgba(45,58,40,0.6)" }}>
+                    {plan.period}
+                  </span>
+                </div>
+                <p className="font-inter text-sm mb-6" style={{ color: "rgba(45,58,40,0.55)" }}>
+                  {plan.commission}
+                </p>
+
+                {/* Category label */}
+                <p className="font-barlow text-xs font-black tracking-widest mb-3" style={{ color: "rgba(45,58,40,0.4)" }}>
+                  {plan.categoryLabel}
+                </p>
+
                 <ul className="space-y-3 mb-8 flex-1">
-                  <li className="flex items-start gap-3">
-                    <span style={{ color: "#F5C124" }} className="mt-0.5 flex-shrink-0 text-lg">✓</span>
-                    <span className="font-inter text-base" style={{ color: "rgba(45,58,40,0.8)" }}>
-                      {plan.subscribers}
-                    </span>
-                  </li>
-                  {SHARED_INCLUDES.map((item) => (
+                  {plan.includes.map((item) => (
                     <li key={item} className="flex items-start gap-3">
                       <span style={{ color: "#F5C124" }} className="mt-0.5 flex-shrink-0 text-lg">✓</span>
                       <span className="font-inter text-base" style={{ color: "rgba(45,58,40,0.8)" }}>
