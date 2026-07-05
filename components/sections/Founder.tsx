@@ -22,14 +22,14 @@ export default function Founder() {
           <div className="flex flex-col sm:flex-row gap-8 items-start">
             {/* Left — photo + name */}
             <div className="flex flex-col items-center sm:items-start gap-2 flex-shrink-0">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-2" style={{ borderColor: "#F5C124" }}>
+              <div className="w-44 h-44 rounded-full overflow-hidden border-2" style={{ borderColor: "#F5C124" }}>
                 <Image
                   src="/ameer.jpeg"
                   alt="Ameer Hamza"
-                  width={128}
-                  height={128}
+                  width={176}
+                  height={176}
                   className="w-full h-full object-cover"
-                  style={{ objectPosition: "50% 18%" }}
+                  style={{ objectPosition: "50% 32%" }}
                 />
               </div>
               <p className="font-barlow text-sm font-black" style={{ color: "#2D3A28" }}>
