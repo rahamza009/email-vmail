@@ -1,5 +1,4 @@
 import FadeIn from "@/components/FadeIn";
-import Image from "next/image";
 
 const BIO = [
   "Defense Studies graduate. Majored in warfare and defense economics at National Defense University, Pakistan. I studied marketing and firearms long enough to make both a living.",
@@ -12,24 +11,31 @@ export default function Founder() {
     <section className="py-14 px-6 bg-white">
       <div className="max-w-4xl mx-auto">
         <FadeIn>
-          <p
-            className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-8"
-            style={{ color: "rgba(45,58,40,0.4)" }}
+          <h2
+            className="font-barlow text-3xl md:text-4xl font-black mb-10"
+            style={{ color: "#2D3A28" }}
           >
             Who You Will Work With
-          </p>
+          </h2>
 
           <div className="flex flex-col sm:flex-row gap-8 items-start">
             {/* Left — photo + name */}
             <div className="flex flex-col items-center sm:items-start gap-2 flex-shrink-0">
-              <div className="w-44 h-44 rounded-full overflow-hidden border-2" style={{ borderColor: "#F5C124" }}>
-                <Image
+              <div
+                className="w-44 h-44 rounded-full overflow-hidden border-2 relative"
+                style={{ borderColor: "#F5C124" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
                   src="/ameer.jpeg"
                   alt="Ameer Hamza"
-                  width={176}
-                  height={176}
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: "50% 32%" }}
+                  style={{
+                    position: "absolute",
+                    width: "150%",
+                    height: "auto",
+                    left: "-25%",
+                    top: "-2%",
+                  }}
                 />
               </div>
               <p className="font-barlow text-sm font-black" style={{ color: "#2D3A28" }}>
