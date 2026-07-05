@@ -6,7 +6,7 @@ import FadeIn from "@/components/FadeIn";
 const FAQS = [
   {
     q: "Which ESPs do you work with?",
-    a: "We specialize in Klaviyo, Sendlane, and Omnisend — all firearms-friendly platforms that won't shut down your account for selling legal products.",
+    a: "It depends on your business size and channel needs. For Starter and Growth stores on Shopify, Klaviyo is the go-to — it updated its policy to permit firearms messaging and has strong flow and segmentation tooling. ActiveCampaign is a solid email-only alternative that explicitly allows firearms businesses. For SMS and email combined, OtterText is the only platform purpose-built for firearms and 2A compliance — we recommend it across all tiers. At the Scale tier, Listrak is enterprise-grade and openly supports firearm retailers, though the cost reflects that. Celerant is ideal for stores with physical retail and POS needs — it pairs with OtterText for compliant email and SMS across the full stack. We steer clear of Mailchimp (high suspension risk), Sendlane (explicitly does not support 2A), and GoHighLevel for SMS (it runs on Twilio underneath, which blocks firearm-related texting).",
   },
   {
     q: "Do you work with firearms businesses specifically?",
@@ -23,10 +23,6 @@ const FAQS = [
   {
     q: "What if we have a small list?",
     a: "We work best with stores at 2,000+ subscribers, but happy to chat if you're close. A smaller but engaged list can still produce strong results with the right strategy.",
-  },
-  {
-    q: "How does the discounted offer work?",
-    a: "Both plans carry an intro rate for the first 2 months: Starter runs at $1,200/mo (standard $2,000/mo) and Growth at $2,500/mo (standard $3,500/mo). Spots are strictly limited — Starter has 1 of 3 remaining, Growth is fully taken. After the intro period, billing moves to the standard rate.",
   },
 ];
 
@@ -69,7 +65,7 @@ export default function FAQ() {
                   </span>
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${open === i ? "max-h-64" : "max-h-0"}`}
+                  className={`overflow-hidden transition-all duration-300 ${open === i ? "max-h-[500px]" : "max-h-0"}`}
                 >
                   <p
                     className="font-inter text-base leading-relaxed px-6 pb-5 text-white/75"
