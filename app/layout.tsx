@@ -22,24 +22,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Email-Vmail | DFY Email Marketing for Firearms & 2A Brands",
+  title: "Email-Vmail | Email Marketing Agency for Gun Stores & FFL Dealers",
   description:
-    "Done-For-You email marketing agency for gun stores, FFL dealers, ammo retailers, and 2A brands. ESP-compliant lifecycle systems that turn subscribers into repeat buyers.",
+    "Email marketing agency for gun stores, FFL dealers, ammo retailers, and 2A brands across the United States. Compliant lifecycle and retention systems that turn subscribers into repeat buyers.",
   metadataBase: new URL("https://emailvmail.com"),
   openGraph: {
     type: "website",
     siteName: "Email-Vmail",
-    title: "Email-Vmail | DFY Email Marketing for Firearms & 2A Brands",
+    title: "Email-Vmail | Email Marketing Agency for Gun Stores & FFL Dealers",
     description:
-      "Done-For-You email marketing for gun stores, ammo retailers, and 2A brands. From subscribed to sold, again and again.",
+      "Email marketing for gun stores and FFL dealers — compliant lifecycle and retention systems, from subscribed to sold, again and again.",
     url: "https://emailvmail.com",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Email-Vmail | DFY Email Marketing for Firearms & 2A Brands",
+    title: "Email-Vmail | Email Marketing Agency for Gun Stores & FFL Dealers",
     description:
-      "Done-For-You email marketing for gun stores, ammo retailers, and 2A brands. From subscribed to sold, again and again.",
+      "Email marketing for gun stores and FFL dealers — compliant lifecycle and retention systems, from subscribed to sold, again and again.",
   },
   robots: {
     index: true,

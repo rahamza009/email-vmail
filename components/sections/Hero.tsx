@@ -44,7 +44,7 @@ export default function Hero() {
             className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6"
             style={{ color: "#2D3A28" }}
           >
-            DFY Email Marketing Agency For FFLs,<br />Firearms, Ammunition and 2-A Brands
+            Email Marketing Agency for Gun Stores,<br />FFL Dealers &amp; Firearms Retailers
           </h1>
 
           <p
@@ -58,7 +58,7 @@ export default function Hero() {
             >
               again and again.
             </em>
-            {" "}We bring shooters and gun owners back to your store through revenue-first, ESP compliant, retention and lifecycle strategies.
+            {" "}We build compliant retention and lifecycle email marketing systems for firearms retailers, ammo stores, and 2A brands across the United States.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">

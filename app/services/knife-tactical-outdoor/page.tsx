@@ -4,8 +4,8 @@ import AuditPopover from "@/components/AuditPopover";
 import CallPopover from "@/components/CallPopover";
 import { getPageSeo } from "@/lib/getPageSeo";
 
-const DEFAULT_TITLE = "Email Marketing for Knife, Tactical & Outdoor Brands | Email-Vmail";
-const DEFAULT_DESC  = "Lifecycle email marketing for knife stores, hunting retailers, EDC brands, outdoor gear companies, survival gear retailers, and self-defense product businesses. Smarter segmentation, higher repeat purchases, and real customer lifetime value.";
+const DEFAULT_TITLE = "Email Marketing for Knife Stores, Hunting & Outdoor Gear Brands | Email-Vmail";
+const DEFAULT_DESC  = "Email marketing agency for knife stores, hunting retailers, tactical gear brands, EDC companies, and outdoor gear ecommerce across the United States. Lifecycle and retention systems that build repeat purchases and grow customer lifetime value.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("knife-tactical-outdoor");
@@ -111,14 +111,14 @@ export default function KnifeTacticalOutdoorPage() {
             </div>
 
             <h1 className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6" style={{ color: "#2D3A28" }}>
-              Retention &amp; Lifecycle Email Marketing for<br />Knife, Tactical &amp; Outdoor Brands
+              Email Marketing for Knife Stores,<br />Hunting Retailers &amp; Outdoor Gear Brands
             </h1>
 
             <p className="font-inter text-2xl md:text-3xl max-w-3xl mx-auto mb-4 leading-relaxed" style={{ color: "rgba(45,58,40,0.75)" }}>
-              Knife, hunting, and gear brands sell in a different way. Buyers feel real pride in what they carry. Flat, one-size ads miss that fact.
+              Knife stores and hunting retailers sell differently than mainstream ecommerce. Buyers feel real pride in what they carry. Generic email marketing misses that entirely.
             </p>
             <p className="font-inter text-lg max-w-2xl mx-auto mb-10" style={{ color: "rgba(45,58,40,0.5)" }}>
-              Serving knife stores, hunting retailers, EDC brands, outdoor gear companies, survival gear retailers, and self-defense product businesses.
+              Serving knife stores, hunting retailers, EDC brands, tactical gear companies, outdoor gear ecommerce, survival gear retailers, and self-defense product businesses across the United States.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">

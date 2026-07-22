@@ -3,15 +3,15 @@ import FadeIn from "@/components/FadeIn";
 const PROBLEMS = [
   {
     title: "Compliance Challenges",
-    body: "Firearms businesses have strict ESP compliance requirements. One policy violation and your account is gone, taking your list, your automations, and your entire revenue engine with it overnight.",
+    body: "FFL dealers and firearms retailers face strict ESP compliance requirements that generic agencies ignore. One policy violation and your account is gone — taking your list, your automations, and your entire revenue engine with it overnight.",
   },
   {
     title: "No Retention System",
-    body: "You make the sale and move on. Without a system to engage your customers after purchase, you miss the relationship that turns a one-time buyer into a lifelong one.",
+    body: "Gun stores make the sale and move on. Without a retention email marketing system built for firearms ecommerce, you miss the relationship that turns a one-time buyer into a repeat customer worth 3–5x more.",
   },
   {
     title: "Poor Email Design",
-    body: "Poorly structured templates and weak wireframing create a confusing experience for your customers. In a trust-driven industry like firearms, poor design costs you credibility before it costs you the sale.",
+    body: "Poorly structured templates and weak copy create a confusing experience. In a trust-driven industry like firearms and ammo, poor email design costs you credibility with gun owners before it costs you the sale.",
   },
 ];
 

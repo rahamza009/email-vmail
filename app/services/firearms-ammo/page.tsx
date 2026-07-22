@@ -4,8 +4,8 @@ import AuditPopover from "@/components/AuditPopover";
 import CallPopover from "@/components/CallPopover";
 import { getPageSeo } from "@/lib/getPageSeo";
 
-const DEFAULT_TITLE = "Email Marketing for Firearms & Ammo Retailers | Email-Vmail";
-const DEFAULT_DESC  = "Compliance-first lifecycle email marketing for FFL dealers, gun stores, ammo retailers, and tactical gear brands. Deliverability-focused automations, advanced segmentation, and repeat revenue systems built for firearms ecommerce.";
+const DEFAULT_TITLE = "Email Marketing Agency for Gun Stores & FFL Dealers | Email-Vmail";
+const DEFAULT_DESC  = "Email marketing agency for gun stores, FFL dealers, and ammo retailers across the United States. Compliance-first lifecycle and retention systems that grow customer lifetime value and drive repeat revenue for firearms ecommerce.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getPageSeo("firearms-ammo");
@@ -111,7 +111,7 @@ export default function FirearmsAmmoPage() {
             </div>
 
             <h1 className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6" style={{ color: "#2D3A28" }}>
-              Retention &amp; Lifecycle Email Marketing<br />for Firearms Retailers
+              Email Marketing Agency for Gun Stores,<br />FFL Dealers &amp; Ammo Retailers
             </h1>
 
             <p className="font-inter text-2xl md:text-3xl max-w-3xl mx-auto mb-10 leading-relaxed" style={{ color: "rgba(45,58,40,0.75)" }}>
@@ -233,10 +233,10 @@ export default function FirearmsAmmoPage() {
           <FadeIn>
             <p className={TAG} style={{ color: "#F5C124" }}>Why Us</p>
             <h2 className="font-barlow text-3xl md:text-4xl font-black text-center mb-3" style={{ color: "#2D3A28" }}>
-              Built for Firearms Ecommerce.<br />Not Generic Ecommerce.
+              An Email Marketing Agency Built for<br />Gun Stores — Not Generic Ecommerce.
             </h2>
             <p className="font-inter text-xl text-center mb-14 max-w-xl mx-auto" style={{ color: "rgba(45,58,40,0.6)" }}>
-              Most email agencies treat firearms retailers like every other online store. We don&apos;t.
+              Most email marketing agencies treat FFL dealers and firearms retailers like any other online store. We don&apos;t — and that difference shows in your results.
             </p>
           </FadeIn>
 
@@ -258,10 +258,10 @@ export default function FirearmsAmmoPage() {
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-barlow text-3xl md:text-4xl font-black mb-4" style={{ color: "#2D3A28" }}>
-              Ready to Turn Subscribers Into<br />Repeat Customers?
+              Ready to Turn Your Gun Store&apos;s<br />Subscribers Into Repeat Buyers?
             </h2>
             <p className="font-inter text-xl mb-8" style={{ color: "rgba(45,58,40,0.65)" }}>
-              Let&apos;s identify the biggest revenue leaks in your email program and build a lifecycle strategy that keeps customers buying again and again.
+              We work with gun stores, FFL dealers, and ammo retailers across the United States. Let&apos;s find the biggest revenue leaks in your email program and build the lifecycle system that fixes them.
             </p>
             <AuditPopover position="above">
               <a href="/audit" className="inline-block font-barlow font-bold px-10 py-4 rounded-xl text-base tracking-wide transition-opacity hover:opacity-90" style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}>

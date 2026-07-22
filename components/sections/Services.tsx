@@ -55,7 +55,7 @@ export default function Services() {
             className="font-inter max-w-3xl mx-auto mb-14 text-lg"
             style={{ color: "rgba(45,58,40,0.6)" }}
           >
-            Email-Vmail builds the full system instead: compliant flows, real list splits, and copy built for gun owners, not a generic crowd. We serve FFL dealers and ammo sellers. We serve tactical, hunting, and knife brands too. Stores trust us from Texas and Florida to Ohio, Georgia, and beyond.
+            Email-Vmail is the email marketing agency for gun stores that builds the full system: compliant flows, real list splits, and copy built for firearms retailers — not a generic crowd. We serve FFL dealers, ammo stores, and tactical, hunting, and knife brands across the United States.
           </p>
         </FadeIn>
 
