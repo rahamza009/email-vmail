@@ -3,20 +3,31 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+const GRID = (size: number) =>
+  `url("data:image/svg+xml,%3Csvg width='${size}' height='${size}' viewBox='0 0 ${size} ${size}' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M0 0h2v${size}H0zm${size-2} 0h2v${size}h-2zM0 0v2h${size}V0zm0 ${size-2}v2h${size}v-2z'/%3E%3C/g%3E%3C/svg%3E")`;
+
 const DEFAULT = {
   hero: {
     name: "Ameer Hamza",
     role: "Founder & Email Marketing Strategist",
-    tagline: "Helping FFLs generate up to 20% more online revenue via email — without the platform bans.",
+    tagline: "",
   },
-  brandStory: {
-    title: "Why Email-Vmail Exists",
-    body: "The firearms industry plays by different rules. Most email platforms penalise legitimate gun stores, ammo retailers, and tactical brands for simply doing business. I built Email-Vmail to fix that — a done-for-you email marketing agency that understands your industry, speaks your language, and builds systems that drive real revenue while keeping you compliant.",
+  company: {
+    headline: "Done-For-You Email Marketing for Firearms, Ammo & Tactical Brands",
+    subheadline: "We build and run the lifecycle email infrastructure that turns your subscriber list into your most reliable, highest-ROI revenue channel.",
+    missionStatement: "Our mission is simple. Move your customers from subscribed to sold, again and again.",
+    missionBody: "Most firearm and tactical stores already have a list. The gap is not the list. It is the system. We build the lifecycle email infrastructure, including flows, campaigns, segmentation, and execution, that turns subscribers into repeat buyers and repeat buyers into loyal customers.",
+    doctrineStatement: "Our doctrine is simple. Precision.",
+    doctrineBody1: "Every email must have a purpose. Every segment must be defined. Every send must be deliberate. We don't batch-and-blast. We build systems that deliver the right message to the right customer at the right point in their lifecycle.",
+    doctrineBody2: "Precision in segmentation. Precision in messaging. Precision in timing. That's how email becomes your highest-ROI channel.",
   },
-  myStory: {
-    title: "My Story",
-    body: "I started in email marketing working with e-commerce brands across different niches. When I began working with firearms clients, I quickly realised the tools, strategies, and playbooks that worked everywhere else simply did not apply here. Compliance constraints, deliverability landmines, platform bans — the industry needed a specialist, not a generalist. That is what Email-Vmail became.",
+  founder: {
+    intro1: "Hi, I am Ameer. After years of building lifecycle email programs for ecommerce brands, I realized generic email marketing rarely fits specialist industries.",
+    intro2: "Firearms, tactical, and outdoor brands have unique customers, unique buying journeys, and unique challenges. They deserve email strategies built around those realities — not recycled ecommerce playbooks.",
+    intro3: "That's why I founded EmailVMail. And it has a story to it.",
   },
+  brandStory: { title: "", body: "" },
+  myStory: { title: "", body: "" },
   galleryImages: [
     "/slider/formal.jpg",
     "/slider/dsc-9600.jpg",
@@ -127,58 +138,70 @@ export default function AboutPage() {
       .then(r => r.json())
       .then(d => {
         if (d.content) {
-          setContent({ ...DEFAULT, ...d.content });
+          setContent({
+            ...DEFAULT,
+            ...d.content,
+            company: { ...DEFAULT.company, ...(d.content.company ?? {}) },
+            founder: { ...DEFAULT.founder, ...(d.content.founder ?? {}) },
+            galleryImages: d.content.galleryImages?.length > 0
+              ? d.content.galleryImages
+              : DEFAULT.galleryImages,
+          });
         }
       })
       .finally(() => setLoading(false));
   }, []);
 
-  const { hero, brandStory, myStory, galleryImages, team, reviews } = content;
+  const { hero, company, founder, galleryImages, team, reviews } = content;
 
   return (
     <main className="min-h-screen bg-white">
 
       {/* ── Company Section ──────────────────────── */}
-      <section className="pt-28 pb-20 px-6 relative" style={{ backgroundColor: "#2D3A28" }}>
+      <section className="pt-28 pb-20 px-6 relative overflow-hidden" style={{ backgroundColor: "#2D3A28" }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: GRID(40), opacity: 0.04 }} />
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: GRID(80), opacity: 0.025 }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "4px", backgroundColor: "#F5C124" }} />
-        <div className="max-w-6xl mx-auto">
 
+        <div className="max-w-6xl mx-auto relative">
           {/* Header */}
-          <div className="text-center mb-16">
-            <p className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-4" style={{ color: "#F5C124" }}>About EmailVmail</p>
-            <h1 className="font-barlow text-4xl md:text-5xl font-black text-white leading-[1.1] mb-6">
-              Done-For-You Email Marketing for<br />Firearms, Ammo &amp; Tactical Brands
+          <div className="text-center mb-10">
+            <p className="font-barlow text-sm font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>About EmailVmail</p>
+            <h1 className="font-barlow text-4xl md:text-6xl font-black text-white leading-[1.1] mb-8">
+              {company.headline}
             </h1>
-            <p className="font-inter text-lg md:text-xl max-w-2xl mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
-              We build and run the lifecycle email infrastructure that turns your subscriber list into your most reliable, highest-ROI revenue channel.
+            <p className="font-inter text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+              {company.subheadline}
             </p>
           </div>
+
+          {/* Gold divider */}
+          <div className="w-16 h-1 mx-auto mb-12 rounded-full" style={{ backgroundColor: "#F5C124" }} />
 
           {/* Mission + Doctrine */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="rounded-2xl p-8" style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(245,193,36,0.3)" }}>
-              <p className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>Mission</p>
+              <p className="font-barlow text-sm font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>Mission</p>
               <p className="font-barlow text-2xl font-black text-white mb-5 leading-snug">
-                Our mission is simple. Move your customers from subscribed to sold, again and again.
+                {company.missionStatement}
               </p>
               <p className="font-inter text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Most firearm and tactical stores already have a list. The gap isn&apos;t the list — it&apos;s the system. We build the lifecycle email infrastructure — flows, campaigns, segmentation, and execution — that turns subscribers into repeat buyers, and repeat buyers into loyal customers.
+                {company.missionBody}
               </p>
             </div>
             <div className="rounded-2xl p-8" style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(245,193,36,0.3)" }}>
-              <p className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>Doctrine</p>
+              <p className="font-barlow text-sm font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>Doctrine</p>
               <p className="font-barlow text-2xl font-black text-white mb-5 leading-snug">
-                Our doctrine is simple. Precision.
+                {company.doctrineStatement}
               </p>
               <p className="font-inter text-lg leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Every email must have a purpose. Every segment must be defined. Every send must be deliberate. We don&apos;t batch-and-blast. We build systems that deliver the right message to the right customer at the right point in their lifecycle.
+                {company.doctrineBody1}
               </p>
               <p className="font-inter text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Precision in segmentation. Precision in messaging. Precision in timing. That&apos;s how email becomes your highest-ROI channel.
+                {company.doctrineBody2}
               </p>
             </div>
           </div>
-
         </div>
       </section>
 
@@ -187,18 +210,18 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
           {/* Text */}
           <div className="flex-1 text-center lg:text-left">
-            <p className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-3" style={{ color: "#F5C124" }}>About CEO &amp; Founder</p>
+            <p className="font-barlow text-sm font-bold tracking-[0.25em] uppercase mb-3" style={{ color: "#F5C124" }}>About CEO &amp; Founder</p>
             <h2 className="font-barlow text-5xl md:text-6xl font-black leading-tight mb-4" style={{ color: "#2D3A28" }}>{hero.name}</h2>
             <p className="font-barlow text-xl font-semibold mb-8" style={{ color: "rgba(45,58,40,0.55)" }}>{hero.role}</p>
             <div className="space-y-5">
               <p className="font-inter text-lg leading-relaxed" style={{ color: "rgba(45,58,40,0.75)" }}>
-                Hi, I am Ameer. After years of building lifecycle email programs for ecommerce brands, I realized generic email marketing rarely fits specialist industries.
+                {founder.intro1}
               </p>
               <p className="font-inter text-lg leading-relaxed" style={{ color: "rgba(45,58,40,0.75)" }}>
-                Firearms, tactical, and outdoor brands have unique customers, unique buying journeys, and unique challenges. They deserve email strategies built around those realities — not recycled ecommerce playbooks.
+                {founder.intro2}
               </p>
               <p className="font-inter text-lg leading-relaxed font-semibold" style={{ color: "#2D3A28" }}>
-                That&apos;s why I founded EmailVMail. And it has a story to it.
+                {founder.intro3}
               </p>
             </div>
           </div>
@@ -213,8 +236,12 @@ export default function AboutPage() {
       <section className="py-24 px-6" style={{ backgroundColor: "#f8f7f4" }}>
         <div className="max-w-3xl mx-auto">
 
-          {/* Section label */}
-          <p className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-10" style={{ color: "#F5C124" }}>The Story Behind Email-Vmail</p>
+          {/* Section label — P.S. treatment */}
+          <div className="mb-12">
+            <p className="font-barlow text-sm font-bold tracking-[0.25em] uppercase mb-2" style={{ color: "#F5C124" }}>P.S.</p>
+            <h2 className="font-barlow text-3xl md:text-4xl font-black leading-tight" style={{ color: "#2D3A28" }}>The Story Behind Email-Vmail</h2>
+            <div className="w-12 h-1 mt-4 rounded-full" style={{ backgroundColor: "#F5C124" }} />
+          </div>
 
           <p className="font-inter text-lg leading-[1.85] mb-5" style={{ color: "rgba(45,58,40,0.8)", textAlign: "justify" }}>
             In 2012, I was a first-year college student, hanging out with a group of friends I&apos;m still close with today. One afternoon, we did what broke college kids do… brainstormed &ldquo;big money&rdquo; business ideas.
