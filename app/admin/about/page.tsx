@@ -26,7 +26,7 @@ interface AboutContent {
 }
 
 const DEFAULT: AboutContent = {
-  hero: { name: "Ameer Hamza", role: "Founder & Email Marketing Strategist", tagline: "" },
+  hero: { name: "Ameer Hamza", role: "Email Strategist — Lifecycle & Retention Marketing", tagline: "" },
   company: {
     headline: "Done-For-You Email Marketing for Firearms, Ammo & Tactical Brands",
     subheadline: "We build and run the lifecycle email infrastructure that turns your subscriber list into your most reliable, highest-ROI revenue channel.",

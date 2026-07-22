@@ -9,7 +9,7 @@ const GRID = (size: number) =>
 const DEFAULT = {
   hero: {
     name: "Ameer Hamza",
-    role: "Founder & Email Marketing Strategist",
+    role: "Email Strategist — Lifecycle & Retention Marketing",
     tagline: "",
   },
   company: {
@@ -170,7 +170,7 @@ export default function AboutPage() {
             <h1 className="font-barlow text-4xl md:text-6xl font-black text-white leading-[1.1] mb-8">
               {company.headline}
             </h1>
-            <p className="font-inter text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+            <p className="font-inter text-xl md:text-2xl leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
               {company.subheadline}
             </p>
           </div>
@@ -182,18 +182,16 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="rounded-2xl p-8" style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(245,193,36,0.3)" }}>
               <p className="font-barlow text-sm font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>Mission</p>
-              <p className="font-barlow text-2xl font-black text-white mb-5 leading-snug">
-                {company.missionStatement}
-              </p>
+              <p className="font-barlow text-2xl font-black text-white mb-1 leading-tight">Our mission is simple.</p>
+              <p className="font-barlow text-2xl font-black text-white mb-5 leading-tight">Move your customers from subscribed to sold, again and again.</p>
               <p className="font-inter text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
                 {company.missionBody}
               </p>
             </div>
             <div className="rounded-2xl p-8" style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(245,193,36,0.3)" }}>
               <p className="font-barlow text-sm font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>Doctrine</p>
-              <p className="font-barlow text-2xl font-black text-white mb-5 leading-snug">
-                {company.doctrineStatement}
-              </p>
+              <p className="font-barlow text-2xl font-black text-white mb-1 leading-tight">Our doctrine is simple.</p>
+              <p className="font-barlow text-2xl font-black text-white mb-5 leading-tight">Precision.</p>
               <p className="font-inter text-lg leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)" }}>
                 {company.doctrineBody1}
               </p>
