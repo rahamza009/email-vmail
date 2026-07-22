@@ -7,7 +7,7 @@ const SERVICES = [
   },
   {
     title: "Email Automations",
-    desc: "Email Automations for gun and ammo stores generate revenue on auto-pilot & increase customers Lifetime Value. It reduces your Customer Acquisition Cost making email marketing a sustainable revenue engine. Automations use personalized touch points to keep customers in the loop and trigger repeat purchases of consumable gear.",
+    desc: "Klaviyo and ActiveCampaign email automations for gun stores, ammo retailers, and hunting stores generate revenue on auto-pilot and increase customer lifetime value. We reduce Customer Acquisition Cost and build a sustainable retention engine. Automations use personalized touchpoints to trigger repeat purchases of firearms, ammo, and consumable gear.",
   },
   {
     title: "HTML Email Design",
@@ -49,13 +49,13 @@ export default function Services() {
             className="font-barlow text-3xl md:text-4xl font-black mb-4"
             style={{ color: "#F5C124" }}
           >
-            We Fix the Leaks for<br />Predictable Revenue Growth.
+            Email Marketing for Gun Stores That Drives<br />Predictable Revenue Growth.
           </h2>
           <p
             className="font-inter max-w-3xl mx-auto mb-14 text-lg"
             style={{ color: "rgba(45,58,40,0.6)" }}
           >
-            Email-Vmail is the email marketing agency for gun stores that builds the full system: compliant flows, real list splits, and copy built for firearms retailers — not a generic crowd. We serve FFL dealers, ammo stores, and tactical, hunting, and knife brands across the United States.
+            Email-Vmail is the email marketing agency for gun stores that builds the full system: compliant Klaviyo and ActiveCampaign flows, real list splits, and copy built for firearms retailers — not a generic crowd. We serve FFL dealers, ammo stores, hunting stores, knife retailers, and tactical gear brands across the United States. On Shopify, WooCommerce, or any custom platform.
           </p>
         </FadeIn>
 

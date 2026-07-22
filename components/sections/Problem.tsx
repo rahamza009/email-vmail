@@ -27,7 +27,7 @@ export default function Problem() {
             className="font-barlow text-3xl md:text-4xl font-black mb-4"
             style={{ color: "#F5C124" }}
           >
-            Your Online Store Is<br />Leaking Revenue
+            Gun Stores Are Losing Email Revenue<br />Every Single Month
           </h2>
           <p className="font-inter max-w-3xl mx-auto mb-4 text-lg text-white/60">
             Most gun stores treat email as an afterthought. Risk scares them off. So they send one flat newsletter and call it done. That leaves real cash on the table each month.
