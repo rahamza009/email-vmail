@@ -183,7 +183,7 @@ export default function AboutPage() {
             <div className="rounded-2xl p-8" style={{ backgroundColor: "rgba(255,255,255,0.05)", border: "1px solid rgba(245,193,36,0.3)" }}>
               <p className="font-barlow text-sm font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>Mission</p>
               <p className="font-barlow text-2xl font-black text-white mb-1 leading-tight">Our mission is simple.</p>
-              <p className="font-barlow text-2xl font-black text-white mb-5 leading-tight">Move your customers from subscribed to sold, again and again.</p>
+              <p className="font-barlow text-2xl font-black text-white mb-5 leading-tight">From subscribed to sold, again and again.</p>
               <p className="font-inter text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
                 {company.missionBody}
               </p>
