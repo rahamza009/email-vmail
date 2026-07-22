@@ -46,6 +46,28 @@ const DEFAULT_SEO = {
   metaDescription: "Done-For-You email marketing agency for gun stores, FFL dealers, ammo retailers, and 2A brands. ESP-compliant lifecycle systems that turn subscribers into repeat buyers.",
 };
 
+function Input({ label, value, onChange, rows, max }: { label: string; value: string; onChange: (v: string) => void; rows?: number; max?: number }) {
+  const len = value.length;
+  const countColor = !max ? undefined : len === 0 ? "rgba(45,58,40,0.3)" : len <= max * 0.85 ? "#16a34a" : len <= max ? "#ca8a04" : "#dc2626";
+  return (
+    <div>
+      <div className="flex justify-between items-center mb-1.5">
+        <label className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.5)" }}>{label}</label>
+        {max && <span className="font-inter text-xs font-semibold tabular-nums" style={{ color: countColor }}>{len}/{max}</span>}
+      </div>
+      {rows ? (
+        <textarea value={value} onChange={e => onChange(e.target.value)} rows={rows}
+          className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none transition-colors focus:border-[#F5C124] resize-y"
+          style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }} />
+      ) : (
+        <input value={value} onChange={e => onChange(e.target.value)}
+          className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none transition-colors focus:border-[#F5C124]"
+          style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }} />
+      )}
+    </div>
+  );
+}
+
 export default function ContentPage() {
   const router = useRouter();
   const [tab, setTab] = useState<Tab>("hero");
@@ -88,28 +110,6 @@ export default function ContentPage() {
       {[1,2].map(i => <div key={i} className="h-32 rounded-2xl animate-pulse" style={{ backgroundColor: "rgba(45,58,40,0.06)" }} />)}
     </div>
   );
-
-  const Input = ({ label, value, onChange, rows, max }: { label: string; value: string; onChange: (v: string) => void; rows?: number; max?: number }) => {
-    const len = value.length;
-    const countColor = !max ? undefined : len === 0 ? "rgba(45,58,40,0.3)" : len <= max * 0.85 ? "#16a34a" : len <= max ? "#ca8a04" : "#dc2626";
-    return (
-      <div>
-        <div className="flex justify-between items-center mb-1.5">
-          <label className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.5)" }}>{label}</label>
-          {max && <span className="font-inter text-xs font-semibold tabular-nums" style={{ color: countColor }}>{len}/{max}</span>}
-        </div>
-        {rows ? (
-          <textarea value={value} onChange={e => onChange(e.target.value)} rows={rows}
-            className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none transition-colors focus:border-[#F5C124] resize-y"
-            style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }} />
-        ) : (
-          <input value={value} onChange={e => onChange(e.target.value)}
-            className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none transition-colors focus:border-[#F5C124]"
-            style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }} />
-        )}
-      </div>
-    );
-  };
 
   return (
     <div className="p-6 md:p-8 max-w-3xl">
