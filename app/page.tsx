@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { getHomeContent } from "@/lib/getHomeContent";
 import HomeClient from "./HomeClient";
 
+export const revalidate = 60;
+
 const DEFAULT_TITLE = "Email-Vmail | Email Marketing Agency for Gun Stores & FFL Dealers";
 const DEFAULT_DESC  = "Email marketing agency for gun stores, FFL dealers, ammo retailers, and 2A brands across the United States. Compliant lifecycle and retention systems that turn subscribers into repeat buyers.";
 
