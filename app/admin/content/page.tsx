@@ -6,38 +6,38 @@ import { useRouter } from "next/navigation";
 type Tab = "hero" | "problem" | "services" | "seo";
 
 const DEFAULT_HERO = {
-  tag: "DFY Email Marketing Agency for FFL & 2A Industry",
-  h1Line1: "DFY Email Marketing Agency For FFLs,",
-  h1Line2: "Firearms, Ammunition and 2-A Brands",
-  subhead: "You built the brand. You earned the customers. But a single platform ban, a shadowban, or an algorithm update can erase it overnight. Email is the only channel you own. We build and run the system that turns your list into your most reliable revenue driver.",
+  tag: "Done-For-You Email Marketing Agency",
+  h1Line1: "Email Marketing Agency for Gun Stores,",
+  h1Line2: "FFL Dealers & Firearms Retailers",
+  subhead: "From subscribed to sold, again and again. We build compliant retention and lifecycle email marketing systems for firearms retailers, ammo stores, and 2A brands across the United States.",
   ctaPrimary: "Get $0 Account Audit",
-  ctaSecondary: "Book a Strategy Call",
+  ctaSecondary: "Fix My Retention",
 };
 
 const DEFAULT_PROBLEM = {
   tag: "Your Challenges Range",
-  h2Line1: "Why Your Email Isn't",
-  h2Line2: "Printing What It Should",
-  subhead: "Most 2A brands have a list. Most of them are leaving serious money on the table because the right systems aren't in place.",
+  h2Line1: "Gun Stores Are Losing Email Revenue",
+  h2Line2: "Every Single Month",
+  subhead: "Most gun stores treat email as an afterthought. Risk scares them off. So they send one flat newsletter and call it done. That leaves real cash on the table each month.\n\nRisk is real. One bad move can cost your list overnight. Weak repeat sales cost you too. Most stores chase new buyers and ignore the ones they already won. Flat templates make it worse — a dull email loses trust fast in this trade.",
   cards: [
-    { title: "Your Email Account Gets Banned Without Warning", body: "Mainstream ESPs like Mailchimp, Klaviyo, and ActiveCampaign routinely suspend firearms, ammo, and tactical businesses. One policy update and your account is gone, taking your list, your automations, and your entire revenue engine with it overnight." },
-    { title: "You're Sending Broadcasts Instead of Lifecycle Emails", body: "Blasting your full list with the same generic email every week isn't a strategy. Without segmentation, automation, and a real lifecycle system, you're leaving the majority of your revenue potential untouched every single month." },
-    { title: "Social Reach Can Disappear Overnight", body: "Instagram, Facebook, and TikTok restrict 2A content aggressively. Your organic reach can vanish without warning. Email is the one channel where you own the relationship, with no algorithm deciding who sees your message." },
+    { title: "Compliance Challenges", body: "FFL dealers and firearms retailers face strict ESP compliance requirements that generic agencies ignore. One policy violation and your account is gone — taking your list, your automations, and your entire revenue engine with it overnight." },
+    { title: "No Retention System", body: "Gun stores make the sale and move on. Without a retention email marketing system built for firearms ecommerce, you miss the relationship that turns a one-time buyer into a repeat customer worth 3–5x more." },
+    { title: "Poor Email Design", body: "Poorly structured templates and weak copy create a confusing experience. In a trust-driven industry like firearms and ammo, poor email design costs you credibility with gun owners before it costs you the sale." },
   ],
 };
 
 const DEFAULT_SERVICES = {
   tag: "The Solution",
-  h2Line1: "Done-For-You Email Systems",
-  h2Line2: "That Work While You Sell",
-  subhead: "We handle everything from strategy to execution. You focus on the business, we make your list print.",
+  h2Line1: "Email Marketing for Gun Stores That Drives",
+  h2Line2: "Predictable Revenue Growth.",
+  subhead: "Email-Vmail is the email marketing agency for gun stores that builds the full system: compliant Klaviyo and ActiveCampaign flows, real list splits, and copy built for firearms retailers — not a generic crowd. We serve FFL dealers, ammo stores, hunting stores, knife retailers, and tactical gear brands across the United States. On Shopify, WooCommerce, or any custom platform.",
   cards: [
-    { title: "Welcome & Onboarding Flows", body: "Turn new subscribers into first-time buyers with a sequenced onboarding series built around your products, your brand story, and the purchase triggers that actually work in 2A." },
-    { title: "Abandoned Cart & Browse Recovery", body: "Recover lost revenue automatically. We build segmented cart and browse abandonment flows that re-engage high-intent buyers before they forget you exist." },
-    { title: "Retention & Repeat Purchase Systems", body: "Your best customer is the one you already have. Post-purchase sequences, replenishment reminders, and loyalty flows keep buyers coming back without any ad spend." },
-    { title: "Campaign Management", body: "Weekly or bi-weekly campaign execution — copywriting, design, scheduling, and optimization — so your list hears from you consistently without adding to your workload." },
-    { title: "List Health & Deliverability", body: "Clean lists reach inboxes. We manage suppression, re-engagement campaigns, and deliverability monitoring to protect your sender reputation across every send." },
-    { title: "ESP Migration & Setup", body: "Moving from a banned or restricted ESP? We handle the full migration: list transfer, automation rebuild, domain warmup, and compliance review for your new platform." },
+    { title: "Email Strategy & Audit", desc: "We start with evaluating your current infrastructure, identifying challenges & loopholes. It follows a revenue-first email marketing strategy for firearms stores before a single campaign goes live. A data-driven strategy leads your brand growth in a way each KPI is marked and reported, offering a clear path to predictable revenue." },
+    { title: "Email Automations", desc: "Klaviyo and ActiveCampaign email automations for gun stores, ammo retailers, and hunting stores generate revenue on auto-pilot and increase customer lifetime value. We reduce Customer Acquisition Cost and build a sustainable retention engine. Automations use personalized touchpoints to trigger repeat purchases of firearms, ammo, and consumable gear." },
+    { title: "HTML Email Design", desc: "Firearms, ammunition and tactical gear stores holds a reputation for dull email designs. We create battle-tested, responsive & creative templates that beats the industry and enhance user experience, prompting shooters & gun owners to buy more. They render sharp in every inbox, ensuring every recipient is engaged, nurtured and converted." },
+    { title: "Campaign Management", desc: "We craft tailored email campaigns for firearms, hunting and knives stores. Each campaign tied to brand value and customer loyalty. We curate email campaigns based on customer browsing & purchasing behaviours focusing sales, promo, seasonal or educational. Full send calendar, scheduling, A/B testing." },
+    { title: "List Segmentation", desc: "List building and segmentation for firearms stores is tricky. We create smart segments based on customer's engagement & purchasing behaviours to send tailored emails i.e. engagement, purchase, repeat purchase, never purchase, and VIP customers. We send the right message to the right buyer at the right time." },
+    { title: "Email Copywriting", desc: "There are hardly any firearms copywriters. At Email-Vmail, we write sales driven, industry-compatible email copy that convert gun owners, shooters and tactical gear users. Every word is crafted to build rapport, reflect their mindset, and drive action. Its intent remains to turn subscribers and browsers into buyers, again and again." },
   ],
 };
 
@@ -186,7 +186,7 @@ export default function ContentPage() {
             <div key={i} className="bg-white rounded-2xl border p-6 space-y-4" style={{ borderColor: "rgba(45,58,40,0.1)" }}>
               <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.4)" }}>Card {i+1}</p>
               <Input label="Title" value={card.title} onChange={v => setServices(p => { const cards = [...p.cards]; cards[i] = { ...cards[i], title: v }; return { ...p, cards }; })} />
-              <Input label="Body" value={card.body} onChange={v => setServices(p => { const cards = [...p.cards]; cards[i] = { ...cards[i], body: v }; return { ...p, cards }; })} rows={4} />
+              <Input label="Body" value={card.desc} onChange={v => setServices(p => { const cards = [...p.cards]; cards[i] = { ...cards[i], desc: v }; return { ...p, cards }; })} rows={4} />
             </div>
           ))}
         </div>

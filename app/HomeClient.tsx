@@ -10,8 +10,9 @@ import Founder from "@/components/sections/Founder";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
 import Newsletter from "@/components/sections/Newsletter";
+import type { HomeContent } from "@/lib/getHomeContent";
 
-export default function HomeClient() {
+export default function HomeClient({ content }: { content?: HomeContent | null }) {
   useEffect(() => {
     const target = sessionStorage.getItem("scrollTo");
     if (target) {
@@ -24,10 +25,10 @@ export default function HomeClient() {
 
   return (
     <main>
-      <Hero />
+      <Hero data={content?.hero} />
       <TrustBar />
-      <Problem />
-      <Services />
+      <Problem data={content?.problem} />
+      <Services data={content?.services} />
       <ICP />
       <Founder />
       <Pricing />

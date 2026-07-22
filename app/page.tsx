@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { getPageSeo } from "@/lib/getPageSeo";
+import { getHomeContent } from "@/lib/getHomeContent";
 import HomeClient from "./HomeClient";
 
 const DEFAULT_TITLE = "Email-Vmail | Email Marketing Agency for Gun Stores & FFL Dealers";
 const DEFAULT_DESC  = "Email marketing agency for gun stores, FFL dealers, ammo retailers, and 2A brands across the United States. Compliant lifecycle and retention systems that turn subscribers into repeat buyers.";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seo = await getPageSeo("home");
+  const content = await getHomeContent();
   return {
-    title:       seo?.metaTitle       || DEFAULT_TITLE,
-    description: seo?.metaDescription || DEFAULT_DESC,
+    title:       content?.seo?.metaTitle       || DEFAULT_TITLE,
+    description: content?.seo?.metaDescription || DEFAULT_DESC,
   };
 }
 
-export default function Page() {
+export default async function Page() {
+  const content = await getHomeContent();
   return (
     <>
       <script
@@ -67,7 +68,7 @@ export default function Page() {
           })
         }}
       />
-      <HomeClient />
+      <HomeClient content={content} />
     </>
   );
 }

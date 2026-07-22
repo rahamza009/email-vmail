@@ -1,6 +1,7 @@
 import FadeIn from "@/components/FadeIn";
+import type { ServicesSection } from "@/lib/getHomeContent";
 
-const SERVICES = [
+const D_CARDS = [
   {
     title: "Email Strategy & Audit",
     desc: "We start with evaluating your current infrastructure, identifying challenges & loopholes. It follows a revenue-first email marketing strategy for firearms stores before a single campaign goes live. A data-driven strategy leads your brand growth in a way each KPI is marked and reported, offering a clear path to predictable revenue.",
@@ -15,7 +16,7 @@ const SERVICES = [
   },
   {
     title: "Campaign Management",
-    desc: "We craft tailored email campaigns for firearms, hunting and knives stores. Each campaign tied to brand value and customer loyalty. Usually, stores send newsletter emails once a week. We curate email campaigns based on customer browsing & purchasing behaviours focusing sales, promo, seasonal or educational. Full send calendar, scheduling, A/B testing.",
+    desc: "We craft tailored email campaigns for firearms, hunting and knives stores. Each campaign tied to brand value and customer loyalty. We curate email campaigns based on customer browsing & purchasing behaviours focusing sales, promo, seasonal or educational. Full send calendar, scheduling, A/B testing.",
   },
   {
     title: "List Segmentation",
@@ -27,6 +28,13 @@ const SERVICES = [
   },
 ];
 
+const D: Required<Omit<ServicesSection, "cards">> = {
+  tag: "The Solution",
+  h2Line1: "Email Marketing for Gun Stores That Drives",
+  h2Line2: "Predictable Revenue Growth.",
+  subhead: "Email-Vmail is the email marketing agency for gun stores that builds the full system: compliant Klaviyo and ActiveCampaign flows, real list splits, and copy built for firearms retailers — not a generic crowd. We serve FFL dealers, ammo stores, hunting stores, knife retailers, and tactical gear brands across the United States. On Shopify, WooCommerce, or any custom platform.",
+};
+
 const ESPS = [
   { name: "Klaviyo",        accent: "#45E9A5" },
   { name: "ActiveCampaign", accent: "#356AE6" },
@@ -37,30 +45,36 @@ const ESPS = [
   { name: "Dotdigital",     accent: "#F5A623" },
 ];
 
-export default function Services() {
+export default function Services({ data }: { data?: ServicesSection }) {
+  const tag    = data?.tag    || D.tag;
+  const h2Line1 = data?.h2Line1 || D.h2Line1;
+  const h2Line2 = data?.h2Line2 || D.h2Line2;
+  const subhead = data?.subhead || D.subhead;
+  const cards  = data?.cards?.length ? data.cards : D_CARDS;
+
   return (
     <section id="services" className="pt-10 pb-6 px-6 bg-white scroll-mt-20">
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
           <p className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-4" style={{ color: "#F5C124" }}>
-            The Solution
+            {tag}
           </p>
           <h2
             className="font-barlow text-3xl md:text-4xl font-black mb-4"
             style={{ color: "#F5C124" }}
           >
-            Email Marketing for Gun Stores That Drives<br />Predictable Revenue Growth.
+            {h2Line1}<br />{h2Line2}
           </h2>
           <p
             className="font-inter max-w-3xl mx-auto mb-14 text-lg"
             style={{ color: "rgba(45,58,40,0.6)" }}
           >
-            Email-Vmail is the email marketing agency for gun stores that builds the full system: compliant Klaviyo and ActiveCampaign flows, real list splits, and copy built for firearms retailers — not a generic crowd. We serve FFL dealers, ammo stores, hunting stores, knife retailers, and tactical gear brands across the United States. On Shopify, WooCommerce, or any custom platform.
+            {subhead}
           </p>
         </FadeIn>
 
         <div className="grid grid-cols-12 gap-5 mb-16">
-          {SERVICES.map((s, i) => (
+          {cards.map((s, i) => (
             <FadeIn key={s.title} delay={i * 90} className="col-span-12 sm:col-span-4">
               <div
                 className="rounded-xl p-6 border-2 h-full flex flex-col gap-3"
@@ -95,17 +109,13 @@ export default function Services() {
               Platforms We Work With
             </p>
 
-            {/* Ticker */}
             <div className="overflow-hidden">
               <div className="ticker-track flex gap-8 w-max">
                 {[...ESPS, ...ESPS].map((esp, i) => (
                   <div
                     key={i}
                     className="flex items-center gap-2 px-6 py-3 rounded-lg shrink-0"
-                    style={{
-                      border: "1px solid rgba(45,58,40,0.15)",
-                      backgroundColor: "rgba(45,58,40,0.05)",
-                    }}
+                    style={{ border: "1px solid rgba(45,58,40,0.15)", backgroundColor: "rgba(45,58,40,0.05)" }}
                   >
                     <span
                       className="inline-block w-2 h-2 rounded-full shrink-0"
