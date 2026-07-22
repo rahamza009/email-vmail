@@ -3,27 +3,27 @@ import FadeIn from "@/components/FadeIn";
 const SERVICES = [
   {
     title: "Email Strategy & Audit",
-    desc: "We build a revenue-first email strategy before a single campaign goes live. We audit your current setup, identify every revenue gap, and map a data-driven Execution Plan tied directly to your store's growth targets. Each KPI is marked and reported, offering a clear path to predictable revenue.",
+    desc: "We start with evaluating your current infrastructure, identifying challenges & loopholes. It follows a revenue-first email marketing strategy for firearms stores before a single campaign goes live. A data-driven strategy leads your brand growth in a way each KPI is marked and reported, offering a clear path to predictable revenue.",
   },
   {
     title: "Email Automations",
-    desc: "Curated email automations to generate revenue on auto-pilot & increase customers Lifetime Value. Automations use personalized touch points to keep customers in the loop and trigger repeat purchases of consumable gear.",
+    desc: "Email Automations for gun and ammo stores generate revenue on auto-pilot & increase customers Lifetime Value. It reduces your Customer Acquisition Cost making email marketing a sustainable revenue engine. Automations use personalized touch points to keep customers in the loop and trigger repeat purchases of consumable gear.",
   },
   {
     title: "HTML Email Design",
-    desc: "Battle-tested, responsive & creative templates that enhance user experience, prompting people to buy more. They render sharp in every inbox, ensuring every recipient is engaged, nurtured and converted.",
+    desc: "Firearms, ammunition and tactical gear stores holds a reputation for dull email designs. We create battle-tested, responsive & creative templates that beats the industry and enhance user experience, prompting shooters & gun owners to buy more. They render sharp in every inbox, ensuring every recipient is engaged, nurtured and converted.",
   },
   {
     title: "Campaign Management",
-    desc: "We plan revenue-first email campaigns tied to brand value and loyalty. Each campaign follows a sales, promo or educational logic for content diversity and reading recipient behaviors. Full send calendar, scheduling, A/B testing. Everything.",
+    desc: "We craft tailored email campaigns for firearms, hunting and knives stores. Each campaign tied to brand value and customer loyalty. Usually, stores send newsletter emails once a week. We curate email campaigns based on customer browsing & purchasing behaviours focusing sales, promo, seasonal or educational. Full send calendar, scheduling, A/B testing.",
   },
   {
     title: "List Segmentation",
-    desc: "Smart segments based on customer behaviour i.e. engagement, purchase, repeat purchase, never purchase, and VIP customers. We send the right message to the right buyer at the right time.",
+    desc: "List building and segmentation for firearms stores is tricky. We create smart segments based on customer's engagement & purchasing behaviours to send tailored emails i.e. engagement, purchase, repeat purchase, never purchase, and VIP customers. We send the right message to the right buyer at the right time.",
   },
   {
     title: "Email Copywriting",
-    desc: "Niche-specific, industry-compatible copy written for gun owners and tactical gear buyers. Every word is crafted to build rapport, reflect their mindset, and drive action. Its intent remains to turn subscribers and browsers into buyers, again and again.",
+    desc: "There are hardly any firearms copywriters. At Email-Vmail, we write sales driven, industry-compatible email copy that convert gun owners, shooters and tactical gear users. Every word is crafted to build rapport, reflect their mindset, and drive action. Its intent remains to turn subscribers and browsers into buyers, again and again.",
   },
 ];
 
@@ -42,17 +42,20 @@ export default function Services() {
     <section id="services" className="pt-10 pb-6 px-6 bg-white scroll-mt-20">
       <div className="max-w-6xl mx-auto text-center">
         <FadeIn>
+          <p className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-4" style={{ color: "#F5C124" }}>
+            The Solution
+          </p>
           <h2
             className="font-barlow text-3xl md:text-4xl font-black mb-4"
             style={{ color: "#F5C124" }}
           >
-            We Fix the Leaks for Predictable Revenue Growth.
+            We Fix the Leaks for<br />Predictable Revenue Growth.
           </h2>
           <p
-            className="font-inter max-w-lg mx-auto mb-14 text-lg"
+            className="font-inter max-w-3xl mx-auto mb-14 text-lg"
             style={{ color: "rgba(45,58,40,0.6)" }}
           >
-            Niche-Specific, Industry Compatible. End-to-End Email Marketing. DFY Strategy and Execution.
+            Niche-specific, industry-compatible, and compliance-focused strategies build a safer and reliable email and SMS marketing ecosystem. We build customer retention and lifecycle marketing systems for firearms, ammunition, tactical gear, hunting, knives and performance sports online retailers.
           </p>
         </FadeIn>
 
@@ -60,16 +63,16 @@ export default function Services() {
           {SERVICES.map((s, i) => (
             <FadeIn key={s.title} delay={i * 90} className="col-span-12 sm:col-span-4">
               <div
-                className="rounded-xl p-6 text-center border-2 h-full flex flex-col items-center gap-3"
+                className="rounded-xl p-6 border-2 h-full flex flex-col gap-3"
                 style={{ backgroundColor: "#2D3A28", borderColor: "#F5C124" }}
               >
                 <h3
-                  className="font-barlow text-lg font-bold text-white flex items-center justify-center"
+                  className="font-barlow text-xl font-bold text-white text-justify"
                   style={{ minHeight: "2.75rem" }}
                 >
                   {s.title}
                 </h3>
-                <p className="font-inter text-lg leading-relaxed text-white/75">
+                <p className="font-inter text-xl leading-relaxed text-white/75 text-justify">
                   {s.desc}
                 </p>
               </div>

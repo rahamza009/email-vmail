@@ -1,38 +1,18 @@
-"use client";
+import type { Metadata } from "next";
+import { getPageSeo } from "@/lib/getPageSeo";
+import HomeClient from "./HomeClient";
 
-import { useEffect } from "react";
-import Hero from "@/components/sections/Hero";
-import TrustBar from "@/components/sections/TrustBar";
-import Problem from "@/components/sections/Problem";
-import Services from "@/components/sections/Services";
-import ICP from "@/components/sections/ICP";
-import Founder from "@/components/sections/Founder";
-import Pricing from "@/components/sections/Pricing";
-import FAQ from "@/components/sections/FAQ";
-import Newsletter from "@/components/sections/Newsletter";
+const DEFAULT_TITLE = "Email-Vmail | DFY Email Marketing for Firearms & 2A Brands";
+const DEFAULT_DESC  = "Done-For-You email marketing agency for gun stores, FFL dealers, ammo retailers, and 2A brands. ESP-compliant lifecycle systems that turn subscribers into repeat buyers.";
 
-export default function Home() {
-  useEffect(() => {
-    const target = sessionStorage.getItem("scrollTo");
-    if (target) {
-      sessionStorage.removeItem("scrollTo");
-      setTimeout(() => {
-        document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    }
-  }, []);
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getPageSeo("home");
+  return {
+    title:       seo?.metaTitle       || DEFAULT_TITLE,
+    description: seo?.metaDescription || DEFAULT_DESC,
+  };
+}
 
-  return (
-    <main>
-      <Hero />
-      <TrustBar />
-      <Problem />
-      <Services />
-      <ICP />
-      <Founder />
-      <Pricing />
-      <FAQ />
-      <Newsletter />
-    </main>
-  );
+export default function Page() {
+  return <HomeClient />;
 }

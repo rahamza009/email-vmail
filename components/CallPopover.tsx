@@ -45,7 +45,7 @@ export default function CallPopover({ children, position = "above" }: Props) {
         <div
           className={`absolute ${
             position === "above" ? "bottom-full mb-4" : "top-full mt-4"
-          } left-1/2 -translate-x-1/2 z-50 w-72 rounded-2xl shadow-2xl border`}
+          } left-1/2 -translate-x-1/2 z-50 w-72 rounded-xl shadow-2xl border`}
           style={{ backgroundColor: "#1a2316", borderColor: "rgba(245,193,36,0.25)" }}
           onMouseEnter={show}
           onMouseLeave={hide}

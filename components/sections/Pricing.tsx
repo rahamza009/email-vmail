@@ -145,9 +145,7 @@ export default function Pricing() {
                 <div className="flex justify-center">
                   <AuditPopover position="above">
                     <a
-                      href="https://tally.so/r/aQk8yW?utm_source=free-audit"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="/audit"
                       className="font-barlow font-bold px-10 py-4 rounded-xl text-base tracking-wide transition-opacity hover:opacity-90 block text-center"
                       style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}
                     >

@@ -48,7 +48,7 @@ export default function AuditPopover({ children, position = "above" }: Props) {
         <div
           className={`absolute ${
             position === "above" ? "bottom-full mb-4" : "top-full mt-4"
-          } left-1/2 -translate-x-1/2 z-50 w-80 md:w-96 rounded-2xl shadow-2xl border`}
+          } left-1/2 -translate-x-1/2 z-50 w-80 md:w-96 rounded-xl shadow-2xl border`}
           style={{ backgroundColor: "#1a2316", borderColor: "rgba(245,193,36,0.25)" }}
           onMouseEnter={show}
           onMouseLeave={hide}

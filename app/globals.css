@@ -42,6 +42,22 @@ body {
   animation-play-state: paused;
 }
 
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideOutLeft {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-40px); }
+}
+
+.slide-in-right { animation: slideInRight 0.25s ease forwards; }
+.slide-in-left  { animation: slideInLeft  0.25s ease forwards; }
+
 .fade-in {
   opacity: 0;
   transform: translateY(24px);

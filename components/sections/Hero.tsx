@@ -36,7 +36,7 @@ export default function Hero() {
               className="font-barlow text-xs font-bold tracking-[0.25em] uppercase px-4 py-2 rounded-full"
               style={{ color: "#F5C124", backgroundColor: "#2D3A28" }}
             >
-              DFY Email Marketing Agency
+              Done-For-You Email Marketing Agency
             </p>
           </div>
 
@@ -44,8 +44,7 @@ export default function Hero() {
             className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6"
             style={{ color: "#2D3A28" }}
           >
-            Email Marketing Built for<br />
-            Gun Stores, Ammo and Tactical Gear.
+            DFY Email Marketing Agency For FFLs,<br />Firearms, Ammunition and 2-A Brands
           </h1>
 
           <p
@@ -59,14 +58,13 @@ export default function Hero() {
             >
               again and again.
             </em>
+            {" "}We bring shooters and gun owners back to your store through revenue-first, ESP compliant, retention and lifecycle strategies.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
             <AuditPopover position="above">
               <a
-                href="https://tally.so/r/aQk8yW?utm_source=free-audit"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/audit"
                 className="font-barlow font-bold px-9 py-4 rounded text-base tracking-wide transition-opacity hover:opacity-90 block text-center w-full sm:w-[240px]"
                 style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}
               >

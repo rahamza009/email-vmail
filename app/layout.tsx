@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Rajdhani, Barlow, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import FooterDivider from "@/components/FooterDivider";
+import SiteShell from "@/components/SiteShell";
 
 const rajdhani = Rajdhani({
   weight: ["400", "500", "600", "700"],
@@ -23,9 +22,29 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Email-Vmail | DFY Email Marketing for Tactical Stores",
+  title: "Email-Vmail | DFY Email Marketing for Firearms & 2A Brands",
   description:
-    "Done-For-You email marketing agency for guns, ammo & tactical stores. From Subscribed to Sold — Again and Again.",
+    "Done-For-You email marketing agency for gun stores, FFL dealers, ammo retailers, and 2A brands. ESP-compliant lifecycle systems that turn subscribers into repeat buyers.",
+  metadataBase: new URL("https://emailvmail.com"),
+  openGraph: {
+    type: "website",
+    siteName: "Email-Vmail",
+    title: "Email-Vmail | DFY Email Marketing for Firearms & 2A Brands",
+    description:
+      "Done-For-You email marketing for gun stores, ammo retailers, and 2A brands. From subscribed to sold, again and again.",
+    url: "https://emailvmail.com",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Email-Vmail | DFY Email Marketing for Firearms & 2A Brands",
+    description:
+      "Done-For-You email marketing for gun stores, ammo retailers, and 2A brands. From subscribed to sold, again and again.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -37,10 +56,34 @@ export default function RootLayout({
       className={`${rajdhani.variable} ${barlow.variable} ${inter.variable}`}
     >
       <body className="antialiased">
-        <Navbar />
-        {children}
-        <FooterDivider />
-        <Footer />
+        <Script id="google-tag-manager" strategy="beforeInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KW478NFN');`}
+        </Script>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KW478NFN"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-28L8BWNRYP"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-28L8BWNRYP');
+          `}
+        </Script>
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
