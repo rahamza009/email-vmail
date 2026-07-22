@@ -23,12 +23,12 @@ const PAIN_POINTS = [
   {
     num: "01",
     title: "Poor Customer Segmentation",
-    body: "Collectors, hunters, EDC enthusiasts, campers, gift buyers, and self-defense shoppers each have different interests and purchase behaviors. Without meaningful segmentation, every customer receives the same promotions — reducing engagement, conversions, and repeat purchases.",
+    body: "We split your list by what they love, not just when they bought: collectors, hunters, everyday carriers, campers, and gift shoppers all need their own path. We build that path from first email to repeat buy to win-back.",
   },
   {
     num: "02",
     title: "Generic Customer Journeys",
-    body: "A premium knife, hunting backpack, or survival kit shouldn't be marketed with the same campaigns. Generic automations fail to deliver the right message at the right time, leaving revenue on the table throughout the customer lifecycle.",
+    body: "Timing matters more here than most trades. Hunt season brings one wave of buyers. Gift season brings a second wave. New drops bring a third. We build your plan around your real year, not a flat template built for any store, anywhere.",
   },
   {
     num: "03",
@@ -115,7 +115,7 @@ export default function KnifeTacticalOutdoorPage() {
             </h1>
 
             <p className="font-inter text-2xl md:text-3xl max-w-3xl mx-auto mb-4 leading-relaxed" style={{ color: "rgba(45,58,40,0.75)" }}>
-              From subscribed to sold, again and again. We turn subscribers into loyal repeat customers with lifecycle email marketing designed to maximize customer lifetime value.
+              Knife, hunting, and gear brands sell in a different way. Buyers feel real pride in what they carry. Flat, one-size ads miss that fact.
             </p>
             <p className="font-inter text-lg max-w-2xl mx-auto mb-10" style={{ color: "rgba(45,58,40,0.5)" }}>
               Serving knife stores, hunting retailers, EDC brands, outdoor gear companies, survival gear retailers, and self-defense product businesses.

@@ -3,6 +3,21 @@ import clientPromise from "@/lib/mongodb";
 
 export const revalidate = 60;
 
+export const metadata = {
+  title: "Tactical Email Insights | Email-Vmail Blog",
+  description: "Compliance guides, ESP comparisons, and lifecycle marketing strategy for FFL dealers, ammo retailers, and tactical gear brands.",
+  openGraph: {
+    title: "Tactical Email Insights | Email-Vmail Blog",
+    description: "Straight-talk email marketing strategy for the firearms and tactical industry — compliance, flows, and segmentation.",
+  },
+  twitter: {
+    card: "summary_large_image" as const,
+    title: "Tactical Email Insights | Email-Vmail Blog",
+    description: "Compliance guides, ESP comparisons, and lifecycle marketing strategy for FFL dealers, ammo retailers, and tactical gear brands.",
+  },
+  alternates: { canonical: "https://emailvmail.com/blog" },
+};
+
 interface Post {
   _id: string;
   title: string;

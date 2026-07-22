@@ -55,7 +55,7 @@ export default function Services() {
             className="font-inter max-w-3xl mx-auto mb-14 text-lg"
             style={{ color: "rgba(45,58,40,0.6)" }}
           >
-            Niche-specific, industry-compatible, and compliance-focused strategies build a safer and reliable email and SMS marketing ecosystem. We build customer retention and lifecycle marketing systems for firearms, ammunition, tactical gear, hunting, knives and performance sports online retailers.
+            Email-Vmail builds the full system instead: compliant flows, real list splits, and copy built for gun owners, not a generic crowd. We serve FFL dealers and ammo sellers. We serve tactical, hunting, and knife brands too. Stores trust us from Texas and Florida to Ohio, Georgia, and beyond.
           </p>
         </FadeIn>
 
@@ -79,6 +79,12 @@ export default function Services() {
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={280}>
+          <p className="font-inter text-lg max-w-3xl mx-auto mb-10" style={{ color: "rgba(45,58,40,0.6)" }}>
+            We fix all three. Each flow follows the rules. Each list split comes from real buying habits, not guesswork. Each template is built to sell, not just to look neat. The result: buyers come back, again and again.
+          </p>
+        </FadeIn>
 
         <FadeIn delay={350}>
           <div className="border-t pt-10" style={{ borderColor: "rgba(45,58,40,0.15)" }}>

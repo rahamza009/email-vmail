@@ -30,10 +30,10 @@ export default function Problem() {
             Your Online Store Is<br />Leaking Revenue
           </h2>
           <p className="font-inter max-w-3xl mx-auto mb-4 text-lg text-white/60">
-            Most firearm retailers treat email marketing as an afterthought due to compliance risk and fail to run a full-scope email marketing system for firearms, ammunition, tactical gear, knife and hunting brands. This leaks the revenue from your online sales funnel every month.
+            Most gun stores treat email as an afterthought. Risk scares them off. So they send one flat newsletter and call it done. That leaves real cash on the table each month.
           </p>
           <p className="font-inter max-w-3xl mx-auto mb-14 text-lg text-white/60">
-            At Email-Vmail, we offer 100% ownership of your Email Marketing setup. Our niche-specific, industry-compatible knowledge base enables us to offer you a seamless marketing experience.
+            Risk is real. One bad move can cost your list overnight. Weak repeat sales cost you too. Most stores chase new buyers and ignore the ones they already won. Flat templates make it worse — a dull email loses trust fast in this trade.
           </p>
         </FadeIn>
 

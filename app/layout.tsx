@@ -83,6 +83,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             gtag('config', 'G-28L8BWNRYP');
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Email-Vmail",
+              "url": "https://emailvmail.com",
+              "description": "Done-for-you email marketing agency for firearms, ammunition, and tactical gear retailers.",
+              "founder": {
+                "@type": "Person",
+                "name": "Ameer Hamza",
+                "jobTitle": "Founder & Email Strategist",
+                "sameAs": ["https://linkedin.com/in/rahamza009/"]
+              },
+              "knowsAbout": [
+                "Email Marketing",
+                "Lifecycle Marketing",
+                "Klaviyo",
+                "ActiveCampaign",
+                "Firearms Industry Compliance",
+                "Ecommerce Retention",
+                "Customer Segmentation"
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "serviceType": "Email Marketing for Firearms, Ammunition, and Tactical Gear Retailers",
+              "provider": {
+                "@type": "Organization",
+                "name": "Email-Vmail",
+                "url": "https://emailvmail.com"
+              },
+              "areaServed": [
+                { "@type": "State", "name": "Texas" },
+                { "@type": "State", "name": "Florida" },
+                { "@type": "State", "name": "Pennsylvania" },
+                { "@type": "State", "name": "North Carolina" },
+                { "@type": "State", "name": "Ohio" },
+                { "@type": "State", "name": "Arizona" },
+                { "@type": "State", "name": "Georgia" },
+                { "@type": "State", "name": "Tennessee" }
+              ],
+              "audience": {
+                "@type": "BusinessAudience",
+                "audienceType": "FFL dealers, gun stores, ammunition retailers, tactical gear and outdoor brands"
+              }
+            })
+          }}
+        />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

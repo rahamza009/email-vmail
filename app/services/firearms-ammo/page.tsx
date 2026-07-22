@@ -28,12 +28,12 @@ const PAIN_POINTS = [
   {
     num: "02",
     title: "Low Customer Lifetime Value",
-    body: "Most stores work hard to acquire customers but leave repeat revenue untapped. Without post-purchase journeys, replenishment reminders, and personalized follow-ups, customers have little reason to return for their next purchase.",
+    body: "The next problem is repeat sales. Most FFL dealers win a buyer once, then the tie ends there. No restock note. No related offer. No reason to return. We build the flows that fix this: welcome notes, post-sale check-ins, restock alerts, and win-back sends.",
   },
   {
     num: "03",
     title: "One-Size-Fits-All Emails",
-    body: "Sending identical campaigns to first-time buyers, loyal customers, and high-value shoppers misses revenue. Smarter segmentation increases engagement, improves relevance, and drives significantly more repeat purchases from the same list.",
+    body: "The third problem is flat copy. A first-time buyer and a top collector should not get the same note. We split your list by what they bought, what they like, and how active they are. This works the same in Texas, Florida, Ohio, and Georgia alike.",
   },
 ];
 
@@ -115,7 +115,7 @@ export default function FirearmsAmmoPage() {
             </h1>
 
             <p className="font-inter text-2xl md:text-3xl max-w-3xl mx-auto mb-10 leading-relaxed" style={{ color: "rgba(45,58,40,0.75)" }}>
-              Helping FFL dealers, gun stores, ammo retailers, and tactical gear brands increase repeat purchases through compliance-first automations, advanced segmentation, and deliverability-focus.
+              Gun stores face stricter rules than most online shops. One wrong move with your email tool can freeze your whole list. We fix that first.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
