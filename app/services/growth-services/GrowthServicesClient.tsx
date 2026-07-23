@@ -2,46 +2,30 @@
 
 import { useState } from "react";
 
-const SERVICES = [
-  {
-    title: "Web Development & Store Management",
-    desc: "High-converting, compliant storefronts built for the firearms and tactical industry. From Shopify customization to full-stack builds — we handle development, ongoing maintenance, and performance optimization so your store stays fast, functional, and converting.",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Industry-Compatible SEO",
-    desc: "Search engine optimization built around the unique restrictions of the firearms and tactical space. We target high-intent keywords, build compliant content architecture, and grow your organic visibility without triggering platform restrictions or policy flags.",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Niche Content Writing",
-    desc: "Product descriptions, blog posts, buying guides, and brand copy written by people who actually understand the industry. Accurate terminology, compliant language, and content that converts — not generic AI copy that sounds like it was written by someone who's never held a firearm.",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Compliant Digital Marketing",
-    desc: "Paid and organic marketing strategies that work within the strict advertising policies of the 2A space. We know what Google, Meta, and other platforms will and won't allow — and we build campaigns that generate revenue without getting your accounts flagged or banned.",
-    icon: (
-      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-      </svg>
-    ),
-  },
+const ICONS = [
+  <svg key="web" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>,
+  <svg key="seo" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" /></svg>,
+  <svg key="content" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>,
+  <svg key="marketing" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
 ];
 
-const SERVICE_NAMES = SERVICES.map(s => s.title);
+const DEFAULT_SERVICES = [
+  { title: "Web Development & Store Management", desc: "High-converting, compliant storefronts built for the firearms and tactical industry. From Shopify customization to full-stack builds — we handle development, ongoing maintenance, and performance optimization so your store stays fast, functional, and converting." },
+  { title: "Industry-Compatible SEO", desc: "Search engine optimization built around the unique restrictions of the firearms and tactical space. We target high-intent keywords, build compliant content architecture, and grow your organic visibility without triggering platform restrictions or policy flags." },
+  { title: "Niche Content Writing", desc: "Product descriptions, blog posts, buying guides, and brand copy written by people who actually understand the industry. Accurate terminology, compliant language, and content that converts — not generic AI copy that sounds like it was written by someone who's never held a firearm." },
+  { title: "Compliant Digital Marketing", desc: "Paid and organic marketing strategies that work within the strict advertising policies of the 2A space. We know what Google, Meta, and other platforms will and won't allow — and we build campaigns that generate revenue without getting your accounts flagged or banned." },
+];
+
+interface Props {
+  heroTag?: string;
+  h1Line1?: string;
+  h1Line2?: string;
+  heroSubhead?: string;
+  serviceCards?: Array<{ title: string; desc: string }>;
+  ctaBody?: string;
+}
+
+const SERVICE_NAMES = DEFAULT_SERVICES.map(s => s.title);
 
 function Modal({ onClose }: { onClose: () => void }) {
   const [form, setForm] = useState({ fullName: "", email: "", phone: "", businessName: "", service: "", challenge: "" });
@@ -153,8 +137,15 @@ function Modal({ onClose }: { onClose: () => void }) {
   );
 }
 
-export default function GrowthServicesClient() {
+export default function GrowthServicesClient({ heroTag, h1Line1, h1Line2, heroSubhead, serviceCards, ctaBody }: Props) {
   const [modalOpen, setModalOpen] = useState(false);
+
+  const tag      = heroTag    || "Digital Marketing Agency for Gun Stores";
+  const line1    = h1Line1   || "One Partner for Everything";
+  const line2    = h1Line2   || "Your Firearms Store Needs to Grow";
+  const subhead  = heroSubhead || "Web development, SEO for firearms ecommerce, content writing, and compliant digital marketing — built by people who know the 2A industry.";
+  const cards    = serviceCards?.length ? serviceCards.map((c, i) => ({ ...c, icon: ICONS[i] ?? ICONS[0] })) : DEFAULT_SERVICES.map((s, i) => ({ ...s, icon: ICONS[i] }));
+  const ctaText  = ctaBody   || "Tell us about your current challenges and which services you need. We'll follow up within 1 business day with a clear plan.";
 
   return (
     <>
@@ -162,12 +153,12 @@ export default function GrowthServicesClient() {
       <main className="min-h-screen bg-white">
         <section className="pt-32 pb-20 px-6" style={{ backgroundColor: "#2D3A28" }}>
           <div className="max-w-4xl mx-auto text-center">
-            <p className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>Other Services</p>
+            <p className="font-barlow text-xs font-bold tracking-[0.25em] uppercase mb-5" style={{ color: "#F5C124" }}>{tag}</p>
             <h1 className="font-barlow text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white mb-6">
-              We offer you a complete<br className="hidden md:block" /> marketing package
+              {line1}<br className="hidden md:block" />{line2}
             </h1>
             <p className="font-inter text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: "rgba(255,255,255,0.65)" }}>
-              A one-stop window for growth with clear KPIs and benchmarks. Everything your store needs to compete — built by people who know the industry.
+              {subhead}
             </p>
           </div>
         </section>
@@ -175,7 +166,7 @@ export default function GrowthServicesClient() {
         <section className="py-20 px-6" style={{ backgroundColor: "#f7f5f0" }}>
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
-              {SERVICES.map(service => (
+              {cards.map(service => (
                 <div key={service.title} className="rounded-2xl border p-8 bg-white" style={{ borderColor: "rgba(45,58,40,0.1)" }}>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-6" style={{ backgroundColor: "rgba(245,193,36,0.12)", color: "#2D3A28" }}>
                     {service.icon}
@@ -196,7 +187,7 @@ export default function GrowthServicesClient() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </button>
-              <p className="font-inter text-sm mt-3" style={{ color: "rgba(45,58,40,0.4)" }}>We respond within 1 business day</p>
+              <p className="font-inter text-sm mt-3 max-w-md mx-auto" style={{ color: "rgba(45,58,40,0.4)" }}>{ctaText}</p>
             </div>
           </div>
         </section>
