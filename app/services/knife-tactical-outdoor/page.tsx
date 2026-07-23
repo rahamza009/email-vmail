@@ -2,16 +2,18 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import AuditPopover from "@/components/AuditPopover";
 import CallPopover from "@/components/CallPopover";
-import { getPageSeo } from "@/lib/getPageSeo";
+import { getServiceContent } from "@/lib/getServiceContent";
+
+export const revalidate = 60;
 
 const DEFAULT_TITLE = "Email Marketing for Knife Stores, Hunting & Outdoor Gear Brands | Email-Vmail";
 const DEFAULT_DESC  = "Email marketing agency for knife stores, hunting retailers, tactical gear brands, EDC companies, and outdoor gear ecommerce across the United States. Lifecycle and retention systems that build repeat purchases and grow customer lifetime value.";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seo = await getPageSeo("knife-tactical-outdoor");
+  const cms = await getServiceContent("knife-tactical-outdoor");
   return {
-    title:       seo?.metaTitle       || DEFAULT_TITLE,
-    description: seo?.metaDescription || DEFAULT_DESC,
+    title:       cms?.seo?.metaTitle       || DEFAULT_TITLE,
+    description: cms?.seo?.metaDescription || DEFAULT_DESC,
     alternates: { canonical: "https://emailvmail.com/services/knife-tactical-outdoor" },
   };
 }
@@ -94,7 +96,21 @@ const WHY_US = [
 const TAG = "font-barlow text-base font-bold tracking-[0.2em] uppercase mb-3 text-center";
 const CARD_BODY = "font-inter text-xl leading-relaxed";
 
-export default function KnifeTacticalOutdoorPage() {
+export default async function KnifeTacticalOutdoorPage() {
+  const cms = await getServiceContent("knife-tactical-outdoor");
+
+  const heroTag    = cms?.heroTag      || "Knife, Hunting & EDC";
+  const h1Line1    = cms?.heroH1Line1  || "Email Marketing for Knife Stores,";
+  const h1Line2    = cms?.heroH1Line2  || "Hunting Retailers & Outdoor Gear Brands";
+  const heroSub    = cms?.heroSubhead  || "Knife stores and hunting retailers sell differently than mainstream ecommerce. Buyers feel real pride in what they carry. Generic email marketing misses that entirely.";
+  const probTag    = cms?.problemTag   || "The Revenue Leaks";
+  const probH2L1   = cms?.problemH2Line1 || "Are You Aware of Revenue Leaks";
+  const probH2L2   = cms?.problemH2Line2 || "in Your Email Setup?";
+  const painPoints = cms?.painPoints?.length ? cms.painPoints : PAIN_POINTS;
+  const ctaH2L1    = cms?.ctaH2Line1  || "Ready to Turn Subscribers Into";
+  const ctaH2L2    = cms?.ctaH2Line2  || "Repeat Customers?";
+  const ctaBody    = cms?.ctaBody     || "Let's uncover the biggest revenue leaks in your email program and build a lifecycle strategy that keeps customers coming back — again and again.";
+
   return (
     <>
       {/* ── Hero ──────────────────────────────────── */}
@@ -106,16 +122,16 @@ export default function KnifeTacticalOutdoorPage() {
           <FadeIn>
             <div className="inline-block mb-5">
               <p className="font-barlow text-sm font-bold tracking-[0.2em] uppercase px-5 py-2 rounded-full" style={{ color: "#F5C124", backgroundColor: "#2D3A28" }}>
-                Knife, Hunting &amp; EDC
+                {heroTag}
               </p>
             </div>
 
             <h1 className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6" style={{ color: "#2D3A28" }}>
-              Email Marketing for Knife Stores,<br />Hunting Retailers &amp; Outdoor Gear Brands
+              {h1Line1}<br />{h1Line2}
             </h1>
 
             <p className="font-inter text-2xl md:text-3xl max-w-3xl mx-auto mb-4 leading-relaxed" style={{ color: "rgba(45,58,40,0.75)" }}>
-              Knife stores and hunting retailers sell differently than mainstream ecommerce. Buyers feel real pride in what they carry. Generic email marketing misses that entirely.
+              {heroSub}
             </p>
             <p className="font-inter text-lg max-w-2xl mx-auto mb-10" style={{ color: "rgba(45,58,40,0.5)" }}>
               Serving knife stores, hunting retailers, EDC brands, tactical gear companies, outdoor gear ecommerce, survival gear retailers, and self-defense product businesses across the United States.
@@ -141,17 +157,14 @@ export default function KnifeTacticalOutdoorPage() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <p className={TAG} style={{ color: "#F5C124" }}>The Revenue Leaks</p>
+            <p className={TAG} style={{ color: "#F5C124" }}>{probTag}</p>
             <h2 className="font-barlow text-3xl md:text-4xl font-black text-center mb-3" style={{ color: "#2D3A28" }}>
-              Are You Aware of Revenue Leaks<br />in Your Email Setup?
+              {probH2L1}<br />{probH2L2}
             </h2>
-            <p className="font-inter text-xl text-center mb-14 max-w-2xl mx-auto" style={{ color: "rgba(45,58,40,0.6)" }}>
-              Most knife and outdoor brands don&apos;t realize how much revenue quietly leaks from their email program.
-            </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {PAIN_POINTS.map((p, i) => (
+            {painPoints.map((p, i) => (
               <FadeIn key={p.num} delay={i * 100}>
                 <div className="rounded-2xl p-9 h-full" style={{ backgroundColor: "#F9FAFB", border: "1px solid #F5C124" }}>
                   <span className="font-barlow text-4xl font-black block mb-5" style={{ color: "rgba(45,58,40,0.12)" }}>{p.num}</span>
@@ -261,10 +274,10 @@ export default function KnifeTacticalOutdoorPage() {
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-barlow text-3xl md:text-4xl font-black mb-4" style={{ color: "#2D3A28" }}>
-              Ready to Turn Subscribers Into<br />Repeat Customers?
+              {ctaH2L1}<br />{ctaH2L2}
             </h2>
             <p className="font-inter text-xl mb-8" style={{ color: "rgba(45,58,40,0.65)" }}>
-              Let&apos;s uncover the biggest revenue leaks in your email program and build a lifecycle strategy that keeps customers coming back — again and again.
+              {ctaBody}
             </p>
             <AuditPopover position="above">
               <a href="/audit" className="inline-block font-barlow font-bold px-10 py-4 rounded-xl text-base tracking-wide transition-opacity hover:opacity-90" style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}>

@@ -2,16 +2,18 @@ import type { Metadata } from "next";
 import FadeIn from "@/components/FadeIn";
 import AuditPopover from "@/components/AuditPopover";
 import CallPopover from "@/components/CallPopover";
-import { getPageSeo } from "@/lib/getPageSeo";
+import { getServiceContent } from "@/lib/getServiceContent";
+
+export const revalidate = 60;
 
 const DEFAULT_TITLE = "Email Marketing Agency for Gun Stores & FFL Dealers | Email-Vmail";
 const DEFAULT_DESC  = "Email marketing agency for gun stores, FFL dealers, and ammo retailers across the United States. Compliance-first lifecycle and retention systems that grow customer lifetime value and drive repeat revenue for firearms ecommerce.";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seo = await getPageSeo("firearms-ammo");
+  const cms = await getServiceContent("firearms-ammo");
   return {
-    title:       seo?.metaTitle       || DEFAULT_TITLE,
-    description: seo?.metaDescription || DEFAULT_DESC,
+    title:       cms?.seo?.metaTitle       || DEFAULT_TITLE,
+    description: cms?.seo?.metaDescription || DEFAULT_DESC,
     alternates: { canonical: "https://emailvmail.com/services/firearms-ammo" },
   };
 }
@@ -94,7 +96,21 @@ const WHY_US = [
 const TAG = "font-barlow text-base font-bold tracking-[0.2em] uppercase mb-3 text-center";
 const CARD_BODY = "font-inter text-xl leading-relaxed";
 
-export default function FirearmsAmmoPage() {
+export default async function FirearmsAmmoPage() {
+  const cms = await getServiceContent("firearms-ammo");
+
+  const heroTag    = cms?.heroTag      || "More Revenue. Less Compliance Risk.";
+  const h1Line1    = cms?.heroH1Line1  || "Email Marketing Agency for Gun Stores,";
+  const h1Line2    = cms?.heroH1Line2  || "FFL Dealers & Ammo Retailers";
+  const heroSub    = cms?.heroSubhead  || "Gun stores face stricter rules than most online shops. One wrong move with your email tool can freeze your whole list. We fix that first.";
+  const probTag    = cms?.problemTag   || "The Problem";
+  const probH2L1   = cms?.problemH2Line1 || "Want to Generate More Revenue from Email?";
+  const probH2L2   = cms?.problemH2Line2 || "Start by fixing these 3 things.";
+  const painPoints = cms?.painPoints?.length ? cms.painPoints : PAIN_POINTS;
+  const ctaH2L1    = cms?.ctaH2Line1  || "Ready to Turn Your Gun Store’s";
+  const ctaH2L2    = cms?.ctaH2Line2  || "Subscribers Into Repeat Buyers?";
+  const ctaBody    = cms?.ctaBody     || "We work with gun stores, FFL dealers, and ammo retailers across the United States. Let’s find the biggest revenue leaks in your email program and build the lifecycle system that fixes them.";
+
   return (
     <>
       {/* ── Hero ──────────────────────────────────── */}
@@ -106,16 +122,16 @@ export default function FirearmsAmmoPage() {
           <FadeIn>
             <div className="inline-block mb-5">
               <p className="font-barlow text-sm font-bold tracking-[0.2em] uppercase px-5 py-2 rounded-full" style={{ color: "#F5C124", backgroundColor: "#2D3A28" }}>
-                More Revenue. Less Compliance Risk.
+                {heroTag}
               </p>
             </div>
 
             <h1 className="font-barlow text-4xl md:text-5xl font-black leading-[1.1] mb-6" style={{ color: "#2D3A28" }}>
-              Email Marketing Agency for Gun Stores,<br />FFL Dealers &amp; Ammo Retailers
+              {h1Line1}<br />{h1Line2}
             </h1>
 
             <p className="font-inter text-2xl md:text-3xl max-w-3xl mx-auto mb-10 leading-relaxed" style={{ color: "rgba(45,58,40,0.75)" }}>
-              Gun stores face stricter rules than most online shops. One wrong move with your email tool can freeze your whole list. We fix that first.
+              {heroSub}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch">
@@ -138,17 +154,17 @@ export default function FirearmsAmmoPage() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <p className={TAG} style={{ color: "#F5C124" }}>The Problem</p>
+            <p className={TAG} style={{ color: "#F5C124" }}>{probTag}</p>
             <h2 className="font-barlow text-3xl md:text-4xl font-black text-center mb-3" style={{ color: "#2D3A28" }}>
-              Want to Generate More Revenue from Email?
+              {probH2L1}
             </h2>
             <p className="font-inter text-xl text-center mb-14 max-w-xl mx-auto" style={{ color: "rgba(45,58,40,0.6)" }}>
-              Start by fixing these 3 things.
+              {probH2L2}
             </p>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {PAIN_POINTS.map((p, i) => (
+            {painPoints.map((p, i) => (
               <FadeIn key={p.num} delay={i * 100}>
                 <div className="rounded-2xl p-9 h-full" style={{ backgroundColor: "#F9FAFB", border: "1px solid #F5C124" }}>
                   <span className="font-barlow text-4xl font-black block mb-5" style={{ color: "rgba(45,58,40,0.12)" }}>{p.num}</span>
@@ -258,10 +274,10 @@ export default function FirearmsAmmoPage() {
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <h2 className="font-barlow text-3xl md:text-4xl font-black mb-4" style={{ color: "#2D3A28" }}>
-              Ready to Turn Your Gun Store&apos;s<br />Subscribers Into Repeat Buyers?
+              {ctaH2L1}<br />{ctaH2L2}
             </h2>
             <p className="font-inter text-xl mb-8" style={{ color: "rgba(45,58,40,0.65)" }}>
-              We work with gun stores, FFL dealers, and ammo retailers across the United States. Let&apos;s find the biggest revenue leaks in your email program and build the lifecycle system that fixes them.
+              {ctaBody}
             </p>
             <AuditPopover position="above">
               <a href="/audit" className="inline-block font-barlow font-bold px-10 py-4 rounded-xl text-base tracking-wide transition-opacity hover:opacity-90" style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}>
