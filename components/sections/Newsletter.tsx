@@ -29,21 +29,21 @@ export default function Newsletter() {
           className="font-barlow text-xs font-bold tracking-[0.25em] uppercase px-4 py-2 rounded-full inline-block mb-5"
           style={{ color: "#F5C124", backgroundColor: "#2D3A28" }}
         >
-          Bi-Monthly Email Newsletter
+          The Weekly ValueMail
         </p>
 
         <h2
           className="font-barlow text-3xl md:text-4xl font-black mb-4 leading-tight"
           style={{ color: "#2D3A28" }}
         >
-          Email Strategies to Grow Your Gun Store Revenue — Free.
+          Join the Newsletter Every Gun &amp; Tactical Store Owner Should Read
         </h2>
 
         <p
           className="font-inter text-lg mb-10"
           style={{ color: "rgba(45,58,40,0.65)" }}
         >
-          Practical tactics, real examples, no fluff. Sent twice a month to gun store owners and tactical retailers.
+          Let&apos;s make email your highest ROI marketing channel. Discover how we build profitable email marketing systems.
         </p>
 
         {status === "done" ? (
@@ -79,7 +79,7 @@ export default function Newsletter() {
               className="font-barlow font-black text-base tracking-wide px-8 py-4 rounded-lg transition-opacity hover:opacity-90 disabled:opacity-60 whitespace-nowrap"
               style={{ backgroundColor: "#2D3A28", color: "#F5C124" }}
             >
-              {status === "submitting" ? "Subscribing..." : "Get Free Tips"}
+              {status === "submitting" ? "Joining..." : "Join VMail"}
             </button>
           </form>
         )}
