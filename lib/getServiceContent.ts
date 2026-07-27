@@ -18,7 +18,16 @@ export interface ServiceContent {
   ctaH2Line1?: string;
   ctaH2Line2?: string;
   ctaBody?: string;
-  seo?: { metaTitle?: string; metaDescription?: string };
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    robots?: string;
+    canonical?: string;
+    ogImage?: string;
+    ogImageAlt?: string;
+    datePublished?: string;
+    dateModified?: string;
+  };
 }
 
 export async function getServiceContent(pageKey: string): Promise<ServiceContent | null> {

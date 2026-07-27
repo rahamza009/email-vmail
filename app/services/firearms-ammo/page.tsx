@@ -11,10 +11,23 @@ const DEFAULT_DESC  = "Email marketing agency for gun stores, FFL dealers, and a
 
 export async function generateMetadata(): Promise<Metadata> {
   const cms = await getServiceContent("firearms-ammo");
+  const seo = cms?.seo;
   return {
-    title:       cms?.seo?.metaTitle       || DEFAULT_TITLE,
-    description: cms?.seo?.metaDescription || DEFAULT_DESC,
-    alternates: { canonical: "https://emailvmail.com/services/firearms-ammo" },
+    title:       seo?.metaTitle       || DEFAULT_TITLE,
+    description: seo?.metaDescription || DEFAULT_DESC,
+    robots:      seo?.robots          || "index,follow",
+    alternates:  { canonical: seo?.canonical || "https://emailvmail.com/services/firearms-ammo" },
+    openGraph: {
+      title:       seo?.metaTitle       || DEFAULT_TITLE,
+      description: seo?.metaDescription || DEFAULT_DESC,
+      ...(seo?.ogImage ? { images: [{ url: seo.ogImage, alt: seo.ogImageAlt || "" }] } : {}),
+    },
+    ...(seo?.datePublished || seo?.dateModified ? {
+      other: {
+        ...(seo.datePublished ? { "article:published_time": seo.datePublished } : {}),
+        ...(seo.dateModified  ? { "article:modified_time":  seo.dateModified  } : {}),
+      },
+    } : {}),
   };
 }
 

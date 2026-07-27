@@ -6,7 +6,16 @@ import { useRouter } from "next/navigation";
 type PageKey = "firearms-ammo" | "knife-tactical-outdoor" | "growth-services";
 
 interface PainCard { num: string; title: string; body: string; }
-interface PageSeo { metaTitle: string; metaDescription: string; }
+interface PageSeo {
+  metaTitle: string;
+  metaDescription: string;
+  robots: string;
+  canonical: string;
+  ogImage: string;
+  ogImageAlt: string;
+  datePublished: string;
+  dateModified: string;
+}
 interface ServiceContent {
   heroTag: string; heroH1Line1: string; heroH1Line2: string; heroSubhead: string;
   problemTag: string; problemH2Line1: string; problemH2Line2: string;
@@ -46,6 +55,12 @@ const DEFAULTS: Record<PageKey, ServiceContent> = {
     seo: {
       metaTitle: "Email Marketing Agency for Gun Stores & FFL Dealers | Email-Vmail",
       metaDescription: "Email marketing agency for gun stores, FFL dealers, and ammo retailers across the United States. Compliance-first lifecycle and retention systems that grow customer lifetime value and drive repeat revenue for firearms ecommerce.",
+      robots: "index,follow",
+      canonical: "https://emailvmail.com/services/firearms-ammo",
+      ogImage: "",
+      ogImageAlt: "",
+      datePublished: "",
+      dateModified: "",
     },
   },
   "knife-tactical-outdoor": {
@@ -77,6 +92,12 @@ const DEFAULTS: Record<PageKey, ServiceContent> = {
     seo: {
       metaTitle: "Email Marketing for Knife Stores, Hunting & Outdoor Gear Brands | Email-Vmail",
       metaDescription: "Email marketing agency for knife stores, hunting retailers, tactical gear brands, EDC companies, and outdoor gear ecommerce across the United States. Lifecycle and retention systems that build repeat purchases and grow customer lifetime value.",
+      robots: "index,follow",
+      canonical: "https://emailvmail.com/services/knife-tactical-outdoor",
+      ogImage: "",
+      ogImageAlt: "",
+      datePublished: "",
+      dateModified: "",
     },
   },
   "growth-services": {
@@ -109,6 +130,12 @@ const DEFAULTS: Record<PageKey, ServiceContent> = {
     seo: {
       metaTitle: "Digital Marketing Agency for Gun Stores | SEO, Web & Content | Email-Vmail",
       metaDescription: "Digital marketing agency for gun stores, FFL dealers, and 2A brands in the United States. SEO for firearms ecommerce, web development, and content writing — one partner for everything your store needs to grow online.",
+      robots: "index,follow",
+      canonical: "https://emailvmail.com/services/growth-services",
+      ogImage: "",
+      ogImageAlt: "",
+      datePublished: "",
+      dateModified: "",
     },
   },
 };
@@ -285,29 +312,65 @@ export default function ServicePagesEditor() {
         </div>
 
         {/* SEO section */}
-        <div className="rounded-2xl border-2 p-6 space-y-4" style={{ borderColor: "#F5C124", backgroundColor: "rgba(245,193,36,0.03)" }}>
-          <div className="flex items-center gap-2 mb-1">
-            <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="#F5C124" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35"/></svg>
-            <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "#2D3A28" }}>SEO — Meta Tags</p>
+        <div className="space-y-4">
+          {/* Core meta */}
+          <div className="rounded-2xl border-2 p-6 space-y-4" style={{ borderColor: "#F5C124", backgroundColor: "rgba(245,193,36,0.03)" }}>
+            <div className="flex items-center gap-2 mb-1">
+              <svg className="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="#F5C124" strokeWidth={2}><circle cx="11" cy="11" r="8"/><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35"/></svg>
+              <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "#2D3A28" }}>Core Meta</p>
+            </div>
+            <Input label="Meta Title" value={cur.seo?.metaTitle ?? ""} onChange={v => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, metaTitle: v } } }))} max={60} />
+            <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Keep under 60 characters.</p>
+            <Input label="Meta Description" value={cur.seo?.metaDescription ?? ""} onChange={v => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, metaDescription: v } } }))} rows={3} max={160} />
+            <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Keep under 160 characters.</p>
           </div>
-          <p className="font-inter text-xs" style={{ color: "rgba(45,58,40,0.55)" }}>
-            These fields control what Google shows for this page. Save then deploy to apply changes.
-          </p>
-          <Input
-            label="Meta Title"
-            value={cur.seo?.metaTitle ?? ""}
-            onChange={v => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, metaTitle: v } } }))}
-            max={60}
-          />
-          <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Shown as the blue link in Google results. Keep under 60 characters.</p>
-          <Input
-            label="Meta Description"
-            value={cur.seo?.metaDescription ?? ""}
-            onChange={v => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, metaDescription: v } } }))}
-            rows={3}
-            max={160}
-          />
-          <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>The snippet shown under your title in Google. Keep under 160 characters.</p>
+
+          {/* Crawling & canonical */}
+          <div className="bg-white rounded-2xl border p-6 space-y-4" style={{ borderColor: "rgba(45,58,40,0.1)" }}>
+            <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.4)" }}>Crawling & Indexing</p>
+            <div>
+              <label className="font-barlow text-xs font-bold tracking-widest uppercase mb-1.5 block" style={{ color: "rgba(45,58,40,0.5)" }}>Robots Directive</label>
+              <select value={cur.seo?.robots ?? "index,follow"} onChange={e => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, robots: e.target.value } } }))}
+                className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none bg-white focus:border-[#F5C124]"
+                style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }}>
+                <option value="index,follow">index, follow — Google crawls and indexes this page</option>
+                <option value="noindex,follow">noindex, follow — hide from Google but follow links</option>
+                <option value="index,nofollow">index, nofollow — index page but ignore links</option>
+                <option value="noindex,nofollow">noindex, nofollow — hide entirely from Google</option>
+              </select>
+            </div>
+            <Input label="Canonical URL" value={cur.seo?.canonical ?? ""} onChange={v => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, canonical: v } } }))} />
+            <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Prevents duplicate content penalties. Should match this page's full URL.</p>
+          </div>
+
+          {/* OG image */}
+          <div className="bg-white rounded-2xl border p-6 space-y-4" style={{ borderColor: "rgba(45,58,40,0.1)" }}>
+            <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.4)" }}>Social Preview Image (OG Image)</p>
+            <Input label="OG Image URL" value={cur.seo?.ogImage ?? ""} onChange={v => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, ogImage: v } } }))} />
+            <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Full URL of the image shown when sharing on social. Ideal: 1200×630px.</p>
+            <Input label="OG Image Alt Text" value={cur.seo?.ogImageAlt ?? ""} onChange={v => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, ogImageAlt: v } } }))} />
+            <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Describe the image for screen readers and SEO compliance.</p>
+          </div>
+
+          {/* Chronological tags */}
+          <div className="bg-white rounded-2xl border p-6 space-y-4" style={{ borderColor: "rgba(45,58,40,0.1)" }}>
+            <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.4)" }}>Chronological Tags</p>
+            <p className="font-inter text-sm -mt-2" style={{ color: "rgba(45,58,40,0.55)" }}>Signals content freshness to Google and improves crawl priority for updated pages.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="font-barlow text-xs font-bold tracking-widest uppercase mb-1.5 block" style={{ color: "rgba(45,58,40,0.5)" }}>Date Published</label>
+                <input type="date" value={cur.seo?.datePublished ?? ""} onChange={e => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, datePublished: e.target.value } } }))}
+                  className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none focus:border-[#F5C124]"
+                  style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }} />
+              </div>
+              <div>
+                <label className="font-barlow text-xs font-bold tracking-widest uppercase mb-1.5 block" style={{ color: "rgba(45,58,40,0.5)" }}>Date Last Modified</label>
+                <input type="date" value={cur.seo?.dateModified ?? ""} onChange={e => setData(p => ({ ...p, [active]: { ...p[active], seo: { ...p[active].seo, dateModified: e.target.value } } }))}
+                  className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none focus:border-[#F5C124]"
+                  style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }} />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

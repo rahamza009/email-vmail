@@ -67,6 +67,15 @@ const MODULES = [
     ),
   },
   {
+    href: "/admin/seo",
+    title: "SEO & Sitemap",
+    desc: "Manage sitemap.xml, robots.txt, indexing rules, and crawl settings",
+    color: "#22d3ee",
+    icon: (
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" /></svg>
+    ),
+  },
+  {
     href: "/admin/settings",
     title: "Settings",
     desc: "CTA URLs, Calendly link, tracking IDs, and deploy",

@@ -44,6 +44,12 @@ const DEFAULT_SERVICES = {
 const DEFAULT_SEO = {
   metaTitle: "Email-Vmail | DFY Email Marketing for Firearms & 2A Brands",
   metaDescription: "Done-For-You email marketing agency for gun stores, FFL dealers, ammo retailers, and 2A brands. ESP-compliant lifecycle systems that turn subscribers into repeat buyers.",
+  robots: "index,follow",
+  canonical: "https://emailvmail.com/",
+  ogImage: "",
+  ogImageAlt: "",
+  datePublished: "",
+  dateModified: "",
 };
 
 function Input({ label, value, onChange, rows, max }: { label: string; value: string; onChange: (v: string) => void; rows?: number; max?: number }) {
@@ -195,25 +201,63 @@ export default function ContentPage() {
       {tab === "seo" && (
         <div className="space-y-5">
           <div className="p-4 rounded-2xl font-inter text-sm" style={{ backgroundColor: "rgba(45,58,40,0.05)", color: "rgba(45,58,40,0.65)" }}>
-            <strong style={{ color: "#2D3A28" }}>How this works:</strong> Save changes here, then deploy. The meta title and description will be baked into the HTML at deploy time — exactly what Google reads when it indexes your page.
+            <strong style={{ color: "#2D3A28" }}>How this works:</strong> Save changes here, then deploy to apply them live. These fields control exactly how Google crawls, indexes, and displays this page.
           </div>
+
+          {/* Core meta */}
           <div className="bg-white rounded-2xl border p-6 space-y-5" style={{ borderColor: "rgba(45,58,40,0.1)" }}>
-            <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.4)" }}>Search Engine Meta Tags — Home Page</p>
-            <Input
-              label="Meta Title"
-              value={seo.metaTitle}
-              onChange={v => setSeo(p => ({ ...p, metaTitle: v }))}
-              max={60}
-            />
+            <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.4)" }}>Core Meta — Home Page</p>
+            <Input label="Meta Title" value={seo.metaTitle} onChange={v => setSeo(p => ({ ...p, metaTitle: v }))} max={60} />
             <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Shown as the blue link in Google results. Keep under 60 characters.</p>
-            <Input
-              label="Meta Description"
-              value={seo.metaDescription}
-              onChange={v => setSeo(p => ({ ...p, metaDescription: v }))}
-              rows={3}
-              max={160}
-            />
+            <Input label="Meta Description" value={seo.metaDescription} onChange={v => setSeo(p => ({ ...p, metaDescription: v }))} rows={3} max={160} />
             <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>The snippet shown under your title in Google. Keep under 160 characters.</p>
+          </div>
+
+          {/* Indexing & canonical */}
+          <div className="bg-white rounded-2xl border p-6 space-y-5" style={{ borderColor: "rgba(45,58,40,0.1)" }}>
+            <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.4)" }}>Crawling & Indexing</p>
+            <div>
+              <label className="font-barlow text-xs font-bold tracking-widest uppercase mb-1.5 block" style={{ color: "rgba(45,58,40,0.5)" }}>Robots Directive</label>
+              <select value={seo.robots} onChange={e => setSeo(p => ({ ...p, robots: e.target.value }))}
+                className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none bg-white focus:border-[#F5C124]"
+                style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }}>
+                <option value="index,follow">index, follow — Google crawls and indexes this page</option>
+                <option value="noindex,follow">noindex, follow — hide from Google but follow links</option>
+                <option value="index,nofollow">index, nofollow — index page but ignore links</option>
+                <option value="noindex,nofollow">noindex, nofollow — hide entirely from Google</option>
+              </select>
+            </div>
+            <Input label="Canonical URL" value={seo.canonical} onChange={v => setSeo(p => ({ ...p, canonical: v }))} />
+            <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Tells Google the "official" URL for this page. Prevents duplicate content penalties.</p>
+          </div>
+
+          {/* OG image */}
+          <div className="bg-white rounded-2xl border p-6 space-y-5" style={{ borderColor: "rgba(45,58,40,0.1)" }}>
+            <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.4)" }}>Social Preview Image (OG Image)</p>
+            <Input label="OG Image URL" value={seo.ogImage} onChange={v => setSeo(p => ({ ...p, ogImage: v }))} />
+            <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Paste a full image URL (e.g. https://emailvmail.com/og-home.jpg). Ideal size: 1200×630px.</p>
+            <Input label="OG Image Alt Text" value={seo.ogImageAlt} onChange={v => setSeo(p => ({ ...p, ogImageAlt: v }))} />
+            <p className="font-inter text-xs -mt-2" style={{ color: "rgba(45,58,40,0.4)" }}>Describe the image for accessibility and SEO (e.g. "Email-Vmail agency for gun stores"). Required for full compliance.</p>
+          </div>
+
+          {/* Chronological tags */}
+          <div className="bg-white rounded-2xl border p-6 space-y-5" style={{ borderColor: "rgba(45,58,40,0.1)" }}>
+            <p className="font-barlow text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(45,58,40,0.4)" }}>Chronological Tags</p>
+            <p className="font-inter text-sm -mt-2" style={{ color: "rgba(45,58,40,0.55)" }}>Date tags tell Google when this page was first published and last updated. This signals content freshness and improves crawl priority.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label className="font-barlow text-xs font-bold tracking-widest uppercase mb-1.5 block" style={{ color: "rgba(45,58,40,0.5)" }}>Date Published</label>
+                <input type="date" value={seo.datePublished} onChange={e => setSeo(p => ({ ...p, datePublished: e.target.value }))}
+                  className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none focus:border-[#F5C124]"
+                  style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }} />
+              </div>
+              <div>
+                <label className="font-barlow text-xs font-bold tracking-widest uppercase mb-1.5 block" style={{ color: "rgba(45,58,40,0.5)" }}>Date Last Modified</label>
+                <input type="date" value={seo.dateModified} onChange={e => setSeo(p => ({ ...p, dateModified: e.target.value }))}
+                  className="w-full font-inter text-sm px-4 py-3 rounded-xl border-2 outline-none focus:border-[#F5C124]"
+                  style={{ borderColor: "rgba(45,58,40,0.15)", color: "#2D3A28" }} />
+              </div>
+            </div>
           </div>
         </div>
       )}
