@@ -29,7 +29,16 @@ export interface HomeContent {
   hero?: HeroSection;
   problem?: ProblemSection;
   services?: ServicesSection;
-  seo?: { metaTitle?: string; metaDescription?: string };
+  seo?: {
+    metaTitle?: string;
+    metaDescription?: string;
+    robots?: string;
+    canonical?: string;
+    ogImage?: string;
+    ogImageAlt?: string;
+    datePublished?: string;
+    dateModified?: string;
+  };
 }
 
 export async function getHomeContent(): Promise<HomeContent | null> {
