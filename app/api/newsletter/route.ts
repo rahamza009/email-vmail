@@ -56,7 +56,8 @@ export async function POST(req: NextRequest) {
 
   // 3. Send welcome email
   try {
-    await sendEmail(email, "Welcome to VMail", welcomeEmail());
+    const { html: welcomeHtml, text: welcomeText } = welcomeEmail();
+    await sendEmail(email, "Welcome to VMail", welcomeHtml, welcomeText);
     const client = await clientPromise;
     await client.db().collection("newsletter_subscribers").updateOne(
       { email },

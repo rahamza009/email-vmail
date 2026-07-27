@@ -10,11 +10,15 @@ export const transporter = nodemailer.createTransport({
   },
 });
 
-export async function sendEmail(to: string, subject: string, html: string) {
+export async function sendEmail(to: string, subject: string, html: string, text: string) {
   await transporter.sendMail({
     from: `"Ameer Hamza | VMail" <${process.env.SMTP_USER}>`,
     to,
     subject,
     html,
+    text,
+    headers: {
+      "List-Unsubscribe": `<mailto:ameer@emailvmail.com?subject=unsubscribe>`,
+    },
   });
 }

@@ -18,7 +18,7 @@ function wrapper(content: string): string {
                 <tr>
                   <td style="padding-top:28px;">
                     <p style="margin:0;font-family:Georgia,serif;font-size:15px;line-height:1.5;color:rgba(45,58,40,0.5);">— Ameer Hamza<br>Founder, EmailVmail</p>
-                    <p style="margin:16px 0 0;font-family:Arial,sans-serif;font-size:12px;line-height:1.5;color:rgba(45,58,40,0.35);">You received this because you subscribed to VMail. <a href="#" style="color:rgba(45,58,40,0.5);">Unsubscribe</a></p>
+                    <p style="margin:16px 0 0;font-family:Arial,sans-serif;font-size:12px;line-height:1.5;color:rgba(45,58,40,0.35);">You received this because you subscribed to VMail. To unsubscribe, reply with "unsubscribe" in the subject.</p>
                   </td>
                 </tr>
               </table>
@@ -35,18 +35,37 @@ function wrapper(content: string): string {
 const bodyStyle = "margin:0 0 20px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.5;color:#2D3A28;";
 const headingStyle = "margin:0 0 20px;font-family:Georgia,'Times New Roman',serif;font-size:20px;font-weight:700;line-height:1.5;color:#2D3A28;";
 
-export function welcomeEmail(): string {
-  return wrapper(`
+export function welcomeEmail(): { html: string; text: string } {
+  const html = wrapper(`
     <h1 style="${headingStyle}">Welcome to VMail.</h1>
     <p style="${bodyStyle}">Hi there,</p>
     <p style="${bodyStyle}">A big thank you for joining VMail (ValueMail).</p>
     <p style="${bodyStyle}">I'll send you another email soon to break the ice and share why I started VMail.</p>
     <p style="${bodyStyle}">Until then... take care.</p>
   `);
+
+  const text = `VMail · ValueMail
+
+Welcome to VMail.
+
+Hi there,
+
+A big thank you for joining VMail (ValueMail).
+
+I'll send you another email soon to break the ice and share why I started VMail.
+
+Until then... take care.
+
+— Ameer Hamza
+Founder, EmailVmail
+
+You received this because you subscribed to VMail. To unsubscribe, reply with "unsubscribe" in the subject.`;
+
+  return { html, text };
 }
 
-export function followUpEmail(): string {
-  return wrapper(`
+export function followUpEmail(): { html: string; text: string } {
+  const html = wrapper(`
     <h1 style="${headingStyle}">Why I started VMail.</h1>
     <p style="${bodyStyle}">Hi,</p>
     <p style="${bodyStyle}">I hope you've been doing good. Let's have some convo.</p>
@@ -67,4 +86,51 @@ export function followUpEmail(): string {
     <p style="margin:0 0 20px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.5;color:#2D3A28;font-style:italic;">Move your audience from subscribed to sold, again and again.</p>
     <p style="${bodyStyle}">See you Friday morning.</p>
   `);
+
+  const text = `VMail · ValueMail
+
+Why I started VMail.
+
+Hi,
+
+I hope you've been doing good. Let's have some convo.
+
+I started this VMail out of my passion for the firearms & tactical gear industry. I was just not impressed by what most store owners are doing with their ecommerce emails.
+
+Over the years, I've subscribed to countless emails from gun & tactical stores. Only a handful genuinely impressed me.
+
+Some emails never trigger.
+
+The rest?
+
+Meh.
+
+But that's a conversation for Friday mornings.
+
+Here's what I discovered.
+
+Most store owners don't realize how much revenue is hidden inside their email list. They don't have the right methodology to uncover it. Others simply play it too safe to convert.
+
+The result?
+
+Lower ROI. Higher customer acquisition costs.
+
+I don't believe the problem is email.
+
+I believe the problem is that most brands don't know what email is truly capable of.
+
+That's what VMail is about.
+
+Every Friday, we'll explore better ideas, challenge conventional thinking, and work toward one goal:
+
+Move your audience from subscribed to sold, again and again.
+
+See you Friday morning.
+
+— Ameer Hamza
+Founder, EmailVmail
+
+You received this because you subscribed to VMail. To unsubscribe, reply with "unsubscribe" in the subject.`;
+
+  return { html, text };
 }

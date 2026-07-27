@@ -23,7 +23,8 @@ export async function GET(req: NextRequest) {
     let sent = 0;
     for (const sub of due) {
       try {
-        await sendEmail(sub.email, "Why I started VMail.", followUpEmail());
+        const { html: followHtml, text: followText } = followUpEmail();
+        await sendEmail(sub.email, "Why I started VMail.", followHtml, followText);
         await col.updateOne({ _id: sub._id }, { $set: { followUpSentAt: new Date() } });
         sent++;
       } catch (err) {

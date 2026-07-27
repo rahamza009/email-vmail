@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="color-scheme" content="light" />
+<meta name="supported-color-schemes" content="light" />
+<title>Silverline — Email Footer</title>
+
+<!--[if mso]>
+<noscript>
+<xml>
+<o:OfficeDocumentSettings>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+</noscript>
+<style>
+  table { border-collapse: collapse; }
+  .fallback-font { font-family: Arial, Helvetica, sans-serif !important; }
+</style>
+<![endif]-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+  body, table, td { margin: 0; padding: 0; }
+  img { border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+  table { border-collapse: collapse !important; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+  body { width: 100% !important; height: 100% !important; background-color: #eef2f3; }
+  a { text-decoration: none; }
+
+  /* Lock brand colors/imagery regardless of client dark mode auto-inversion */
+  /* Outer frame: the lightly-blurred photo, visible as a border around the glass card */
+  .force-bg-outer {
+    background-color: #2e6b74 !important;
+    background-image: linear-gradient(rgba(20, 55, 65, 0.15), rgba(20, 55, 65, 0.15)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=70&blur=20') !important;
+    background-size: cover !important;
+    background-position: center 62% !important;
+    background-repeat: no-repeat !important;
+  }
+  /* Inner glass card: heavier blur + teal tint, inset inside the frame */
+  .force-bg {
+    background-color: #3f5f66 !important;
+    background-image: linear-gradient(rgba(46, 70, 76, 0.35), rgba(46, 70, 76, 0.35)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=70&blur=50') !important;
+    background-size: cover !important;
+    background-position: center 62% !important;
+    background-repeat: no-repeat !important;
+  }
+  .force-text { color: #ffffff !important; }
+  .force-text-soft { color: rgba(255, 255, 255, 0.85) !important; }
+  @media (prefers-color-scheme: dark) {
+    .force-bg-outer {
+      background-color: #2e6b74 !important;
+      background-image: linear-gradient(rgba(20, 55, 65, 0.15), rgba(20, 55, 65, 0.15)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=70&blur=20') !important;
+    }
+    .force-bg {
+      background-color: #3f5f66 !important;
+      background-image: linear-gradient(rgba(46, 70, 76, 0.35), rgba(46, 70, 76, 0.35)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=70&blur=50') !important;
+    }
+    .force-text { color: #ffffff !important; }
+    .force-text-soft { color: rgba(255, 255, 255, 0.85) !important; }
+  }
+  [data-ogsc] .force-bg-outer {
+    background-color: #2e6b74 !important;
+    background-image: linear-gradient(rgba(20, 55, 65, 0.15), rgba(20, 55, 65, 0.15)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=70&blur=20') !important;
+  }
+  [data-ogsc] .force-bg {
+    background-color: #3f5f66 !important;
+    background-image: linear-gradient(rgba(46, 70, 76, 0.35), rgba(46, 70, 76, 0.35)), url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=70&blur=50') !important;
+  }
+  [data-ogsc] .force-text { color: #ffffff !important; }
+  [data-ogsc] .force-text-soft { color: rgba(255, 255, 255, 0.85) !important; }
+
+  /* Mobile squeeze, not overflow */
+  @media only screen and (max-width: 620px) {
+    .email-outer { width: 100% !important; max-width: 100% !important; border-radius: 0 !important; }
+    .email-container { width: 100% !important; max-width: 100% !important; border-radius: 10px !important; }
+    .outer-pad { padding: 10px !important; }
+    .mobile-pad { padding-left: 22px !important; padding-right: 22px !important; }
+    .logo-text { font-size: 24px !important; }
+    .contact-line { font-size: 13.5px !important; }
+    .service-cell { display: block !important; width: 100% !important; padding: 8px 0 !important; text-align: center !important; }
+  }
+</style>
+</head>
+<body style="margin:0; padding:0; background-color:#eef2f3;">
+
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+  Silverline &mdash; award-winning pool design &amp; construction.
+</div>
+
+<center style="width:100%; background-color:#eef2f3;">
+<!--[if mso]>
+<table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td>
+<![endif]-->
+
+  <table role="presentation" class="email-outer force-bg-outer" width="600" align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#2e6b74" style="width:600px; max-width:600px; margin:0 auto; background-color:#2e6b74; border-radius:18px;">
+    <tr>
+      <td class="outer-pad" style="padding:18px;">
+
+        <table role="presentation" class="email-container force-bg" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#3f5f66" style="width:100%; background-color:#3f5f66; border-radius:14px; overflow:hidden;">
+          <tr>
+            <td class="mobile-pad" align="center" style="padding:40px 44px 28px;">
+
+        <!-- Logo / brand -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+          <tr>
+            <td align="center" class="logo-text force-text fallback-font" style="font-family:'Michroma', Arial, Helvetica, sans-serif; font-size:28px; letter-spacing:2px; color:#f2f6f7;">
+              SILVER<span style="color:#a9cdd9;">LINE</span>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Address -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td align="center" class="force-text-soft fallback-font" style="padding:18px 0 0; font-family:'Poppins', Arial, Helvetica, sans-serif; font-weight:300; font-size:15px; line-height:1.5; color:rgba(255,255,255,0.85);">
+              201 Wampler Dr, Lenoir City, TN 37772, United States
+            </td>
+          </tr>
+        </table>
+
+        <!-- Phone + email -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td align="center" class="contact-line force-text fallback-font" style="padding:14px 0 0; font-family:'Poppins', Arial, Helvetica, sans-serif; font-weight:400; font-size:15px; color:#ffffff;">
+              <a href="tel:+18659668419" class="force-text" style="color:#ffffff;">+1 865-966-8419</a>
+              <span style="display:inline-block; padding:0 14px; color:rgba(255,255,255,0.5);">&#8226;</span>
+              <a href="mailto:support@silverlineind.com" class="force-text" style="color:#ffffff;">support@silverlineind.com</a>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Spacer -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td style="padding-top:28px; font-size:1px; line-height:1px;">&nbsp;</td>
+          </tr>
+        </table>
+
+        <!-- Service links: 5 equal columns -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td class="service-cell fallback-font" width="20%" align="center" style="padding:6px 4px; font-family:'Poppins', Arial, Helvetica, sans-serif; font-size:14px;">
+              <a href="#" class="force-text-soft" style="color:rgba(255,255,255,0.85);">Home</a>
+            </td>
+            <td class="service-cell fallback-font" width="20%" align="center" style="padding:6px 4px; font-family:'Poppins', Arial, Helvetica, sans-serif; font-size:14px;">
+              <a href="#" class="force-text-soft" style="color:rgba(255,255,255,0.85);">Pools</a>
+            </td>
+            <td class="service-cell fallback-font" width="20%" align="center" style="padding:6px 4px; font-family:'Poppins', Arial, Helvetica, sans-serif; font-size:14px;">
+              <a href="#" class="force-text-soft" style="color:rgba(255,255,255,0.85);">Developments</a>
+            </td>
+            <td class="service-cell fallback-font" width="20%" align="center" style="padding:6px 4px; font-family:'Poppins', Arial, Helvetica, sans-serif; font-size:14px;">
+              <a href="#" class="force-text-soft" style="color:rgba(255,255,255,0.85);">Properties</a>
+            </td>
+            <td class="service-cell fallback-font" width="20%" align="center" style="padding:6px 4px; font-family:'Poppins', Arial, Helvetica, sans-serif; font-size:14px;">
+              <a href="#" class="force-text-soft" style="color:rgba(255,255,255,0.85);">Consultation</a>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Unsubscribe -->
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+          <tr>
+            <td align="center" class="fallback-font" style="padding:20px 0 0; font-family:'Poppins', Arial, Helvetica, sans-serif; font-weight:300; font-size:12.5px;">
+              <!-- Swap href for your ESP's unsubscribe merge tag, e.g. Klaviyo {% unsubscribe %} or Mailchimp *|UNSUB|* -->
+              <a href="{{unsubscribe_url}}" class="force-text-soft" style="color:rgba(255,255,255,0.65); text-decoration:underline;">Unsubscribe</a>
+            </td>
+          </tr>
+        </table>
+
+            </td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+<!--[if mso]>
+</td></tr></table>
+<![endif]-->
+</center>
+
+</body>
+</html>
